@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF025E3558C005974B0 /* Assets.xcassets */; };
+		C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */; };
+		C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C4FFE25E3558C005974B0 /* Panda_SazaTests.swift */; };
+		C60C500A25E3558C005974B0 /* Panda_SazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C500925E3558C005974B0 /* Panda_SazaUITests.swift */; };
+		C60C502825E3595A005974B0 /* AuthMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C502725E3595A005974B0 /* AuthMainView.swift */; };
+		C60C503425E359DF005974B0 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C503325E359DF005974B0 /* ColorExtention.swift */; };
+		C60C503F25E35D49005974B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C503E25E35D49005974B0 /* AppDelegate.swift */; };
+		C60C504725E35DB4005974B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C504625E35DB4005974B0 /* SceneDelegate.swift */; };
+		C60C504D25E35E26005974B0 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C504C25E35E26005974B0 /* HostingController.swift */; };
+		C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C505825E3655E005974B0 /* FloatingTextField.swift */; };
+		C60C505E25E36C9F005974B0 /* LabelDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C505D25E36C9F005974B0 /* LabelDivider.swift */; };
+		C60C506425E36D42005974B0 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C506325E36D42005974B0 /* ButtonStyle.swift */; };
+		C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C507125E3778E005974B0 /* AuthSignInView.swift */; };
+		C60C507725E37CB7005974B0 /* AuthSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C507625E37CB7005974B0 /* AuthSignUpView.swift */; };
+		C60C507C25E3918F005974B0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C507B25E3918F005974B0 /* ViewExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C60C4FFB25E3558C005974B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C60C4FE125E35589005974B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C60C4FE825E35589005974B0;
+			remoteInfo = "Panda-Saza";
+		};
+		C60C500625E3558C005974B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C60C4FE125E35589005974B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C60C4FE825E35589005974B0;
+			remoteInfo = "Panda-Saza";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C60C4FE925E35589005974B0 /* Panda-Saza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Panda-Saza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60C4FF025E3558C005974B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C60C4FF525E3558C005974B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C60C4FFA25E3558C005974B0 /* Panda-SazaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Panda-SazaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60C4FFE25E3558C005974B0 /* Panda_SazaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panda_SazaTests.swift; sourceTree = "<group>"; };
+		C60C500025E3558C005974B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C60C500525E3558C005974B0 /* Panda-SazaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Panda-SazaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60C500925E3558C005974B0 /* Panda_SazaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panda_SazaUITests.swift; sourceTree = "<group>"; };
+		C60C500B25E3558C005974B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C60C502725E3595A005974B0 /* AuthMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMainView.swift; sourceTree = "<group>"; };
+		C60C503325E359DF005974B0 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
+		C60C503E25E35D49005974B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C60C504625E35DB4005974B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C60C504C25E35E26005974B0 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		C60C505825E3655E005974B0 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		C60C505D25E36C9F005974B0 /* LabelDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDivider.swift; sourceTree = "<group>"; };
+		C60C506325E36D42005974B0 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		C60C507125E3778E005974B0 /* AuthSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInView.swift; sourceTree = "<group>"; };
+		C60C507625E37CB7005974B0 /* AuthSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpView.swift; sourceTree = "<group>"; };
+		C60C507B25E3918F005974B0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C60C4FE625E35589005974B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60C4FF725E3558C005974B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60C500225E3558C005974B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C60C4FE025E35589005974B0 = {
+			isa = PBXGroup;
+			children = (
+				C60C4FEB25E35589005974B0 /* Panda-Saza */,
+				C60C4FFD25E3558C005974B0 /* Panda-SazaTests */,
+				C60C500825E3558C005974B0 /* Panda-SazaUITests */,
+				C60C4FEA25E35589005974B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C60C4FEA25E35589005974B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C60C4FE925E35589005974B0 /* Panda-Saza.app */,
+				C60C4FFA25E3558C005974B0 /* Panda-SazaTests.xctest */,
+				C60C500525E3558C005974B0 /* Panda-SazaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C60C4FEB25E35589005974B0 /* Panda-Saza */ = {
+			isa = PBXGroup;
+			children = (
+				C60C505725E36552005974B0 /* Component */,
+				C60C504B25E35E13005974B0 /* Util */,
+				C60C503225E359C4005974B0 /* Extension */,
+				C60C501A25E3575E005974B0 /* View */,
+				C60C4FF025E3558C005974B0 /* Assets.xcassets */,
+				C60C4FF525E3558C005974B0 /* Info.plist */,
+				C60C4FF225E3558C005974B0 /* Preview Content */,
+				C60C503E25E35D49005974B0 /* AppDelegate.swift */,
+				C60C504625E35DB4005974B0 /* SceneDelegate.swift */,
+			);
+			path = "Panda-Saza";
+			sourceTree = "<group>";
+		};
+		C60C4FF225E3558C005974B0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C60C4FFD25E3558C005974B0 /* Panda-SazaTests */ = {
+			isa = PBXGroup;
+			children = (
+				C60C4FFE25E3558C005974B0 /* Panda_SazaTests.swift */,
+				C60C500025E3558C005974B0 /* Info.plist */,
+			);
+			path = "Panda-SazaTests";
+			sourceTree = "<group>";
+		};
+		C60C500825E3558C005974B0 /* Panda-SazaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C60C500925E3558C005974B0 /* Panda_SazaUITests.swift */,
+				C60C500B25E3558C005974B0 /* Info.plist */,
+			);
+			path = "Panda-SazaUITests";
+			sourceTree = "<group>";
+		};
+		C60C501A25E3575E005974B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C60C502625E35941005974B0 /* AuthView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C60C502625E35941005974B0 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				C60C502725E3595A005974B0 /* AuthMainView.swift */,
+				C60C507125E3778E005974B0 /* AuthSignInView.swift */,
+				C60C507625E37CB7005974B0 /* AuthSignUpView.swift */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		C60C503225E359C4005974B0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C60C503325E359DF005974B0 /* ColorExtention.swift */,
+				C60C507B25E3918F005974B0 /* ViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C60C504B25E35E13005974B0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C60C504C25E35E26005974B0 /* HostingController.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C60C505725E36552005974B0 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C60C505825E3655E005974B0 /* FloatingTextField.swift */,
+				C60C505D25E36C9F005974B0 /* LabelDivider.swift */,
+				C60C506325E36D42005974B0 /* ButtonStyle.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C60C4FE825E35589005974B0 /* Panda-Saza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60C500E25E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-Saza" */;
+			buildPhases = (
+				C60C4FE525E35589005974B0 /* Sources */,
+				C60C4FE625E35589005974B0 /* Frameworks */,
+				C60C4FE725E35589005974B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Panda-Saza";
+			productName = "Panda-Saza";
+			productReference = C60C4FE925E35589005974B0 /* Panda-Saza.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C60C4FF925E3558C005974B0 /* Panda-SazaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60C501125E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-SazaTests" */;
+			buildPhases = (
+				C60C4FF625E3558C005974B0 /* Sources */,
+				C60C4FF725E3558C005974B0 /* Frameworks */,
+				C60C4FF825E3558C005974B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C60C4FFC25E3558C005974B0 /* PBXTargetDependency */,
+			);
+			name = "Panda-SazaTests";
+			productName = "Panda-SazaTests";
+			productReference = C60C4FFA25E3558C005974B0 /* Panda-SazaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C60C500425E3558C005974B0 /* Panda-SazaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60C501425E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-SazaUITests" */;
+			buildPhases = (
+				C60C500125E3558C005974B0 /* Sources */,
+				C60C500225E3558C005974B0 /* Frameworks */,
+				C60C500325E3558C005974B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C60C500725E3558C005974B0 /* PBXTargetDependency */,
+			);
+			name = "Panda-SazaUITests";
+			productName = "Panda-SazaUITests";
+			productReference = C60C500525E3558C005974B0 /* Panda-SazaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C60C4FE125E35589005974B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					C60C4FE825E35589005974B0 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					C60C4FF925E3558C005974B0 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C60C4FE825E35589005974B0;
+					};
+					C60C500425E3558C005974B0 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C60C4FE825E35589005974B0;
+					};
+				};
+			};
+			buildConfigurationList = C60C4FE425E35589005974B0 /* Build configuration list for PBXProject "Panda-Saza" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C60C4FE025E35589005974B0;
+			productRefGroup = C60C4FEA25E35589005974B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C60C4FE825E35589005974B0 /* Panda-Saza */,
+				C60C4FF925E3558C005974B0 /* Panda-SazaTests */,
+				C60C500425E3558C005974B0 /* Panda-SazaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C60C4FE725E35589005974B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */,
+				C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60C4FF825E3558C005974B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60C500325E3558C005974B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C60C4FE525E35589005974B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60C504D25E35E26005974B0 /* HostingController.swift in Sources */,
+				C60C506425E36D42005974B0 /* ButtonStyle.swift in Sources */,
+				C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */,
+				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
+				C60C505E25E36C9F005974B0 /* LabelDivider.swift in Sources */,
+				C60C503F25E35D49005974B0 /* AppDelegate.swift in Sources */,
+				C60C503425E359DF005974B0 /* ColorExtention.swift in Sources */,
+				C60C507C25E3918F005974B0 /* ViewExtension.swift in Sources */,
+				C60C502825E3595A005974B0 /* AuthMainView.swift in Sources */,
+				C60C507725E37CB7005974B0 /* AuthSignUpView.swift in Sources */,
+				C60C504725E35DB4005974B0 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60C4FF625E3558C005974B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60C500125E3558C005974B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60C500A25E3558C005974B0 /* Panda_SazaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C60C4FFC25E3558C005974B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C60C4FE825E35589005974B0 /* Panda-Saza */;
+			targetProxy = C60C4FFB25E3558C005974B0 /* PBXContainerItemProxy */;
+		};
+		C60C500725E3558C005974B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C60C4FE825E35589005974B0 /* Panda-Saza */;
+			targetProxy = C60C500625E3558C005974B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C60C500C25E3558C005974B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C60C500D25E3558C005974B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C60C500F25E3558C005974B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Panda-Saza/Preview Content\"";
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Panda-Saza/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hubtwork.Panda-Saza";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C60C501025E3558C005974B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Panda-Saza/Preview Content\"";
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Panda-Saza/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hubtwork.Panda-Saza";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C60C501225E3558C005974B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "Panda-SazaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hubtwork.Panda-SazaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Panda-Saza.app/Panda-Saza";
+			};
+			name = Debug;
+		};
+		C60C501325E3558C005974B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "Panda-SazaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hubtwork.Panda-SazaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Panda-Saza.app/Panda-Saza";
+			};
+			name = Release;
+		};
+		C60C501525E3558C005974B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "Panda-SazaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hubtwork.Panda-SazaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Panda-Saza";
+			};
+			name = Debug;
+		};
+		C60C501625E3558C005974B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "Panda-SazaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hubtwork.Panda-SazaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Panda-Saza";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C60C4FE425E35589005974B0 /* Build configuration list for PBXProject "Panda-Saza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60C500C25E3558C005974B0 /* Debug */,
+				C60C500D25E3558C005974B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60C500E25E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-Saza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60C500F25E3558C005974B0 /* Debug */,
+				C60C501025E3558C005974B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60C501125E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-SazaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60C501225E3558C005974B0 /* Debug */,
+				C60C501325E3558C005974B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60C501425E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-SazaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60C501525E3558C005974B0 /* Debug */,
+				C60C501625E3558C005974B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C60C4FE125E35589005974B0 /* Project object */;
+}
