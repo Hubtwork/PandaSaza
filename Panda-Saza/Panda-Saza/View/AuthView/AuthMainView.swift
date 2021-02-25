@@ -9,16 +9,27 @@ import SwiftUI
 
 struct AuthMainView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var inputText: String = ""
     @State private var gotoSignUpView = false
     
     var body: some View {
-        NavigationView{
             ZStack {
+                /*
                 LinearGradient(gradient: Gradient(colors: [.topColor,.centerColor,.bottomColor]),
                     startPoint: .topLeading, endPoint: .bottom)
-            
+            */
                 VStack(alignment: .center, spacing:40) {
+                    ZStack{
+                        HStack{
+                            Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                                Image(systemName: "chevron.left")
+                                    .font(Font.system(size: 15))
+                            }.foregroundColor(.black)
+                            .padding(.leading, 10)
+                            Spacer()
+                        }
+                    }
                     Spacer()
                     Text("판다사자")
                         .frame(width: 200, height: 60)
@@ -49,7 +60,6 @@ struct AuthMainView: View {
             }
             
             .navigationBarHidden(true)
-        }
     }
 }
 

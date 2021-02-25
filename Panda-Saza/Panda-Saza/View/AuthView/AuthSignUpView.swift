@@ -20,22 +20,25 @@ struct AuthSignUpView: View {
     
     var body: some View {
         ZStack {
+            /*
             LinearGradient(gradient: Gradient(colors: [.topColor,.centerColor,.bottomColor]),
                 startPoint: .topLeading, endPoint: .bottom)
+            */
             VStack{
-                ZStack() {
+                ZStack {
                     HStack{
                         Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
                             Image(systemName: "chevron.left")
-                                .font(Font.system(size: 20))
-                        }.foregroundColor(.pink)
+                                .font(Font.system(size: 15))
+                        }.foregroundColor(.black)
                         .padding(.leading, 10)
                         Spacer()
                     }
                     Text("SIGN UP")
-                        .font(Font.system(size: 20))
-                        .foregroundColor(.pink)
-                }.padding(.top, 10)
+                        .font(Font.system(size: 15))
+                        .bold()
+                        .foregroundColor(.black)
+                }
                 
                 VStack(alignment: .center){
                     FloatingTextField(title: "ID", text: $id)

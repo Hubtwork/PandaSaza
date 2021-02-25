@@ -14,7 +14,7 @@ struct ItemThumbnail: Hashable, Codable {
     var itemNameTrans: String
     var itemPrice: Int
     
-    var registrationTime: Int
+    var registrationTime: Double
     
     var sellerLoc: String
     var interest: Int

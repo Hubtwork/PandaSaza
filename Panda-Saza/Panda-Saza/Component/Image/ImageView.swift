@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ImageView<Placeholder: View>: View {
     @StateObject private var loader: ImageLoader
+    
     private let placeholder: Placeholder
     private let image: (UIImage) -> Image
     
@@ -31,7 +32,9 @@ struct ImageView<Placeholder: View>: View {
         Group {
             if loader.image != nil {
                 image(loader.image!)
-                    .scaledToFit()
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 100)
             } else {
                 placeholder
             }
@@ -58,7 +61,6 @@ struct ImageView_Previews: PreviewProvider {
                         .resizable()
                 }
              )
-             .frame(width: 100, height: 100)
              .background(Color(.white))
              .modifier(RoundedEdge(width: 2, color: .black, cornerRadius: 10))
          }
