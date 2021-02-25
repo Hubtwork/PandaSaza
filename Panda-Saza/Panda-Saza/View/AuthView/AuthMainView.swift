@@ -14,6 +14,7 @@ struct AuthMainView: View {
     @State private var gotoSignUpView = false
     
     var body: some View {
+        NavigationView{
             ZStack {
                 /*
                 LinearGradient(gradient: Gradient(colors: [.topColor,.centerColor,.bottomColor]),
@@ -60,6 +61,8 @@ struct AuthMainView: View {
             }
             
             .navigationBarHidden(true)
+        }
+            
     }
 }
 
