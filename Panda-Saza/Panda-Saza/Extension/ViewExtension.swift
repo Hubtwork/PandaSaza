@@ -31,4 +31,20 @@ extension View {
             }
         }
     }
+    
+    /// Get Scaled System Font
+    /// - Parameters:
+    ///   - size: size to Fit in.
+    func scaledFont(size: CGFloat) -> some View {
+        return self.modifier(ScaledFont(size: size))
+    }
+}
+
+extension Binding where Value == Bool {
+    var not: Binding<Value> {
+        Binding<Value>(
+            get: { !self.wrappedValue },
+            set: { self.wrappedValue = !$0 }
+        )
+    }
 }
