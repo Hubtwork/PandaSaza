@@ -19,3 +19,14 @@ struct RoundedEdge: ViewModifier {
             .cornerRadius(cornerRadius)
     }
 }
+
+struct ProductFrameEdge: ViewModifier {
+    let width: CGFloat
+    let color: Color
+
+    func body(content: Content) -> some View {
+        content
+            .padding(width)
+            .background(color)
+    }
+}

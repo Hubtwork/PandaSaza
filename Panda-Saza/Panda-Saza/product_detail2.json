@@ -1,0 +1,19 @@
+{
+    "productdetail": {
+        "itemId": 2,
+        "itemTitle": "한복",
+        "itemImages": [
+            "https://cdn.allets.com/commerce/goods/resize/900/20210122/1611304143038_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+            "https://cdn.allets.com/commerce/goods/resize/296/20210122/1611304195570_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"
+            ],
+        "itemContents": "배송비\n선불3,500원 (200,000원 이상 무료배송)\n배송종류 : 국내배송\n예상수령일 : 2021년 03월 09일 화요일 ( 판매자 평균배송일 7일, 영업일 기준 )\n원산지 : 대한민국\n상품번호 : G0000375308\n브랜드 : Hanboklynn collection",
+        "itemCategory": "의류 / 여성",
+        "itemTimeline": 1614326177,
+        "itemPrice": 34000,
+        "sellerId": 2,
+        "sellerName": "이도현",
+        "sellerSchool": "동국대학교",
+        "sellerLocale": "kr",
+        "sellerRating": 4.3
+    }
+}

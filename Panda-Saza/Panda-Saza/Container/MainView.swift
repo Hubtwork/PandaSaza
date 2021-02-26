@@ -48,7 +48,7 @@ struct MainView: View {
                 
                 switch selectedIdx {
                     case 0:
-                        ShoppingHomeView()
+                        ShoppingHomeView(viewModel: ShoppingHomeViewModel())
                         
                     case 1:
                         if !isLogin {
@@ -68,6 +68,7 @@ struct MainView: View {
                 }
             }
             BottomTabBar(selectedIndex: $selectedIdx, isLogin: $isLogin, shouldLoginModal: $shouldLoginWithModal, tabBarSystemIcons: tabBarImages, tabBarLabels: tabBarLabels, color: .black)
+                .padding(.top, 10)
             
         }
         

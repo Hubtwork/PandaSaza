@@ -49,7 +49,7 @@ struct BottomTabBar: View {
     var body: some View {
         VStack(spacing: 0) {
             Divider()
-            HStack(alignment: .bottom) {
+            HStack {
                 ForEach(0..<tabBarItems.count) { idx in
                     if idx == 0 { Spacer() }
                     self.TabBarItemView(at: idx)
