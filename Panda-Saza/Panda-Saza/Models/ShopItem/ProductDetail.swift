@@ -16,6 +16,9 @@ struct ProductDetail: Codable, Identifiable {
     let itemCategory: String
     let itemTimeline: Double
     let itemPrice: Int
+    let cnt_chat: Int
+    let cnt_like: Int
+    let cnt_show: Int
     
     let sellerId: Int
     let sellerName: String
@@ -31,6 +34,9 @@ struct ProductDetail: Codable, Identifiable {
         case itemCategory
         case itemTimeline
         case itemPrice
+        case cnt_chat
+        case cnt_like
+        case cnt_show
         
         case sellerId
         case sellerName

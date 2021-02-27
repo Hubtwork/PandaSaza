@@ -129,10 +129,31 @@ private extension ProductDetailView {
                 .padding(10)
             
             /// Item Relevant Data
-            Text("채팅 7 • 찜 4 • 조회수 174")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .padding(.leading, 10)
+            HStack(spacing: 5){
+                Spacer()
+                HStack(spacing: 3) {
+                    if (viewModel.product!.cnt_chat > 0) {
+                        Image("chat")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                        Text(String(viewModel.product!.cnt_chat))
+                            .font(.body)
+                    }
+                }
+                HStack(spacing: 3) {
+                    if (viewModel.product!.cnt_like > 0) {
+                        Image("heart")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                        Text(String(viewModel.product!.cnt_like))
+                            .font(.body)
+                    }
+                }
+                HStack(spacing: 3) {
+                    Text(String(format: "%@ %d", "조회수", viewModel.product!.cnt_show))
+                        .font(.body)
+                }
+            }.padding(.trailing, 20)
         }
         .frame(width: UIScreen.screenWidth, alignment: .leading)
         .padding(.vertical, 15)

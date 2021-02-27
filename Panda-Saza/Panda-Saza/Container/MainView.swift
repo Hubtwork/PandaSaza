@@ -23,14 +23,14 @@ struct MainView: View {
     
     private var tabBarItems: [BottomTabBarItem] = []
     
-    @State private var isLogin = false
+    @State private var isLogin = true
     @State private var test = "hi"
     @State private var selectedIdx = 0
     
     @State private var shouldLoginWithModal = false
     
     let tabBarImages = ["cart", "doc.plaintext", "plus.app.fill", "message.fill", "person"]
-    let tabBarLabels = ["구매하기", "가맹점", "판매하기", "채팅", "내 정보"]
+    let tabBarLabels = ["구매하기", "매거진", "판매하기", "채팅", "내 정보"]
     
     var selectedItem: BottomTabBarItem {
         tabBarItems[selectedIdx]
