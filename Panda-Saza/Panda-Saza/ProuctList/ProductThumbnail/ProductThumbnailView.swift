@@ -40,11 +40,30 @@ struct ProductThumbnailView: View {
             .padding(.leading, UIScreen.screenWidth * 0.02)
             
             HStack {
+                HStack(spacing: 3) {
+                    if (viewModel.product.cnt_chat > 0) {
+                        Image("chat")
+                            .resizable()
+                            .frame(width: 10, height: 10)
+                        Text(String(viewModel.product.cnt_chat))
+                            .font(.caption2)
+                    }
+                }.frame(width: 20)
+                HStack(spacing: 3) {
+                    if (viewModel.product.cnt_like > 0) {
+                        Image("heart")
+                            .resizable()
+                            .frame(width: 10, height: 10)
+                        Text(String(viewModel.product.cnt_like))
+                            .font(.caption2)
+                    }
+                }.frame(width: 20)
                 Spacer()
                 Text(String(format: "%d %@", viewModel.product.itemPrice, "원"))
                     .font(.caption)
                     .bold()
             }.frame(minWidth: 0, maxWidth: .infinity)
+            .padding(.leading, UIScreen.screenWidth * 0.02)
             .padding([.trailing, .bottom], UIScreen.screenWidth * 0.02)
         }
         .background(Color.white)

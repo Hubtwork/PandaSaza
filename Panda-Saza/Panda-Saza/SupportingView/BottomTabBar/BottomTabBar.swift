@@ -56,7 +56,7 @@ struct BottomTabBar: View {
                     Spacer()
                 }
             }
-            
+            .padding(.top, UIScreen.screenWidth * 0.02)
             .padding(.bottom)
             .background(Color.white)
             .frame(width: UIScreen.screenWidth)

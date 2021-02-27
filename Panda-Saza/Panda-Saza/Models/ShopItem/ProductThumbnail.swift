@@ -21,6 +21,9 @@ struct ProductThumbnail: Hashable, Codable {
     
     let thumbnailImageURL: String
     
+    let cnt_chat: Int
+    let cnt_like: Int
+    
     enum CodingKeys: String, CodingKey {
         case itemId
         case itemName
@@ -33,5 +36,7 @@ struct ProductThumbnail: Hashable, Codable {
         case itemInterest
         
         case thumbnailImageURL
+        case cnt_chat
+        case cnt_like
     }
 }

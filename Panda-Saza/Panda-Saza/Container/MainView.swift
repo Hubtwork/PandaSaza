@@ -29,8 +29,8 @@ struct MainView: View {
     
     @State private var shouldLoginWithModal = false
     
-    let tabBarImages = ["cart", "heart.circle", "plus.app.fill", "message.fill", "person"]
-    let tabBarLabels = ["구매하기", "찜 목록", "판매하기", "채팅", "내 정보"]
+    let tabBarImages = ["cart", "doc.plaintext", "plus.app.fill", "message.fill", "person"]
+    let tabBarLabels = ["구매하기", "가맹점", "판매하기", "채팅", "내 정보"]
     
     var selectedItem: BottomTabBarItem {
         tabBarItems[selectedIdx]

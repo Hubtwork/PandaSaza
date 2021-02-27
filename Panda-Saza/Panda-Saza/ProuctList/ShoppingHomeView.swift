@@ -13,15 +13,19 @@ struct ShoppingHomeView: View {
     
     var body: some View {
         VStack(spacing: 0){
-            HStack {
+            HStack(spacing: 15){
                 Spacer()
                 NavigationLink(destination: SearchView()) {
                     Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                 }
                 NavigationLink(destination: LikeView()) {
-                    Image(systemName: "suit.heart")
+                    Image(systemName: "heart")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                 }
-            }.padding(.trailing, 10)
+            }.padding(.trailing, 15)
             .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight / 20)
             .foregroundColor(.black)
             
@@ -50,6 +54,7 @@ extension ShoppingHomeView {
                     }
                 }
             })
+            .padding(.top, UIScreen.screenWidth * 0.04)
                 
             
             }

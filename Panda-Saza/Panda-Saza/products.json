@@ -8,6 +8,8 @@
           "registrationTime": 1614129326,
           "sellerLoc": "동국대학교",
           "itemInterest": 4,
+          "cnt_chat": 1,
+          "cnt_like": 3,
           "thumbnailImageURL": "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1587569403/476433_DTDCT_1000_001_057_0000_Light-GG.jpg"
       },
       {
@@ -18,6 +20,8 @@
           "registrationTime": 1614124326,
           "sellerLoc": "서강대학교",
           "itemInterest": 2,
+          "cnt_chat": 0,
+          "cnt_like": 4,
           "thumbnailImageURL": "https://cdn.allets.com/commerce/goods/resize/900/20210122/1611304143038_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"
       }
   ]
