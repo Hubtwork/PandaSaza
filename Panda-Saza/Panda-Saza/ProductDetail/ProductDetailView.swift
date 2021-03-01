@@ -37,7 +37,11 @@ private extension ProductDetailView {
                             }
                         }.frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/3)
                         /// Layer 1 : SellerProfile
-                        self.sellerProfile
+                        NavigationLink(
+                            destination: UserProfileView(viewModel: UserProfileViewModel(uId: viewModel.product!.sellerId)).navigationBarHidden(true)){
+                            self.sellerProfile
+                                .foregroundColor(.black)
+                        }
                         /// Divider between Seller Profile / ItemDetail Contents
                         Divider().frame(width: UIScreen.screenWidth * 0.9)
                         /// Layer 1 : Product Detail
@@ -57,8 +61,8 @@ private extension ProductDetailView {
         /// Seller Profile View
         HStack {
             HStack(spacing: 0) {
-                CircleImageView(imageString: "gucci_02")
-                    .frame(width:UIScreen.screenWidth / 6)
+                CircleImageView(imageString: viewModel.product!.sellerProfileIcon)
+                    .frame(width:UIScreen.screenWidth / 7, height: UIScreen.screenWidth / 7)
                 
                 VStack(alignment: .leading, spacing: 3) {
                     Text(viewModel.product!.sellerName)
@@ -67,7 +71,7 @@ private extension ProductDetailView {
                     Text(viewModel.product!.sellerSchool)
                         .font(Font.system(size: 18))
                         .foregroundColor(.gray)
-                }
+                }.padding(.leading, 10)
             }
             Spacer()
             VStack(alignment: .leading, spacing: 3) {

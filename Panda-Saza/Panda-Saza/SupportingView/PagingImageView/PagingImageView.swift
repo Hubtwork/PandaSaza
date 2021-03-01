@@ -53,7 +53,7 @@ struct PagingView<Content>: View where Content: View {
 
             PageControl(index: $index, maxIndex: maxIndex)
         }
-        .border(Color(.black))
+        
     }
 
     func offset(in geometry: GeometryProxy) -> CGFloat {

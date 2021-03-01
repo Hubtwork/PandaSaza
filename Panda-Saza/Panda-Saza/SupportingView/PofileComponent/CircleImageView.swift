@@ -17,9 +17,8 @@ struct CircleImageView: View {
     
     var body: some View {
         VStack {
-            Image(imageString)
-                .resizable()
-                .scaledToFit()
+            ImageView(withURL: imageString, isComingFromHomepage: false)
+                .scaledToFill()
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 0.1))
                 .shadow(radius: 1)

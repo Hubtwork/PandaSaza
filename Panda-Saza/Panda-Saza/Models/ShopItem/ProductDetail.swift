@@ -22,6 +22,7 @@ struct ProductDetail: Codable, Identifiable {
     
     let sellerId: Int
     let sellerName: String
+    let sellerProfileIcon: String
     let sellerSchool: String
     let sellerLocale: String
     let sellerRating: Double
@@ -40,6 +41,7 @@ struct ProductDetail: Codable, Identifiable {
         
         case sellerId
         case sellerName
+        case sellerProfileIcon
         case sellerSchool
         case sellerLocale
         case sellerRating

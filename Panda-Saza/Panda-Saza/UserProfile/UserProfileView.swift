@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    
+    @ObservedObject var viewModel: UserProfileViewModel
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         userProfile
     }
@@ -15,15 +19,22 @@ struct UserProfileView: View {
 
 extension UserProfileView {
     var userProfile: some View {
-        ScrollView {
-            VStack {
-                self.sellerProfileBase
-                
-                self.sellerProfileInfo
-                self.sellerProfileAuth
-                
-                self.sellerProfileAuthHistory
-                self.sellerProfileSellHistory
+        VStack(spacing: 0) {
+            
+            /// Header :: Navigation Toolbar
+            self.topStickyToolbar
+            Divider()
+            /// Body :: Profile View
+            ScrollView {
+                VStack {
+                    self.sellerProfileBase
+                    
+                    self.sellerProfileInfo
+                    self.sellerProfileAuth
+                    
+                    self.sellerProfileAuthHistory
+                    self.sellerProfileSellHistory
+                }
             }
         }
     }
@@ -32,17 +43,17 @@ extension UserProfileView {
         /// Seller Profile View
         HStack {
             HStack(spacing: 0) {
-                CircleImageView(imageString: "gucci_02")
-                    .frame(width:UIScreen.screenWidth / 4)
+                CircleImageView(imageString: self.viewModel.user!.userProfileIcon)
+                    .frame(width:UIScreen.screenWidth / 6, height: UIScreen.screenWidth / 6)
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("이름")
+                    Text(self.viewModel.user!.userName)
                         .font(.title2)
                         .bold()
-                    Text("동국대학교")
+                    Text(self.viewModel.user!.userSchool)
                         .font(.body)
                         .foregroundColor(.gray)
-                }
+                }.padding(.leading, 10)
             }
             Spacer()
             
@@ -59,7 +70,7 @@ extension UserProfileView {
                     Text("국적")
                         .font(.body)
                         .bold()
-                    Image("kr")
+                    Image(self.viewModel.user!.userLocale)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20)
@@ -75,7 +86,7 @@ extension UserProfileView {
                         .foregroundColor(.yellow)
                         .frame(width: 18)
                         .padding(.leading, 10)
-                    Text(String("3.1"))
+                    Text(String(self.viewModel.user!.userRating))
                         .font(.body)
                         .bold()
                 }
@@ -95,9 +106,17 @@ extension UserProfileView {
                 Text("인증 뱃지")
                     .font(.body)
                     .bold()
-                Text("학생증")
-                    .font(.caption)
-                    .bold()
+                
+                if self.viewModel.user!.userAuthMethods.count > 0 {
+                    ForEach(self.viewModel.user!.userAuthMethods, id: \.self) { userAuth in
+                        
+                        Text(userAuth)
+                            .font(.caption)
+                            .bold()
+                            .padding(5)
+                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.2)))
+                    }
+                }
             }
             Spacer()
             
@@ -107,12 +126,22 @@ extension UserProfileView {
     
     var sellerProfileAuthHistory: some View {
         VStack(alignment: .leading, spacing: 5){
-            Text("2021년 2월 3일, 동국대학교 학생증 인증")
-                .font(.body)
+            if self.viewModel.user!.userAuthHistory.count == 0 {
+                Text("미인증 회원입니다")
+                    .font(.body)
+            }
+            else {
+                ForEach(self.viewModel.user!.userAuthHistory, id: \.self) {
+                    userAuth in
+                    
+                    Text(userAuth)
+                        .font(.body)
+                }
+            }
             HStack(spacing : 0) {
                 Text("최근 로그인 ")
                     .font(.body)
-                Text(" 2021년 3월 1일")
+                Text(self.viewModel.user!.userLoginRecent)
                     .font(.body)
                     .bold()
                 Spacer()
@@ -128,7 +157,7 @@ extension UserProfileView {
     var sellerProfileSellHistory: some View {
         VStack(alignment: .leading, spacing: UIScreen.screenHeight / 40) {
             HStack {
-                Text("판매상품 3개")
+                Text(String(format: "%@ %d%@", "판매상품", self.viewModel.user!.sellItems.count, "개"))
                     .font(.title3)
                     .bold()
                 Spacer()
@@ -141,7 +170,7 @@ extension UserProfileView {
             Divider()
             VStack(alignment: .leading){
                 HStack {
-                    Text("받은 평가 0개")
+                    Text(String(format: "%@ %d%@", "받은 평가", self.viewModel.user!.rateHistory.count, "개"))
                         .font(.title3)
                         .bold()
                     Spacer()
@@ -152,14 +181,16 @@ extension UserProfileView {
                         .frame(width: 15, height: 15)
                 }
                 .padding(.bottom, UIScreen.screenHeight / 40)
-                
-                Text("받은 평가가 아직 없어요.")
-                    .font(.body)
+                /// TODO - 평가 개수가 0개가 아닐 때, 평가 상위 3개 미리보기
+                if self.viewModel.user!.rateHistory.count == 0 {
+                    Text("받은 평가가 아직 없어요.")
+                        .font(.body)
+                }
             }
             Divider()
             VStack(alignment: .leading) {
                 HStack {
-                    Text("받은 후기 0개")
+                    Text(String(format: "%@ %d%@", "받은 리뷰", self.viewModel.user!.reviewHistory.count, "개"))
                         .font(.title3)
                         .bold()
                     Spacer()
@@ -171,47 +202,33 @@ extension UserProfileView {
                 }
                 .padding(.bottom, UIScreen.screenHeight / 40)
                 
-                Text("받은 리뷰가 아직 없어요.")
-                    .font(.body)
+                /// TODO - 리뷰 개수가 0개가 아닐 때, 리뷰 상위 3개 미리보기
+                if self.viewModel.user!.reviewHistory.count == 0 {
+                    Text("받은 리뷰가 아직 없어요.")
+                        .font(.body)
+                }
             }
         }.padding(.horizontal, UIScreen.screenWidth / 20)
         .padding(.vertical, UIScreen.screenWidth / 20)
     }
     
-    /*
-     
-     
-     VStack(alignment: .leading, spacing: 3) {
-         HStack {
-             Text("국적")
-                 .font(Font.system(size: 18))
-                 .bold()
-             Image("kor")
-                 .resizable()
-                 .scaledToFit()
-                 .frame(width: 20)
-         }
-         HStack {
-             Text("평점")
-                 .font(Font.system(size: 18))
-                 .bold()
-             Image(systemName: "star.fill")
-                 .resizable()
-                 .scaledToFit()
-                 .foregroundColor(.yellow)
-                 .frame(width: 18)
-             Text(String("3.1"))
-                 .font(Font.system(size: 18))
-                 .bold()
-         }
-     }.frame(width: UIScreen.screenWidth / 3)
-     .padding(.trailing, 15)
-     */
-    
-}
-
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileView()
+    var topStickyToolbar: some View {
+        
+            HStack{
+                Button(action: { presentation.wrappedValue.dismiss() }) {
+                    Image(systemName: "chevron.left")
+                        .font(Font.system(size: UIScreen.screenWidth / 15))
+                }.foregroundColor(.black)
+                Spacer()
+                Text("프로필")
+                    .font(.title2)
+                    .bold()
+                Spacer()
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 15)
+            
     }
+    
+    
 }
