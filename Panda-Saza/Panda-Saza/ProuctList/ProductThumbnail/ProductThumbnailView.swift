@@ -16,6 +16,7 @@ struct ProductThumbnailView: View {
             ImageView(withURL: viewModel.product.thumbnailImageURL, isComingFromHomepage: false)
                 .frame(height: UIScreen.screenWidth * 0.4)
                 .background(Color(.white))
+            /// Item Name Stack
             HStack {
                 Text("(Trans) " + viewModel.product.itemNameTrans)
                 .font(.caption)
@@ -30,6 +31,7 @@ struct ProductThumbnailView: View {
                 Spacer()
             }.frame(minWidth: 0, maxWidth: .infinity)
             .padding(.leading, UIScreen.screenWidth * 0.02)
+            /// Item Location / RegistTime Stack
             HStack {
                 Text(viewModel.product.sellerLoc + " • " + calcDateDiff(baseDateTimestamp: viewModel.product.registrationTime))
                     .font(.caption2)
@@ -38,7 +40,7 @@ struct ProductThumbnailView: View {
                 Spacer()
             }.frame(minWidth: 0, maxWidth: .infinity)
             .padding(.leading, UIScreen.screenWidth * 0.02)
-            
+            /// Item Chat / Like / Price Stack
             HStack {
                 HStack(spacing: 3) {
                     if (viewModel.product.cnt_chat > 0) {
