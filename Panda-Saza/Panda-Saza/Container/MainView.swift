@@ -28,9 +28,10 @@ struct MainView: View {
     @State private var selectedIdx = 0
     
     @State private var shouldLoginWithModal = false
+    @State private var sellItemModal = false
     
-    let tabBarImages = ["cart", "doc.plaintext", "plus.app.fill", "message.fill", "person"]
-    let tabBarLabels = ["구매하기", "매거진", "판매하기", "채팅", "내 정보"]
+    let tabBarImages = ["cart", "doc.plaintext",  "message.fill", "person"]
+    let tabBarLabels = ["구매하기", "매거진", "채팅", "내 정보"]
     
     var selectedItem: BottomTabBarItem {
         tabBarItems[selectedIdx]
@@ -46,6 +47,11 @@ struct MainView: View {
                         AuthMainView()
                 })
                 
+                Spacer()
+                    .fullScreenCover(isPresented: $sellItemModal, content: {
+                        ProductRegistView()
+                    })
+                
                 switch selectedIdx {
                     case 0:
                         ShoppingHomeView(viewModel: ShoppingHomeViewModel())
@@ -59,7 +65,15 @@ struct MainView: View {
                                 Text("TEST")
                             }
                         }
-                        
+                    
+                    case 3:
+                        if !isLogin {
+                            AuthMainView()
+                        }
+                        else {
+                            MyPageView(viewModel: MyPageViewModel())
+                        }
+                    
                     default:
                         NavigationView {
                             Text("Remaining tabs")
@@ -69,7 +83,6 @@ struct MainView: View {
             }
             BottomTabBar(selectedIndex: $selectedIdx, isLogin: $isLogin, shouldLoginModal: $shouldLoginWithModal, tabBarSystemIcons: tabBarImages, tabBarLabels: tabBarLabels, color: .black)
                 .padding(.top, 10)
-            
         }
         
         .navigationBarHidden(true)

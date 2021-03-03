@@ -21,7 +21,7 @@ struct ButtonStyle: ViewModifier {
         content
             .padding()
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-            .foregroundColor(Color.white)
+            .foregroundColor(Color.black)
             .background(enabled() ? color : Color.black)
             .cornerRadius(5)
     }

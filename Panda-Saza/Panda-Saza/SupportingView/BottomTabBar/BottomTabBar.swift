@@ -37,7 +37,8 @@ struct BottomTabBar: View {
             }
             else {
                 withAnimation {
-                self.selectedIndex = index
+                    
+                    self.selectedIndex = index
                 }
             }
         }) {
