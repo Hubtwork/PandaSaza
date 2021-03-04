@@ -137,35 +137,32 @@ extension MyPageView {
     var userDataSettings: some View {
         VStack(spacing: 20){
             HStack(alignment: .center) {
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(height: 20)
-                Text("프로필 수정")
-                    .font(.body)
+                NavigationLink(destination:
+                                ProfileChangeView(profileImageURL: self.viewModel.user!.userProfileIcon, profileName: .constant(self.viewModel.user!.userName))
+                ) {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color.black)
+                        .frame(height: 20)
+                    Text("프로필 수정")
+                        .font(.body)
+                }.foregroundColor(.black)
                 Spacer()
             }
             
             HStack(alignment: .center) {
-                Image(systemName: "envelope.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(height: 20)
-                Text("이메일 변경")
-                    .font(.body)
-                Spacer()
-            }
-            
-            HStack(alignment: .center) {
-                Image(systemName: "phone.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(height: 20)
-                Text("전화번호 수정")
-                    .font(.body)
+                NavigationLink(destination:
+                                EmailChangeView(accountEmail: .constant(self.viewModel.user!.userEmail), accountPhone: .constant("010-3512-3221"))
+                ){
+                    Image(systemName: "envelope.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color.black)
+                        .frame(height: 20)
+                    Text("계정 정보 수정")
+                        .font(.body)
+                }.foregroundColor(.black)
                 Spacer()
             }
             

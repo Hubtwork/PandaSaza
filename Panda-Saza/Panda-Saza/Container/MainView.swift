@@ -65,6 +65,14 @@ struct MainView: View {
                                 Text("TEST")
                             }
                         }
+                        
+                    case 2:
+                        if !isLogin {
+                            AuthMainView()
+                        }
+                        else {
+                            ChattingList(viewModel: ChattingListViewModel())
+                        }
                     
                     case 3:
                         if !isLogin {

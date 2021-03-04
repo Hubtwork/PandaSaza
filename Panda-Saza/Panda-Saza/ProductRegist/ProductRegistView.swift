@@ -8,6 +8,18 @@
 import SwiftUI
 import Combine
 
+class NumbersOnly: ObservableObject {
+    @Published var value = "" {
+        didSet {
+            let filtered = value.filter { $0.isNumber }
+            
+            if value != filtered {
+                value = filtered
+            }
+        }
+    }
+}
+
 struct ProductRegistView: View {
     
     @Environment(\.presentationMode) var presentation
@@ -15,8 +27,12 @@ struct ProductRegistView: View {
     @State var itemName: String = ""
     @State var itemCategory: String = "카테고리 선택"
     
-    @State private var itemPrice: String = ""
+    @ObservedObject var itemPrice = NumbersOnly()
     @State var canNegotiate: Bool = false
+    /// Photo Relative
+    @State private var photoPickerIsPresented = false
+    @State var selectedImage: [UIImage] = []
+    
     
     @State private var itemContents: String = ""
     
@@ -25,8 +41,10 @@ struct ProductRegistView: View {
             VStack(spacing: 0){
                 self.topTitleBar
                 Divider()
+                    .background(Color.black)
                 ScrollView {
-                    
+                    self.itemPictureView
+                    Divider()
                     /// item Name
                     self.itemNameView
                     Divider()
@@ -41,11 +59,48 @@ struct ProductRegistView: View {
             }
             
             .navigationBarHidden(true)
-        }
+        }.sheet(isPresented: $photoPickerIsPresented) {
+            PhotoPicker(isPresented: $photoPickerIsPresented, multiMode: true, images: $selectedImage)
+          }
     }
 }
 
 extension ProductRegistView {
+    
+    var itemPictureView: some View {
+        HStack(alignment: .center) {
+            Button(action: {
+                photoPickerIsPresented = true
+            }) {
+                VStack(spacing: 5) {
+                    Image(systemName: "camera.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 22)
+                    Text(String(selectedImage.count) + " / 10")
+                        .font(.body)
+                }
+                .frame(width: 80, height: 80)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
+            }.foregroundColor(.black)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 5){
+                    ForEach(selectedImage, id: \.self) { image in
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: 70, height: 70)
+                            .aspectRatio(contentMode: .fill)
+                            .cornerRadius(10)
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
+                    }
+                }
+                .padding(10)
+            }
+            
+        }.padding(.vertical, 10)
+        .padding(.horizontal, 20)
+    }
     
     var itemNameView: some View {
         HStack {
@@ -71,7 +126,7 @@ extension ProductRegistView {
     var itemPriceView: some View {
         HStack(spacing: 10) {
             /// Toggle Currency String
-            if self.itemPrice.isEmpty {
+            if self.itemPrice.value.isEmpty {
                 Text("₩")
                     .foregroundColor(.gray)
                     .font(.body)
@@ -82,15 +137,9 @@ extension ProductRegistView {
                     .font(.body)
             }
             /// Toggle Price
-            TextField("희망 가격", text: $itemPrice)
+            TextField("희망 가격", text: $itemPrice.value)
                 .font(.body)
-                .keyboardType(.numberPad)
-                .onReceive(Just(itemPrice)) { newValue in
-                    let filtered = newValue.filter { "0123456789".contains($0) }
-                    if filtered != newValue {
-                        self.itemPrice = filtered
-                    }
-                }
+                .keyboardType(.decimalPad)
             Spacer()
             /// Toggle Negotiate
             HStack{

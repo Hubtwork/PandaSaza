@@ -24,6 +24,7 @@ extension UserProfileView {
             /// Header :: Navigation Toolbar
             self.topStickyToolbar
             Divider()
+                .background(Color.black)
             /// Body :: Profile View
             ScrollView {
                 VStack {

@@ -32,6 +32,8 @@ struct ShoppingHomeView: View {
                 .foregroundColor(.black)
                 
                 Divider()
+                    .background(Color.black)
+                
                 self.productThumbnailView(products: viewModel.products)
                     .foregroundColor(.black)
             }
