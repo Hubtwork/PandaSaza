@@ -24,14 +24,15 @@ struct MainView: View {
     private var tabBarItems: [BottomTabBarItem] = []
     
     @State private var isLogin = true
+    @State private var authCompleted = false
     @State private var test = "hi"
     @State private var selectedIdx = 0
     
     @State private var shouldLoginWithModal = false
     @State private var sellItemModal = false
     
-    let tabBarImages = ["cart", "doc.plaintext",  "message.fill", "person"]
-    let tabBarLabels = ["구매하기", "매거진", "채팅", "내 정보"]
+    let tabBarImages = ["cart", "doc.plaintext", "plus.circle", "message.fill", "person"]
+    let tabBarLabels = ["상품구매", "찜 목록", "상품판매", "채팅", "내 정보"]
     
     var selectedItem: BottomTabBarItem {
         tabBarItems[selectedIdx]
@@ -54,33 +55,18 @@ struct MainView: View {
                 
                 switch selectedIdx {
                     case 0:
-                        ShoppingHomeView(viewModel: ShoppingHomeViewModel())
+                        ShoppingHomeView(viewModel: ShoppingHomeViewModel(), authCompleted: $authCompleted)
                         
                     case 1:
-                        if !isLogin {
-                            AuthMainView()
-                        }
-                        else {
-                            ScrollView {
-                                Text("TEST")
-                            }
+                        ScrollView {
+                            Text("TEST")
                         }
                         
-                    case 2:
-                        if !isLogin {
-                            AuthMainView()
-                        }
-                        else {
-                            ChattingList(viewModel: ChattingListViewModel())
-                        }
-                    
                     case 3:
-                        if !isLogin {
-                            AuthMainView()
-                        }
-                        else {
-                            MyPageView(viewModel: MyPageViewModel())
-                        }
+                        ChattingList(viewModel: ChattingListViewModel())
+                    
+                    case 4:
+                        MyPageView(viewModel: MyPageViewModel())
                     
                     default:
                         NavigationView {
@@ -89,7 +75,7 @@ struct MainView: View {
                         }
                 }
             }
-            BottomTabBar(selectedIndex: $selectedIdx, isLogin: $isLogin, shouldLoginModal: $shouldLoginWithModal, tabBarSystemIcons: tabBarImages, tabBarLabels: tabBarLabels, color: .black)
+            BottomTabBar(selectedIndex: $selectedIdx, isLogin: $isLogin, shouldLoginModal: $shouldLoginWithModal, itemSellingModal: $sellItemModal, tabBarSystemIcons: tabBarImages, tabBarLabels: tabBarLabels, color: .black)
                 .padding(.top, 10)
         }
         

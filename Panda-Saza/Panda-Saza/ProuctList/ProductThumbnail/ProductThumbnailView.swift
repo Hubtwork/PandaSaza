@@ -14,7 +14,7 @@ struct ProductThumbnailView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: UIScreen.screenWidth * 0.02){
             ImageView(withURL: viewModel.product.thumbnailImageURL, isComingFromHomepage: false)
-                .frame(height: UIScreen.screenWidth * 0.4)
+                .frame(height: UIScreen.screenWidth * 0.47)
                 .background(Color(.white))
             /// Item Name Stack
             HStack {
