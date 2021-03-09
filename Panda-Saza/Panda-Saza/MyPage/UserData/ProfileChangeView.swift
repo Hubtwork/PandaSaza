@@ -11,10 +11,10 @@ struct ProfileChangeView: View {
     
     @Environment(\.presentationMode) var presentation
     var profileImageURL: String
-    @Binding var profileName: String
+    @State var profileName: String
     
-    @State private var photoPickerIsPresented = false
-    @State var selectedImage: [UIImage] = []
+    @State private var showSheet = false
+    @ObservedObject var mediaItems = PickedMediaItems()
     
     var body: some View {
         layout
@@ -37,35 +37,34 @@ extension ProfileChangeView {
             introduceText
                 .padding(.top, 10)
             
-            ScrollView {
-                ForEach(selectedImage, id: \.self) { uiImage in
-                  Image(uiImage: uiImage)
-                    .resizable()
-                    .frame(height: 250, alignment: .center)
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .padding(10)
-                }
-                .padding()
-              }
-            
             Spacer()
         }.edgesIgnoringSafeArea(.bottom)
-        .sheet(isPresented: $photoPickerIsPresented) {
-            PhotoPicker(isPresented: $photoPickerIsPresented, multiMode: false, images: $selectedImage)
-          }
+        .sheet(isPresented: $showSheet, content: {
+            PhotoPicker(multiMode: false, mediaItems: mediaItems) { didSelectItem in
+                // Handle didSelectItems value here...
+                showSheet = false
+            }
+        })
     }
     
     var profileImageView: some View {
         HStack {
             Spacer()
             Button(action: {
-                photoPickerIsPresented.toggle()
+                showSheet = true
             }) {
-                CircleImageView(imageString: profileImageURL)
-                    .frame(width:UIScreen.screenWidth / 4, height: UIScreen.screenWidth / 4)
-                    .overlay(Circle().stroke(Color.black, lineWidth: 1).shadow(radius: 3))
-                    .overlay(profileImageBadge)
+                if mediaItems.items.isEmpty {
+                    CircleImageView(imageString: profileImageURL)
+                        .frame(width:UIScreen.screenWidth / 4, height: UIScreen.screenWidth / 4)
+                        .overlay(Circle().stroke(Color.black, lineWidth: 1).shadow(radius: 3))
+                        .overlay(profileImageBadge)
+                }
+                else {
+                    CircleImageView(uiImage: mediaItems.getLast()!.photo ?? UIImage())
+                        .frame(width:UIScreen.screenWidth / 4, height: UIScreen.screenWidth / 4)
+                        .overlay(Circle().stroke(Color.black, lineWidth: 1).shadow(radius: 3))
+                        .overlay(profileImageBadge)
+                }
             }
             Spacer()
         }
@@ -131,6 +130,6 @@ extension ProfileChangeView {
 
 struct ProfileChangeView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileChangeView(profileImageURL:  "https://file3.instiz.net/data/cached_img/upload/2019/09/21/22/f5ce7f9944770d1c575d9ada78c97b65.jpg", profileName: .constant("정동민"))
+        ProfileChangeView(profileImageURL: "https://file3.instiz.net/data/cached_img/upload/2019/09/21/22/f5ce7f9944770d1c575d9ada78c97b65.jpg", profileName: "정동민")
     }
 }

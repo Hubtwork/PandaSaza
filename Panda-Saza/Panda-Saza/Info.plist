@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) 은 사진첩 권한을 필요로 합니다 ( 프로필 변경 및 상품 판매 )</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) 은 카메라 권한을 필요로 합니다 ( 프로필 변경 및 상품 판매 )</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

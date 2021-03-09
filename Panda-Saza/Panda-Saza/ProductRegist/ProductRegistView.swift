@@ -30,9 +30,11 @@ struct ProductRegistView: View {
     @ObservedObject var itemPrice = NumbersOnly()
     @State var canNegotiate: Bool = false
     /// Photo Relative
-    @State private var photoPickerIsPresented = false
-    @State var selectedImage: [UIImage] = []
-    
+    @State private var showSheet = false
+    @ObservedObject var mediaItems = PickedMediaItems()
+    /// Image Picker Relative
+    @State var showImagePicker = false
+    @State var selectedImage: [ProductItemImage] = []
     
     @State private var itemContents: String = ""
     
@@ -43,7 +45,8 @@ struct ProductRegistView: View {
                 Divider()
                     .background(Color.black)
                 ScrollView {
-                    self.itemPictureView
+                    
+                    self.photoView
                     Divider()
                     /// item Name
                     self.itemNameView
@@ -59,18 +62,21 @@ struct ProductRegistView: View {
             }
             
             .navigationBarHidden(true)
-        }.sheet(isPresented: $photoPickerIsPresented) {
-            PhotoPicker(isPresented: $photoPickerIsPresented, multiMode: true, images: $selectedImage)
-          }
+        }
+        .onReceive(PSImagePicker.shared.$images, perform: { images in self.selectedImage = images
+        })
+        .sheet(isPresented: self.$showImagePicker, content: {
+            PSImagePicker.shared.view
+        })
     }
 }
 
 extension ProductRegistView {
     
-    var itemPictureView: some View {
+    var photoView: some View {
         HStack(alignment: .center) {
             Button(action: {
-                photoPickerIsPresented = true
+                showImagePicker = true
             }) {
                 VStack(spacing: 5) {
                     Image(systemName: "camera.fill")
@@ -86,8 +92,8 @@ extension ProductRegistView {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 5){
-                    ForEach(selectedImage, id: \.self) { image in
-                        Image(uiImage: image)
+                    ForEach(self.selectedImage, id: \.id) { item in
+                        Image(uiImage: item.photo!)
                             .resizable()
                             .frame(width: 70, height: 70)
                             .aspectRatio(contentMode: .fill)

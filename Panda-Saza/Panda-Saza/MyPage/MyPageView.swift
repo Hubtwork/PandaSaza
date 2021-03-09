@@ -138,7 +138,7 @@ extension MyPageView {
         VStack(spacing: 20){
             HStack(alignment: .center) {
                 NavigationLink(destination:
-                                ProfileChangeView(profileImageURL: self.viewModel.user!.userProfileIcon, profileName: .constant(self.viewModel.user!.userName))
+                                ProfileChangeView(profileImageURL: self.viewModel.user!.userProfileIcon, profileName: self.viewModel.user!.userName)
                 ) {
                     Image(systemName: "person.circle")
                         .resizable()

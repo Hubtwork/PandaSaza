@@ -33,7 +33,7 @@ struct MainView: View {
     
     let tabBarImages = ["cart", "doc.plaintext", "plus.circle", "message.fill", "person"]
     let tabBarLabels = ["상품구매", "찜 목록", "상품판매", "채팅", "내 정보"]
-    
+
     var selectedItem: BottomTabBarItem {
         tabBarItems[selectedIdx]
     }

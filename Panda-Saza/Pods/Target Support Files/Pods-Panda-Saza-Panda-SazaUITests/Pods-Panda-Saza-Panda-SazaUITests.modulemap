@@ -1,0 +1,6 @@
+framework module Pods_Panda_Saza_Panda_SazaUITests {
+  umbrella header "Pods-Panda-Saza-Panda-SazaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004D774F75B0123EEF5B63A2 /* Pods_Panda_Saza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */; };
+		29C758A8B03806CA68ABD5E2 /* Pods_Panda_Saza_Panda_SazaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D252ABEDEEE9B4935A46D3 /* Pods_Panda_Saza_Panda_SazaUITests.framework */; };
+		6549E2526BB7DE98D1ED2625 /* Pods_Panda_SazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */; };
 		C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF025E3558C005974B0 /* Assets.xcassets */; };
 		C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */; };
 		C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C4FFE25E3558C005974B0 /* Panda_SazaTests.swift */; };
@@ -40,11 +43,14 @@
 		C60C512F25E735DC005974B0 /* BottomTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C512E25E735DC005974B0 /* BottomTabBarItemView.swift */; };
 		C60C513425E736AF005974B0 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C513325E736AF005974B0 /* BottomTabBar.swift */; };
 		C60C514225E7691E005974B0 /* PagingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C514125E7691E005974B0 /* PagingImageView.swift */; };
-		C66D3B4325F5C44B008F06E4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C66D3B4225F5C44B008F06E4 /* FirebaseAuth */; };
-		C66D3B4525F5C44B008F06E4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C66D3B4425F5C44B008F06E4 /* FirebaseDatabase */; };
-		C66D3B4725F5C44B008F06E4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C66D3B4625F5C44B008F06E4 /* FirebaseStorage */; };
+		C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D46C325F745D7001AE6E5 /* PhotopickerDemo.swift */; };
+		C63D46D325F746D9001AE6E5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D46D225F746D9001AE6E5 /* ImagePicker.swift */; };
+		C63D471425F761BE001AE6E5 /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D471325F761BE001AE6E5 /* ProductItem.swift */; };
 		C66D3B4C25F5C634008F06E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */; };
 		C66D3B7125F62D82008F06E4 /* AuthNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B7025F62D82008F06E4 /* AuthNoticeView.swift */; };
+		C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */; };
+		C66D3B8525F7220E008F06E4 /* LivePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B8425F7220E008F06E4 /* LivePhotoView.swift */; };
+		C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B8925F725DC008F06E4 /* ProfileChangeViewModel.swift */; };
 		C6D2E40E25EE4BB2006182DA /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E40D25EE4BB2006182DA /* MyPageView.swift */; };
 		C6D2E41E25EE8E51006182DA /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E41D25EE8E51006182DA /* MyPageViewModel.swift */; };
 		C6D2E42325EE8E87006182DA /* user_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C6D2E42225EE8E87006182DA /* user_data.json */; };
@@ -106,6 +112,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E851574D5B58551F6FC388C /* Pods-Panda-Saza-Panda-SazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-Saza-Panda-SazaUITests.release.xcconfig"; path = "Target Support Files/Pods-Panda-Saza-Panda-SazaUITests/Pods-Panda-Saza-Panda-SazaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_SazaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C5CCEF56E016FBBA51B9AFE /* Pods-Panda-Saza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-Saza.release.xcconfig"; path = "Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza.release.xcconfig"; sourceTree = "<group>"; };
+		2A70656BE242A677427B3C96 /* Pods-Panda-Saza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-Saza.debug.xcconfig"; path = "Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza.debug.xcconfig"; sourceTree = "<group>"; };
+		558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_Saza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.debug.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.release.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.release.xcconfig"; sourceTree = "<group>"; };
+		93D252ABEDEEE9B4935A46D3 /* Pods_Panda_Saza_Panda_SazaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_Saza_Panda_SazaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60C4FE925E35589005974B0 /* Panda-Saza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Panda-Saza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60C4FF025E3558C005974B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -145,8 +159,14 @@
 		C60C512E25E735DC005974B0 /* BottomTabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarItemView.swift; sourceTree = "<group>"; };
 		C60C513325E736AF005974B0 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
 		C60C514125E7691E005974B0 /* PagingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingImageView.swift; sourceTree = "<group>"; };
+		C63D46C325F745D7001AE6E5 /* PhotopickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotopickerDemo.swift; sourceTree = "<group>"; };
+		C63D46D225F746D9001AE6E5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C63D471325F761BE001AE6E5 /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
 		C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C66D3B7025F62D82008F06E4 /* AuthNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNoticeView.swift; sourceTree = "<group>"; };
+		C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerModel.swift; sourceTree = "<group>"; };
+		C66D3B8425F7220E008F06E4 /* LivePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoView.swift; sourceTree = "<group>"; };
+		C66D3B8925F725DC008F06E4 /* ProfileChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileChangeViewModel.swift; sourceTree = "<group>"; };
 		C6D2E40D25EE4BB2006182DA /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		C6D2E41D25EE8E51006182DA /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		C6D2E42225EE8E87006182DA /* user_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_data.json; sourceTree = "<group>"; };
@@ -188,6 +208,7 @@
 		C6FEA6B225ECF3D6007E7AB5 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		C6FEA6BA25ECF41B007E7AB5 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		C6FEA6BF25ECF42C007E7AB5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FF5B5F4BFB938D638F3F067D /* Pods-Panda-Saza-Panda-SazaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-Saza-Panda-SazaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Panda-Saza-Panda-SazaUITests/Pods-Panda-Saza-Panda-SazaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,9 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C66D3B4325F5C44B008F06E4 /* FirebaseAuth in Frameworks */,
-				C66D3B4525F5C44B008F06E4 /* FirebaseDatabase in Frameworks */,
-				C66D3B4725F5C44B008F06E4 /* FirebaseStorage in Frameworks */,
+				004D774F75B0123EEF5B63A2 /* Pods_Panda_Saza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6549E2526BB7DE98D1ED2625 /* Pods_Panda_SazaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,12 +232,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C758A8B03806CA68ABD5E2 /* Pods_Panda_Saza_Panda_SazaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48BFFAF1C248F28C9F491DD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A70656BE242A677427B3C96 /* Pods-Panda-Saza.debug.xcconfig */,
+				1C5CCEF56E016FBBA51B9AFE /* Pods-Panda-Saza.release.xcconfig */,
+				FF5B5F4BFB938D638F3F067D /* Pods-Panda-Saza-Panda-SazaUITests.debug.xcconfig */,
+				0E851574D5B58551F6FC388C /* Pods-Panda-Saza-Panda-SazaUITests.release.xcconfig */,
+				66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */,
+				67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E41460748B3425B72E2A5DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */,
+				93D252ABEDEEE9B4935A46D3 /* Pods_Panda_Saza_Panda_SazaUITests.framework */,
+				17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C60C4FE025E35589005974B0 = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +269,8 @@
 				C60C4FFD25E3558C005974B0 /* Panda-SazaTests */,
 				C60C500825E3558C005974B0 /* Panda-SazaUITests */,
 				C60C4FEA25E35589005974B0 /* Products */,
+				48BFFAF1C248F28C9F491DD7 /* Pods */,
+				8E41460748B3425B72E2A5DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -316,9 +362,9 @@
 		C60C504B25E35E13005974B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				C66D3B7825F71C0A008F06E4 /* PhotoPicker */,
 				C60C504C25E35E26005974B0 /* HostingController.swift */,
 				C60C50C325E5E06D005974B0 /* DateDifference.swift */,
-				C6D2E44F25F05A8C006182DA /* PhotoPicker.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -326,6 +372,7 @@
 		C60C505725E36552005974B0 /* SupportingView */ = {
 			isa = PBXGroup;
 			children = (
+				C63D46D125F746C3001AE6E5 /* ImagePicker */,
 				C6FEA5AF25E77E2F007E7AB5 /* PofileComponent */,
 				C60C514025E7690F005974B0 /* PagingImageView */,
 				C60C512525E73538005974B0 /* BottomTabBar */,
@@ -405,6 +452,14 @@
 			path = PagingImageView;
 			sourceTree = "<group>";
 		};
+		C63D46D125F746C3001AE6E5 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C63D46D225F746D9001AE6E5 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		C66D3B5025F5C8AA008F06E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +469,17 @@
 				C6D2E49225F0A0CA006182DA /* ChattingThumbnailViewModel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C66D3B7825F71C0A008F06E4 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C6D2E44F25F05A8C006182DA /* PhotoPicker.swift */,
+				C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */,
+				C66D3B8425F7220E008F06E4 /* LivePhotoView.swift */,
+				C63D46C325F745D7001AE6E5 /* PhotopickerDemo.swift */,
+			);
+			path = PhotoPicker;
 			sourceTree = "<group>";
 		};
 		C6D2E40925EE4AC3006182DA /* MyPage */ = {
@@ -433,6 +499,7 @@
 			children = (
 				C6D2E43D25F05064006182DA /* ProfileChangeView.swift */,
 				C6D2E45F25F0836C006182DA /* EmailChangeView.swift */,
+				C66D3B8925F725DC008F06E4 /* ProfileChangeViewModel.swift */,
 			);
 			path = UserData;
 			sourceTree = "<group>";
@@ -573,6 +640,7 @@
 			children = (
 				C6FEA6B125ECF3C4007E7AB5 /* Category */,
 				C6FEA6A425ECF2AD007E7AB5 /* ProductRegistView.swift */,
+				C63D471325F761BE001AE6E5 /* ProductItem.swift */,
 			);
 			path = ProductRegist;
 			sourceTree = "<group>";
@@ -593,20 +661,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C60C500E25E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-Saza" */;
 			buildPhases = (
+				1EF8654491AEB979878F1ACC /* [CP] Check Pods Manifest.lock */,
 				C60C4FE525E35589005974B0 /* Sources */,
 				C60C4FE625E35589005974B0 /* Frameworks */,
 				C60C4FE725E35589005974B0 /* Resources */,
+				0D6F8393C3150D640661EA54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Panda-Saza";
-			packageProductDependencies = (
-				C66D3B4225F5C44B008F06E4 /* FirebaseAuth */,
-				C66D3B4425F5C44B008F06E4 /* FirebaseDatabase */,
-				C66D3B4625F5C44B008F06E4 /* FirebaseStorage */,
-			);
 			productName = "Panda-Saza";
 			productReference = C60C4FE925E35589005974B0 /* Panda-Saza.app */;
 			productType = "com.apple.product-type.application";
@@ -615,6 +680,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C60C501125E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-SazaTests" */;
 			buildPhases = (
+				96961AE2F77A53B146B3C58F /* [CP] Check Pods Manifest.lock */,
 				C60C4FF625E3558C005974B0 /* Sources */,
 				C60C4FF725E3558C005974B0 /* Frameworks */,
 				C60C4FF825E3558C005974B0 /* Resources */,
@@ -633,9 +699,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C60C501425E3558C005974B0 /* Build configuration list for PBXNativeTarget "Panda-SazaUITests" */;
 			buildPhases = (
+				04E90BD7762D505B3231EEC7 /* [CP] Check Pods Manifest.lock */,
 				C60C500125E3558C005974B0 /* Sources */,
 				C60C500225E3558C005974B0 /* Frameworks */,
 				C60C500325E3558C005974B0 /* Resources */,
+				6D0DE66F725DA8FE51FA19CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -678,9 +746,6 @@
 				Base,
 			);
 			mainGroup = C60C4FE025E35589005974B0;
-			packageReferences = (
-				C66D3B4125F5C44B008F06E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = C60C4FEA25E35589005974B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -728,6 +793,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04E90BD7762D505B3231EEC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Panda-Saza-Panda-SazaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D6F8393C3150D640661EA54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EF8654491AEB979878F1ACC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Panda-Saza-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D0DE66F725DA8FE51FA19CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Panda-Saza-Panda-SazaUITests/Pods-Panda-Saza-Panda-SazaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Panda-Saza-Panda-SazaUITests/Pods-Panda-Saza-Panda-SazaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Panda-Saza-Panda-SazaUITests/Pods-Panda-Saza-Panda-SazaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96961AE2F77A53B146B3C58F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Panda-SazaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C60C4FE525E35589005974B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -737,6 +905,7 @@
 				C6D2E46025F0836C006182DA /* EmailChangeView.swift in Sources */,
 				C6D2E47225F08ED1006182DA /* ChattingList.swift in Sources */,
 				C60C504D25E35E26005974B0 /* HostingController.swift in Sources */,
+				C63D471425F761BE001AE6E5 /* ProductItem.swift in Sources */,
 				C6D2E48B25F09D19006182DA /* ChattingListViewModel.swift in Sources */,
 				C6FEA6A525ECF2AD007E7AB5 /* ProductRegistView.swift in Sources */,
 				C6D2E48225F09C6F006182DA /* ChattingThumbnail.swift in Sources */,
@@ -751,12 +920,16 @@
 				C6D2E46A25F08EC8006182DA /* ChattingThumbnailView.swift in Sources */,
 				C6FEA66C25EBBB74007E7AB5 /* UserProfileView.swift in Sources */,
 				C60C506425E36D42005974B0 /* ButtonStyle.swift in Sources */,
+				C63D46D325F746D9001AE6E5 /* ImagePicker.swift in Sources */,
 				C60C50B425E54EAB005974B0 /* RoundedEdge.swift in Sources */,
 				C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */,
 				C60C510B25E63652005974B0 /* UserManager.swift in Sources */,
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
 				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
+				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
+				C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */,
+				C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */,
 				C6D2E43E25F05064006182DA /* ProfileChangeView.swift in Sources */,
 				C60C505E25E36C9F005974B0 /* LabelDivider.swift in Sources */,
 				C6D2E41E25EE8E51006182DA /* MyPageViewModel.swift in Sources */,
@@ -767,6 +940,7 @@
 				C60C503425E359DF005974B0 /* ColorExtention.swift in Sources */,
 				C6FEA67925EC9134007E7AB5 /* UserProfileViewModel.swift in Sources */,
 				C60C513425E736AF005974B0 /* BottomTabBar.swift in Sources */,
+				C66D3B8525F7220E008F06E4 /* LivePhotoView.swift in Sources */,
 				C6FEA6C025ECF42C007E7AB5 /* Category.swift in Sources */,
 				C6D2E43525EF1378006182DA /* UserData.swift in Sources */,
 				C60C50AF25E54534005974B0 /* ImageView.swift in Sources */,
@@ -948,6 +1122,7 @@
 		};
 		C60C500F25E3558C005974B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A70656BE242A677427B3C96 /* Pods-Panda-Saza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -970,6 +1145,7 @@
 		};
 		C60C501025E3558C005974B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C5CCEF56E016FBBA51B9AFE /* Pods-Panda-Saza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -992,6 +1168,7 @@
 		};
 		C60C501225E3558C005974B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1014,6 +1191,7 @@
 		};
 		C60C501325E3558C005974B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1036,6 +1214,7 @@
 		};
 		C60C501525E3558C005974B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF5B5F4BFB938D638F3F067D /* Pods-Panda-Saza-Panda-SazaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1056,6 +1235,7 @@
 		};
 		C60C501625E3558C005974B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E851574D5B58551F6FC388C /* Pods-Panda-Saza-Panda-SazaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1114,35 +1294,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C66D3B4125F5C44B008F06E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.7.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C66D3B4225F5C44B008F06E4 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C66D3B4125F5C44B008F06E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		C66D3B4425F5C44B008F06E4 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C66D3B4125F5C44B008F06E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		C66D3B4625F5C44B008F06E4 /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C66D3B4125F5C44B008F06E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C60C4FE125E35589005974B0 /* Project object */;
 }
