@@ -16,6 +16,10 @@ struct ProfileChangeView: View {
     @State private var showSheet = false
     @ObservedObject var mediaItems = PickedMediaItems()
     
+    /// Image Picker Relative
+    @State var showImagePicker = false
+    @State var selectedImages: [ProductItemImage] = []
+    
     var body: some View {
         layout
             .navigationBarHidden(true)
@@ -39,11 +43,10 @@ extension ProfileChangeView {
             
             Spacer()
         }.edgesIgnoringSafeArea(.bottom)
-        .sheet(isPresented: $showSheet, content: {
-            PhotoPicker(multiMode: false, mediaItems: mediaItems) { didSelectItem in
-                // Handle didSelectItems value here...
-                showSheet = false
-            }
+        .onReceive(ProfileImagePicker.shared.$images, perform: { images in self.selectedImages = images
+        })
+        .sheet(isPresented: self.$showImagePicker, content: {
+            ProfileImagePicker.shared.view
         })
     }
     
@@ -51,16 +54,16 @@ extension ProfileChangeView {
         HStack {
             Spacer()
             Button(action: {
-                showSheet = true
+                showImagePicker = true
             }) {
-                if mediaItems.items.isEmpty {
+                if selectedImages.isEmpty {
                     CircleImageView(imageString: profileImageURL)
                         .frame(width:UIScreen.screenWidth / 4, height: UIScreen.screenWidth / 4)
                         .overlay(Circle().stroke(Color.black, lineWidth: 1).shadow(radius: 3))
                         .overlay(profileImageBadge)
                 }
                 else {
-                    CircleImageView(uiImage: mediaItems.getLast()!.photo ?? UIImage())
+                    CircleImageView(uiImage: selectedImages[0].photo ?? UIImage())
                         .frame(width:UIScreen.screenWidth / 4, height: UIScreen.screenWidth / 4)
                         .overlay(Circle().stroke(Color.black, lineWidth: 1).shadow(radius: 3))
                         .overlay(profileImageBadge)

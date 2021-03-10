@@ -29,9 +29,6 @@ struct ProductRegistView: View {
     
     @ObservedObject var itemPrice = NumbersOnly()
     @State var canNegotiate: Bool = false
-    /// Photo Relative
-    @State private var showSheet = false
-    @ObservedObject var mediaItems = PickedMediaItems()
     /// Image Picker Relative
     @State var showImagePicker = false
     @State var selectedImage: [ProductItemImage] = []

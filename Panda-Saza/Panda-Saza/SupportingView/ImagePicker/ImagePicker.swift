@@ -63,6 +63,78 @@ extension ImagePicker {
     }
 }
 
+class ProfileImagePicker: ObservableObject {
+    static let shared: ProfileImagePicker = ProfileImagePicker()
+    
+    let view = ProfileImagePicker.View()
+    
+    let willChange = PassthroughSubject<[ProductItemImage], Never>()
+    @Published var images: [ProductItemImage] = [] {
+        didSet{
+            if !images.isEmpty {
+                willChange.send(images)
+            }
+        }
+    }
+}
+
+extension ProfileImagePicker{
+    
+    struct View: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> YPImagePicker {
+            // PSImagePicker.shared.images.removeAll()
+            var config = YPImagePickerConfiguration()
+            
+            config.startOnScreen = YPPickerScreen.library
+            config.shouldSaveNewPicturesToAlbum = false
+            
+            config.screens = [.library, .photo]
+            
+            config.hidesStatusBar = true
+            config.hidesBottomBar = false
+            config.hidesCancelButton = false
+            
+            config.wordings.libraryTitle = "갤러리"
+            config.wordings.cameraTitle = "카메라"
+            config.wordings.next = "다음"
+            config.wordings.filter = "필터"
+            config.wordings.cancel = "취소"
+            
+            config.library.mediaType = .photo
+            config.library.maxNumberOfItems = 1
+            config.library.defaultMultipleSelection = false
+            config.library.preSelectItemOnMultipleSelection = false
+            config.library.skipSelectionsGallery = false
+            
+            config.showsPhotoFilters = true
+            
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 17)]
+            
+            let picker = YPImagePicker(configuration: config)
+            picker.didFinishPicking { [unowned picker] items, cancelled in
+                ProfileImagePicker.shared.images.removeAll()
+                for item in items {
+                    switch item {
+                    case .photo(let photo):
+                        ProfileImagePicker.shared.images.append(ProductItemImage(photo: photo.image))
+                    case .video(let video):
+                        print(video)
+                    }
+                }
+                picker.dismiss(animated: true, completion: nil)
+            }
+            
+            return picker
+        }
+        func updateUIViewController(_ uiViewController: YPImagePicker, context: UIViewControllerRepresentableContext<ProfileImagePicker.View>) {
+            
+        }
+    }
+}
+
+
+
 class PSImagePicker: ObservableObject {
     static let shared: PSImagePicker = PSImagePicker()
     var selectedItems = [YPMediaItem]()
@@ -95,11 +167,9 @@ extension PSImagePicker{
             config.hidesStatusBar = true
             config.hidesBottomBar = false
             
-            // config.library.preselectedItems = []
             config.wordings.libraryTitle = "갤러리"
             config.wordings.cameraTitle = "카메라"
-            config.wordings.next = "다음"
-            config.wordings.filter = "필터"
+            config.wordings.next = "완료"
             config.wordings.cancel = "취소"
             
             config.library.mediaType = .photo
@@ -125,6 +195,7 @@ extension PSImagePicker{
                         print(video)
                     }
                 }
+                /// ㅖ
                 PSImagePicker.shared.selectedItems = items
                 picker.dismiss(animated: true, completion: nil)
             }
