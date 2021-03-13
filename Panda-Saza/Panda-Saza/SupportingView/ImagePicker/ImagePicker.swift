@@ -96,7 +96,7 @@ extension ProfileImagePicker{
             
             config.wordings.libraryTitle = "갤러리"
             config.wordings.cameraTitle = "카메라"
-            config.wordings.next = "다음"
+            config.wordings.next = "완료"
             config.wordings.filter = "필터"
             config.wordings.cancel = "취소"
             
@@ -113,6 +113,14 @@ extension ProfileImagePicker{
             
             let picker = YPImagePicker(configuration: config)
             picker.didFinishPicking { [unowned picker] items, cancelled in
+                if cancelled {
+                    if ProfileImagePicker.shared.images.isEmpty {
+                        ProfileImagePicker.shared.images.removeAll()
+                    }
+                    picker.dismiss(animated: true, completion: nil)
+                    return
+                }
+                
                 ProfileImagePicker.shared.images.removeAll()
                 for item in items {
                     switch item {

@@ -58,10 +58,8 @@ struct MainView: View {
                         ShoppingHomeView(viewModel: ShoppingHomeViewModel(), authCompleted: $authCompleted)
                         
                     case 1:
-                        ScrollView {
-                            Text("TEST")
-                        }
-                        
+                        LikeView()
+                        //SlidingTab()
                     case 3:
                         ChattingList(viewModel: ChattingListViewModel())
                     

@@ -1,25 +1,22 @@
 //
-//  LikeView.swift
+//  ItemPurchasedView.swift
 //  Panda-Saza
 //
-//  Created by Jae Heo on 2021/02/24.
+//  Created by Jae Heo on 2021/03/11.
 //
 
 import SwiftUI
 
-struct LikeView: View {
+struct ItemPurchasedView: View {
     
-    @State private var selectedTabIndex = 0
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
-        
         layout
-            .navigationBarHidden(true)
     }
-    
 }
 
-extension LikeView {
+extension ItemPurchasedView {
     
     var layout: some View {
         VStack(spacing: 0) {
@@ -34,7 +31,7 @@ extension LikeView {
             ScrollView {
                 VStack(alignment: .center) {
                     Spacer()
-                    Text("아직 찜한 상품이 없어요")
+                    Text("아직 구매한 상품이 없어요")
                         .font(.title2)
                         .foregroundColor(Color.black.opacity(0.6))
                     Spacer()
@@ -47,18 +44,29 @@ extension LikeView {
     var titleBar: some View {
         ZStack {
             HStack {
+                Button(action: { presentation.wrappedValue.dismiss() }) {
+                    Image(systemName: "chevron.left")
+                        .font(Font.system(size: UIScreen.screenWidth / 15))
+                }.foregroundColor(.black)
                 Spacer()
-                Text("찜 목록")
-                    .font(.title3)
+            }.padding(.vertical, 10)
+            .padding(.horizontal, 10)
+            
+            HStack {
+                Spacer()
+                Text("구매내역")
+                    .font(.title2)
                     .bold()
                 Spacer()
             }.padding(.vertical, 10)
         }
     }
+    
+    
 }
 
-struct LikeView_Previews: PreviewProvider {
+struct ItemPurchasedView_Previews: PreviewProvider {
     static var previews: some View {
-        LikeView()
+        ItemPurchasedView()
     }
 }

@@ -98,37 +98,36 @@ extension MyPageView {
     var userProfileButtons: some View {
         HStack {
             Spacer()
-            
-            VStack {
-                Image(systemName: "bag.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(width: UIScreen.screenWidth * 0.08, height: UIScreen.screenWidth * 0.08)
-                Text("구매 내역")
-                    .font(.body)
+            NavigationLink(destination:
+                            ItemPurchasedView()
+                                .navigationBarHidden(true)
+            ) {
+                VStack {
+                    Image(systemName: "bag.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color.black)
+                        .frame(width: UIScreen.screenWidth * 0.08, height: UIScreen.screenWidth * 0.08)
+                    Text("구매 내역")
+                        .font(.body)
+                        .foregroundColor(.black)
+                }
             }
             Spacer()
-            
-            VStack {
-                Image(systemName: "cart.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(height: UIScreen.screenWidth * 0.08)
-                Text("판매 내역")
-                    .font(.body)
-            }
-            Spacer()
-            
-            VStack {
-                Image(systemName: "heart.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(height: UIScreen.screenWidth * 0.08)
-                Text("찜 목록")
-                    .font(.body)
+            NavigationLink(destination:
+                            ItemSaledView()
+                                .navigationBarHidden(true)
+            ) {
+                VStack {
+                    Image(systemName: "cart.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color.black)
+                        .frame(height: UIScreen.screenWidth * 0.08)
+                    Text("판매 내역")
+                        .font(.body)
+                        .foregroundColor(.black)
+                }
             }
             Spacer()
         }
@@ -212,14 +211,17 @@ extension MyPageView {
             .padding(.vertical, 10)
             .padding(.horizontal, 15)
             
-            HStack {
-                Spacer()
-                Image(systemName: "gearshape.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.black)
-                    .frame(height: 20)
-            }.padding(.trailing, 15)
+            NavigationLink(destination: ConfigurationView().navigationBarHidden(true)
+            ) {
+                HStack {
+                    Spacer()
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color.black)
+                        .frame(height: 20)
+                }.padding(.trailing, 15)
+            }
         }
     }
 }

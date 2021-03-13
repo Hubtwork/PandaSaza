@@ -64,14 +64,15 @@ public struct SlidingTabView : View {
                 tabs: [String],
                 font: Font = .body,
                 animation: Animation = .spring(),
-                activeAccentColor: Color = .blue,
+                activeAccentColor: Color = .black,
                 inactiveAccentColor: Color = Color.black.opacity(0.4),
-                selectionBarColor: Color = .blue,
+                selectionBarColor: Color = .black,
                 inactiveTabColor: Color = .clear,
                 activeTabColor: Color = .clear,
-                selectionBarHeight: CGFloat = 2,
+                selectionBarHeight: CGFloat = 3,
                 selectionBarBackgroundColor: Color = Color.gray.opacity(0.2),
-                selectionBarBackgroundHeight: CGFloat = 1) {
+                selectionBarBackgroundHeight: CGFloat = 1
+                ) {
         self._selection = selection
         self.tabs = tabs
         self.font = font
@@ -100,11 +101,12 @@ public struct SlidingTabView : View {
                     }) {
                         HStack {
                             Spacer()
-                            Text(tab).font(self.font)
+                            Text(tab)
+                                .font(self.font)
                             Spacer()
                         }
                     }
-                    .padding(.vertical, 4)
+                    .padding(.vertical, 10)
                         .accentColor(
                             self.isSelected(tabIdentifier: tab)
                                 ? self.activeAccentColor
@@ -153,10 +155,8 @@ struct SlidingTabExampleView : View {
         VStack(alignment: .leading) {
             SlidingTabView(selection: self.$selectedTabIndex,
                            tabs: ["First", "Second"],
-                           font: .body,
-                           activeAccentColor: Color.blue,
-                           selectionBarColor: Color.blue)
-            (selectedTabIndex == 0 ? Text("First View") : Text("Second View")).padding()
+                           font: .body)
+            (selectedTabIndex == 0 ? Text("First View") : Text("Second View")).padding().background(Color.gray)
             Spacer()
         }
         .padding(.top, 50)
