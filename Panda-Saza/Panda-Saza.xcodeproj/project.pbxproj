@@ -51,6 +51,11 @@
 		C63D473525F9F2B5001AE6E5 /* SlidingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D473425F9F2B5001AE6E5 /* SlidingTab.swift */; };
 		C63D474925FA0D49001AE6E5 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D474825FA0D49001AE6E5 /* ConfigurationView.swift */; };
 		C63D475425FCAC9F001AE6E5 /* TitleContentsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D475325FCAC9F001AE6E5 /* TitleContentsContainer.swift */; };
+		C63D476A25FE15AE001AE6E5 /* PushConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D476925FE15AE001AE6E5 /* PushConfigurationView.swift */; };
+		C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D476E25FE23AE001AE6E5 /* PushSoundConfigurationView.swift */; };
+		C63D477425FE253F001AE6E5 /* sound.json in Resources */ = {isa = PBXBuildFile; fileRef = C63D477325FE253F001AE6E5 /* sound.json */; };
+		C63D477A25FE25A1001AE6E5 /* PushSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D477925FE25A1001AE6E5 /* PushSound.swift */; };
+		C63D477F25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D477E25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift */; };
 		C66D3B4C25F5C634008F06E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */; };
 		C66D3B7125F62D82008F06E4 /* AuthNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B7025F62D82008F06E4 /* AuthNoticeView.swift */; };
 		C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */; };
@@ -172,6 +177,11 @@
 		C63D473425F9F2B5001AE6E5 /* SlidingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingTab.swift; sourceTree = "<group>"; };
 		C63D474825FA0D49001AE6E5 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		C63D475325FCAC9F001AE6E5 /* TitleContentsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleContentsContainer.swift; sourceTree = "<group>"; };
+		C63D476925FE15AE001AE6E5 /* PushConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConfigurationView.swift; sourceTree = "<group>"; };
+		C63D476E25FE23AE001AE6E5 /* PushSoundConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSoundConfigurationView.swift; sourceTree = "<group>"; };
+		C63D477325FE253F001AE6E5 /* sound.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sound.json; sourceTree = "<group>"; };
+		C63D477925FE25A1001AE6E5 /* PushSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSound.swift; sourceTree = "<group>"; };
+		C63D477E25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSoundConfigurationViewModel.swift; sourceTree = "<group>"; };
 		C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C66D3B7025F62D82008F06E4 /* AuthNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNoticeView.swift; sourceTree = "<group>"; };
 		C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerModel.swift; sourceTree = "<group>"; };
@@ -324,6 +334,7 @@
 				C6FEA66625E8EAAB007E7AB5 /* product_detail2.json */,
 				C6FEA68825ECCF0B007E7AB5 /* user_profile1.json */,
 				C6D2E42A25EF1265006182DA /* user_profile3.json */,
+				C63D477325FE253F001AE6E5 /* sound.json */,
 				C6D2E42225EE8E87006182DA /* user_data.json */,
 				C6FEA6AC25ECF2C0007E7AB5 /* itemCategory.json */,
 				C6FEA69825ECDBAF007E7AB5 /* user_profile2.json */,
@@ -401,6 +412,7 @@
 		C60C508C25E54198005974B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C63D477825FE258C001AE6E5 /* AppCore */,
 				C6D2E48025F09C65006182DA /* Chatting */,
 				C6FEA5D725E8A8D3007E7AB5 /* DTO */,
 				C60C510025E63532005974B0 /* User */,
@@ -495,6 +507,14 @@
 			path = TabView;
 			sourceTree = "<group>";
 		};
+		C63D477825FE258C001AE6E5 /* AppCore */ = {
+			isa = PBXGroup;
+			children = (
+				C63D477925FE25A1001AE6E5 /* PushSound.swift */,
+			);
+			path = AppCore;
+			sourceTree = "<group>";
+		};
 		C66D3B5025F5C8AA008F06E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +572,9 @@
 			isa = PBXGroup;
 			children = (
 				C63D474825FA0D49001AE6E5 /* ConfigurationView.swift */,
+				C63D476925FE15AE001AE6E5 /* PushConfigurationView.swift */,
+				C63D476E25FE23AE001AE6E5 /* PushSoundConfigurationView.swift */,
+				C63D477E25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -803,6 +826,7 @@
 			files = (
 				C6FEA66725E8EAAB007E7AB5 /* product_detail2.json in Resources */,
 				C6D2E47725F09B1A006182DA /* chatting.json in Resources */,
+				C63D477425FE253F001AE6E5 /* sound.json in Resources */,
 				C6D2E42325EE8E87006182DA /* user_data.json in Resources */,
 				C6D2E42B25EF1265006182DA /* user_profile3.json in Resources */,
 				C6FEA63C25E8D7E1007E7AB5 /* products.json in Resources */,
@@ -947,6 +971,7 @@
 				C63D471425F761BE001AE6E5 /* ProductItem.swift in Sources */,
 				C6D2E48B25F09D19006182DA /* ChattingListViewModel.swift in Sources */,
 				C63D471E25F9E052001AE6E5 /* ItemSaledView.swift in Sources */,
+				C63D476A25FE15AE001AE6E5 /* PushConfigurationView.swift in Sources */,
 				C6FEA6A525ECF2AD007E7AB5 /* ProductRegistView.swift in Sources */,
 				C6D2E48225F09C6F006182DA /* ChattingThumbnail.swift in Sources */,
 				C6FEA6BB25ECF41B007E7AB5 /* CategoryViewModel.swift in Sources */,
@@ -954,6 +979,7 @@
 				C60C512725E7354C005974B0 /* BottomTabBarItem.swift in Sources */,
 				C60C50D325E6072F005974B0 /* MainView.swift in Sources */,
 				C6FEA5F325E8BAAD007E7AB5 /* APIClient.swift in Sources */,
+				C63D477F25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift in Sources */,
 				C6D2E47C25F09C32006182DA /* ChattingLocal.swift in Sources */,
 				C60C50F425E62137005974B0 /* LikeView.swift in Sources */,
 				C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */,
@@ -978,6 +1004,7 @@
 				C60C508F25E541C0005974B0 /* ProductThumbnail.swift in Sources */,
 				C60C503F25E35D49005974B0 /* AppDelegate.swift in Sources */,
 				C63D474925FA0D49001AE6E5 /* ConfigurationView.swift in Sources */,
+				C63D477A25FE25A1001AE6E5 /* PushSound.swift in Sources */,
 				C6FEA6B325ECF3D6007E7AB5 /* CategoryView.swift in Sources */,
 				C60C503425E359DF005974B0 /* ColorExtention.swift in Sources */,
 				C6FEA67925EC9134007E7AB5 /* UserProfileViewModel.swift in Sources */,
@@ -995,6 +1022,7 @@
 				C6FEA5DC25E8AB65007E7AB5 /* TestDTO.swift in Sources */,
 				C60C510225E6353D005974B0 /* UserProfile.swift in Sources */,
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
+				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
 				C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */,
 				C6D2E49325F0A0CA006182DA /* ChattingThumbnailViewModel.swift in Sources */,
 				C60C512F25E735DC005974B0 /* BottomTabBarItemView.swift in Sources */,

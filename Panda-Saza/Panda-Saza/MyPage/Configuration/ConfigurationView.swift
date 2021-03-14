@@ -23,7 +23,6 @@ struct ConfigurationView: View {
 
 extension ConfigurationView {
     
-    
     var layout: some View {
         VStack(spacing: 0) {
             self.titleBar
@@ -37,14 +36,17 @@ extension ConfigurationView {
                     extraConfigurationView
                 }
             }
-        }
+        }.foregroundColor(Color.black)
     }
     
     var notifyConfigurationView: some View {
         TitleContentsContainer(title: "알림 설정") {
-            HStack {
-                Text("푸시 알림 설정")
-                Spacer()
+            NavigationLink(destination: PushConfigurationView()
+                            .navigationBarHidden(true)) {
+                HStack {
+                    Text("푸시 알림 설정")
+                    Spacer()
+                }
             }
             HStack {
                 Text("방해 금지 설정")
@@ -53,11 +55,14 @@ extension ConfigurationView {
                     .toggleStyle(SwitchToggleStyle(tint: Color.blue))
                     .labelsHidden()
             }
-            HStack {
-                Text("알림음")
-                Spacer()
-                Text(alarmSound)
-                    .foregroundColor(Color.blue)
+            NavigationLink(destination: PushSoundConfigurationView(pushSound: $alarmSound)
+                            .navigationBarHidden(true)) {
+                HStack {
+                    Text("알림음")
+                    Spacer()
+                    Text(alarmSound)
+                        .foregroundColor(Color.blue)
+                }
             }
         }
     }

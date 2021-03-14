@@ -81,7 +81,7 @@ extension MyPageView {
                                 .navigationBarHidden(true)
             ) {
                 Text("프로필 보기")
-                    .font(.body)
+                    .font(.title3)
                     .padding(.vertical, 5)
                     .frame(width: UIScreen.screenWidth * 0.7)
                     .background(Color.white)
@@ -107,9 +107,9 @@ extension MyPageView {
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(Color.black)
-                        .frame(width: UIScreen.screenWidth * 0.08, height: UIScreen.screenWidth * 0.08)
+                        .frame(width: UIScreen.screenWidth * 0.1)
                     Text("구매 내역")
-                        .font(.body)
+                        .font(.title3)
                         .foregroundColor(.black)
                 }
             }
@@ -123,9 +123,9 @@ extension MyPageView {
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(Color.black)
-                        .frame(height: UIScreen.screenWidth * 0.08)
+                        .frame(height: UIScreen.screenWidth * 0.1)
                     Text("판매 내역")
-                        .font(.body)
+                        .font(.title3)
                         .foregroundColor(.black)
                 }
             }
@@ -145,7 +145,7 @@ extension MyPageView {
                         .foregroundColor(Color.black)
                         .frame(height: 20)
                     Text("프로필 수정")
-                        .font(.body)
+                        .font(.title3)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -160,7 +160,7 @@ extension MyPageView {
                         .foregroundColor(Color.black)
                         .frame(height: 20)
                     Text("계정 정보 수정")
-                        .font(.body)
+                        .font(.title3)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -178,7 +178,7 @@ extension MyPageView {
                     .foregroundColor(Color.black)
                     .frame(height: 20)
                 Text("인증 센터")
-                    .font(.body)
+                    .font(.title3)
                 Spacer()
             }
             
@@ -190,7 +190,7 @@ extension MyPageView {
                     .foregroundColor(Color.black)
                     .frame(height: 20)
                 Text("알림 센터")
-                    .font(.body)
+                    .font(.title3)
                 Spacer()
             }
         
@@ -204,7 +204,7 @@ extension MyPageView {
             HStack{
                 Spacer()
                 Text("나의 판다사자")
-                    .font(.title2)
+                    .font(.title3)
                     .bold()
                 Spacer()
             }

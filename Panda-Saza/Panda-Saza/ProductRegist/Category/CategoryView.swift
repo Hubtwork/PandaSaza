@@ -16,7 +16,6 @@ struct CategoryView: View {
     init(viewModel: CategoryViewModel, text: Binding<String>) {
         self.viewModel = viewModel
         self.text = text
-        UITableView.appearance().separatorStyle = .none //remove separators
     }
     
     // @Binding var selectedCategory: String
