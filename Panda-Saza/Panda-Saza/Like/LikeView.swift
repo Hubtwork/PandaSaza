@@ -9,46 +9,51 @@ import SwiftUI
 
 struct LikeView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var selectedTabIndex = 0
     
     var body: some View {
-        VStack {
-            ZStack {
-                HStack {
-                    Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
-                        Image(systemName: "chevron.left")
-                            .font(Font.system(size: 15))
-                    }.foregroundColor(.black)
-                    .padding(.leading, 10)
-                    Spacer()
-                }
-                Text("좋아요 / 이벤트")
-                    .font(Font.system(size: 12))
-                    .bold()
-                    .foregroundColor(.black)
-            }
-            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight / 20)
-            
-            SlidingTabView(selection: self.$selectedTabIndex,
-                           tabs: ["좋아요", "이벤트"],
-                           font: Font.system(size: 12).bold(),
-                           activeAccentColor: Color.black,
-                           selectionBarColor: Color.black)
-            (selectedTabIndex == 0 ? Text("좋아요 리스트") : Text("이벤트 리스트"))
-                /*
-                .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .global)
-                            .onEnded { value in
-                                let horizontalAmount = value.translation.width as CGFloat
-                                _ = value.translation.height as CGFloat
-                                
-                                selectedTabIndex += horizontalAmount < 0 ? -1 : 1
-                            })
-                 */
-                .animation(.none)
-            Spacer()
+        
+        layout
+            .navigationBarHidden(true)
+    }
+    
+}
+
+extension LikeView {
+    
+    var layout: some View {
+        VStack(spacing: 0) {
+            self.titleBar
+            Divider()
+            noItemView
         }
-        .navigationBarHidden(true)
+    }
+    
+    var noItemView : some View {
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(alignment: .center) {
+                    Spacer()
+                    Text("아직 찜한 상품이 없어요")
+                        .font(.title2)
+                        .foregroundColor(Color.black.opacity(0.6))
+                    Spacer()
+                }.frame(width: geometry.size.width,
+                        height: geometry.size.height)
+            }
+        }
+    }
+    
+    var titleBar: some View {
+        ZStack {
+            HStack {
+                Spacer()
+                Text("찜 목록")
+                    .font(.title3)
+                    .bold()
+                Spacer()
+            }.padding(.vertical, 10)
+        }
     }
 }
 

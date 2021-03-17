@@ -11,14 +11,16 @@ struct BottomTabBar: View {
     
     @Binding private var selectedIndex: Int
     @Binding private var shouldLoginModal: Bool
+    @Binding private var itemSellingModal: Bool
     @Binding private var isLogin: Bool
     
     private let tabBarItems: [BottomTabBarItem]
     
-    public init(selectedIndex: Binding<Int>, isLogin: Binding<Bool>, shouldLoginModal: Binding<Bool>, tabBarSystemIcons: [String], tabBarLabels: [String], color: Color) {
+    public init(selectedIndex: Binding<Int>, isLogin: Binding<Bool>, shouldLoginModal: Binding<Bool>, itemSellingModal: Binding<Bool>, tabBarSystemIcons: [String], tabBarLabels: [String], color: Color) {
         self._shouldLoginModal = shouldLoginModal
         self._isLogin = isLogin
         self._selectedIndex = selectedIndex
+        self._itemSellingModal = itemSellingModal
         /// check icon count == label count
         assert(tabBarSystemIcons.count == tabBarLabels.count)
         /// Initialize TabBarItems
@@ -36,8 +38,11 @@ struct BottomTabBar: View {
                 self.shouldLoginModal.toggle()
             }
             else {
-                withAnimation {
-                self.selectedIndex = index
+                if index == 2 {
+                    self.itemSellingModal.toggle()
+                }
+                else {
+                    self.selectedIndex = index
                 }
             }
         }) {
@@ -70,6 +75,7 @@ struct BottomTabBar_Previews: PreviewProvider {
         BottomTabBar(selectedIndex: .constant(1),
                      isLogin: .constant(true),
                      shouldLoginModal: .constant(false),
+                     itemSellingModal: .constant(false),
                      tabBarSystemIcons: ["cart", "heart.circle", "plus.app.fill", "message.fill", "person"],
                      tabBarLabels: ["구매하기", "찜 목록", "판매하기", "채팅", "내 정보"],
                      color: .black)

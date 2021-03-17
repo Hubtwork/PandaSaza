@@ -1,0 +1,23 @@
+
+{
+    "userProfile": {
+        "uId": 3,
+        "userName": "정동민",
+        "userSchool": "서울대학교",
+        "userProfileIcon": "https://file3.instiz.net/data/cached_img/upload/2019/09/21/22/f5ce7f9944770d1c575d9ada78c97b65.jpg",
+        "userLocale": "kr",
+        "userRating": 4.2,
+        "userAuthMethods": [
+            "학생증"
+        ],
+        "userAuthHistory": [
+            "2020년 2월 3일, 학생증 인증"
+        ],
+        "userLoginRecent": "2021년 2월 22일",
+        "sellItems": [
+            4
+        ],
+        "rateHistory": [],
+        "reviewHistory": []
+    }
+}
