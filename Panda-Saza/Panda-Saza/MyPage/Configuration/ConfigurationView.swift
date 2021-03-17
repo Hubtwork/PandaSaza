@@ -69,17 +69,32 @@ extension ConfigurationView {
     
     var userConfigurationView: some View {
         TitleContentsContainer(title: "사용자 설정") {
-            HStack {
-                Text("계정 / 정보 관리")
-                Spacer()
+            NavigationLink(destination:
+                            EmailChangeView(accountEmail: .constant("hoochoo@gmail.com"), accountPhone: .constant("010-3512-3221"))
+                            .navigationBarHidden(true)
+            ){
+                HStack {
+                    Text("계정 / 정보 관리")
+                    Spacer()
+                }
             }
-            HStack {
-                Text("관심 목록 관리")
-                Spacer()
+            NavigationLink(destination:
+                            InterestItemView()
+                            .navigationBarHidden(true)
+            ){
+                HStack {
+                    Text("관심 목록 관리")
+                    Spacer()
+                }
             }
-            HStack {
-                Text("차단 목록 관리")
-                Spacer()
+            NavigationLink(destination:
+                            HateItemView()
+                            .navigationBarHidden(true)
+            ){
+                HStack {
+                    Text("차단 목록 관리")
+                    Spacer()
+                }
             }
             HStack {
                 Text("기타 설정")

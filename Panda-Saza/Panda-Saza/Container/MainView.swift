@@ -72,6 +72,7 @@ struct MainView: View {
                             
                         }
                 }
+                
             }
             BottomTabBar(selectedIndex: $selectedIdx, isLogin: $isLogin, shouldLoginModal: $shouldLoginWithModal, itemSellingModal: $sellItemModal, tabBarSystemIcons: tabBarImages, tabBarLabels: tabBarLabels, color: .black)
                 .padding(.top, 10)

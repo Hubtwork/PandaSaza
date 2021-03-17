@@ -26,77 +26,51 @@ extension EmailChangeView {
             titleBar
             Divider()
             
-            accountSection
-                .padding(.top, 30)
-            profileEmailView
-                .padding(.top, 20)
-            profilePhoneView
-                .padding(.top, 20)
+            TitleContentsContainer(title: "계정 정보") {
+                profileEmailView
+                profilePhoneView
+            }
             
-            sideSection
-                .padding(.top, 30)
-            
-            serviceDocument
-                .padding(.top, 20)
+            TitleContentsContainer(title: "기타 정보") {
+                serviceDocument
+            }
             
             Spacer()
         }
-    }
-    
-    var accountSection: some View {
-        HStack {
-            Text("계정 정보")
-                .font(.title2)
-                .bold()
-            Spacer()
-        }.padding(.leading, 10)
     }
     
     var profileEmailView: some View {
         VStack(spacing: 10){
             HStack {
                 Text("이메일")
-                    .font(.title2)
+                    .bold()
                 Spacer()
                 Text("변경")
-                    .font(.title2)
                     .foregroundColor(.red)
             }
             HStack {
                 Text(accountEmail)
-                    .font(.title3)
                     .foregroundColor(.gray)
                 Spacer()
             }
-        }.padding(.horizontal, 10)
+        }
     }
     
     var profilePhoneView: some View {
         VStack(spacing: 10){
             HStack {
                 Text("전화번호")
-                    .font(.title2)
+                    .bold()
                 Spacer()
                 Text("변경")
-                    .font(.title2)
                     .foregroundColor(.red)
             }
             HStack {
                 Text(accountPhone)
-                    .font(.title3)
                     .foregroundColor(.gray)
                 Spacer()
             }
-        }.padding(.horizontal, 10)
-    }
-    
-    var sideSection: some View {
-        HStack {
-            Text("기타 정보")
-                .font(.title2)
-                .bold()
-            Spacer()
-        }.padding(.leading, 10)
+        }
     }
     
     var serviceDocument: some View {
@@ -104,7 +78,7 @@ extension EmailChangeView {
             Text("서비스 이용약관")
                 .font(.title3)
             Spacer()
-        }.padding(.leading, 10)
+        }
     }    
     
     var titleBar: some View {

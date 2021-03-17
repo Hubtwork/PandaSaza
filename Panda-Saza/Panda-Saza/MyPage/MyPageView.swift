@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyPageView: View {
     
+    @State private var selectedTabIndex = 0
     @ObservedObject var viewModel: MyPageViewModel
     
     var body: some View {
@@ -29,16 +30,14 @@ extension MyPageView {
                 self.userProfileBase
                 
                 self.userProfileShowButton
-                    .padding(.top, 10)
+                    .padding(.vertical, 10)
                 /// About Items
-                self.userProfileButtons
-                    .padding(.vertical, 15)
                 
                 backgroundDivider
                 self.userDataSettings
                 
                 backgroundDivider
-                self.userProfileAuthSettings
+                userSellingItems
                 
             }
         }
@@ -54,8 +53,14 @@ extension MyPageView {
         /// Seller Profile View
         HStack {
             HStack(spacing: 0) {
-                CircleImageView(imageString: self.viewModel.user!.userProfileIcon)
-                    .frame(width:UIScreen.screenWidth / 6, height: UIScreen.screenWidth / 6)
+                NavigationLink(destination:
+                                ProfileChangeView(profileImageURL: self.viewModel.user!.userProfileIcon, profileName: self.viewModel.user!.userName)
+                ) {
+                    CircleImageView(imageString: self.viewModel.user!.userProfileIcon)
+                        .frame(width:UIScreen.screenWidth / 6, height: UIScreen.screenWidth / 6)
+                        .overlay(Circle().stroke(Color.black, lineWidth: 1).shadow(radius: 3))
+                        .overlay(profileImageBadge)
+                }
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(self.viewModel.user!.userName)
@@ -73,6 +78,22 @@ extension MyPageView {
         .padding(.leading, UIScreen.screenWidth / 20)
     }
     
+    var profileImageBadge: some View {
+        ZStack {
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Image(systemName:"camera.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.black)
+                        .frame(width: UIScreen.screenWidth / 15, height: UIScreen.screenWidth / 15)
+                }
+            }
+        }
+    }
+    
     var userProfileShowButton: some View {
         HStack {
             Spacer()
@@ -81,7 +102,7 @@ extension MyPageView {
                                 .navigationBarHidden(true)
             ) {
                 Text("프로필 보기")
-                    .font(.title3)
+                    .font(.body)
                     .padding(.vertical, 5)
                     .frame(width: UIScreen.screenWidth * 0.7)
                     .background(Color.white)
@@ -95,39 +116,73 @@ extension MyPageView {
         }
     }
     
+    var userSellingItems: some View {
+        VStack(spacing: 3) {
+            SlidingTabView(selection: self.$selectedTabIndex,
+                           tabs: ["판매중", "판매완료", "정산"],
+                           font: Font.body.bold(),
+                           activeAccentColor: Color.black,
+                           selectionBarColor: Color.black)
+            switch(selectedTabIndex) {
+                case 0:
+                    noItemView(ment: "판매중인 상품이 없습니다")
+                case 1:
+                    noItemView(ment: "판매완료된 상품이 없습니다")
+                case 2:
+                    noItemView(ment: "정산하 상품이 없습니다")
+                default:
+                    VStack{}
+            }
+        }
+    }
+    
+    func noItemView(ment: String) -> some View {
+        ScrollView(.horizontal) {
+            HStack(alignment: .center) {
+                Spacer()
+                Text(ment)
+                    .font(.title2)
+                    .foregroundColor(Color.black.opacity(0.6))
+                Spacer()
+            }.frame(width: UIScreen.screenWidth,
+                    height: UIScreen.screenHeight/2 )
+        }
+    }
+    
     var userProfileButtons: some View {
         HStack {
             Spacer()
-            NavigationLink(destination:
-                            ItemPurchasedView()
-                                .navigationBarHidden(true)
-            ) {
-                VStack {
-                    Image(systemName: "bag.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color.black)
-                        .frame(width: UIScreen.screenWidth * 0.1)
-                    Text("구매 내역")
-                        .font(.title3)
-                        .foregroundColor(.black)
-                }
+            
+            VStack {
+                Image(systemName: "bag.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(Color.black)
+                    .frame(width: UIScreen.screenWidth * 0.08, height: UIScreen.screenWidth * 0.08)
+                Text("구매 내역")
+                    .font(.body)
             }
             Spacer()
-            NavigationLink(destination:
-                            ItemSaledView()
-                                .navigationBarHidden(true)
-            ) {
-                VStack {
-                    Image(systemName: "cart.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color.black)
-                        .frame(height: UIScreen.screenWidth * 0.1)
-                    Text("판매 내역")
-                        .font(.title3)
-                        .foregroundColor(.black)
-                }
+            
+            VStack {
+                Image(systemName: "cart.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(Color.black)
+                    .frame(height: UIScreen.screenWidth * 0.08)
+                Text("판매 내역")
+                    .font(.body)
+            }
+            Spacer()
+            
+            VStack {
+                Image(systemName: "heart.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(Color.black)
+                    .frame(height: UIScreen.screenWidth * 0.08)
+                Text("찜 목록")
+                    .font(.body)
             }
             Spacer()
         }
@@ -145,7 +200,7 @@ extension MyPageView {
                         .foregroundColor(Color.black)
                         .frame(height: 20)
                     Text("프로필 수정")
-                        .font(.title3)
+                        .font(.body)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -160,7 +215,7 @@ extension MyPageView {
                         .foregroundColor(Color.black)
                         .frame(height: 20)
                     Text("계정 정보 수정")
-                        .font(.title3)
+                        .font(.body)
                 }.foregroundColor(.black)
                 Spacer()
             }
@@ -178,7 +233,7 @@ extension MyPageView {
                     .foregroundColor(Color.black)
                     .frame(height: 20)
                 Text("인증 센터")
-                    .font(.title3)
+                    .font(.body)
                 Spacer()
             }
             
@@ -190,7 +245,7 @@ extension MyPageView {
                     .foregroundColor(Color.black)
                     .frame(height: 20)
                 Text("알림 센터")
-                    .font(.title3)
+                    .font(.body)
                 Spacer()
             }
         
@@ -204,14 +259,15 @@ extension MyPageView {
             HStack{
                 Spacer()
                 Text("나의 판다사자")
-                    .font(.title3)
+                    .font(.title2)
                     .bold()
                 Spacer()
             }
             .padding(.vertical, 10)
             .padding(.horizontal, 15)
-            
-            NavigationLink(destination: ConfigurationView().navigationBarHidden(true)
+            NavigationLink(destination:
+                ConfigurationView()
+                            .navigationBarHidden(true)
             ) {
                 HStack {
                     Spacer()

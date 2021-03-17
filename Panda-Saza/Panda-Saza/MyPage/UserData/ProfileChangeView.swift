@@ -75,11 +75,17 @@ extension ProfileChangeView {
     
     var profileImageBadge: some View {
         ZStack {
-            Image(systemName:"plus.circle.fill")
-                .resizable()
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .frame(width: UIScreen.screenWidth / 12, height: UIScreen.screenWidth / 12)
-                .position(x: UIScreen.screenWidth / 4.5, y: UIScreen.screenWidth / 4.5)
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Image(systemName:"camera.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.black)
+                        .frame(width: UIScreen.screenWidth / 10, height: UIScreen.screenWidth / 10)
+                }
+            }
         }
     }
     

@@ -56,6 +56,13 @@
 		C63D477425FE253F001AE6E5 /* sound.json in Resources */ = {isa = PBXBuildFile; fileRef = C63D477325FE253F001AE6E5 /* sound.json */; };
 		C63D477A25FE25A1001AE6E5 /* PushSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D477925FE25A1001AE6E5 /* PushSound.swift */; };
 		C63D477F25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D477E25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift */; };
+		C63D4785260187D1001AE6E5 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D4784260187D1001AE6E5 /* BottomSheet.swift */; };
+		C63D479B2601AF23001AE6E5 /* InterestItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D479A2601AF23001AE6E5 /* InterestItemView.swift */; };
+		C63D47A72601AF4F001AE6E5 /* HateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D47A62601AF4F001AE6E5 /* HateItemView.swift */; };
+		C63D47AF2601B144001AE6E5 /* AppLocaleConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D47AE2601B144001AE6E5 /* AppLocaleConfigurationView.swift */; };
+		C63D47B42601B508001AE6E5 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = C63D47B32601B508001AE6E5 /* language.json */; };
+		C63D47B92601B53D001AE6E5 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D47B82601B53D001AE6E5 /* AppLanguage.swift */; };
+		C63D47BE2601B56D001AE6E5 /* AppLocaleConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D47BD2601B56D001AE6E5 /* AppLocaleConfigurationViewModel.swift */; };
 		C66D3B4C25F5C634008F06E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */; };
 		C66D3B7125F62D82008F06E4 /* AuthNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B7025F62D82008F06E4 /* AuthNoticeView.swift */; };
 		C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */; };
@@ -182,6 +189,13 @@
 		C63D477325FE253F001AE6E5 /* sound.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sound.json; sourceTree = "<group>"; };
 		C63D477925FE25A1001AE6E5 /* PushSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSound.swift; sourceTree = "<group>"; };
 		C63D477E25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSoundConfigurationViewModel.swift; sourceTree = "<group>"; };
+		C63D4784260187D1001AE6E5 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		C63D479A2601AF23001AE6E5 /* InterestItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestItemView.swift; sourceTree = "<group>"; };
+		C63D47A62601AF4F001AE6E5 /* HateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HateItemView.swift; sourceTree = "<group>"; };
+		C63D47AE2601B144001AE6E5 /* AppLocaleConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocaleConfigurationView.swift; sourceTree = "<group>"; };
+		C63D47B32601B508001AE6E5 /* language.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
+		C63D47B82601B53D001AE6E5 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		C63D47BD2601B56D001AE6E5 /* AppLocaleConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocaleConfigurationViewModel.swift; sourceTree = "<group>"; };
 		C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C66D3B7025F62D82008F06E4 /* AuthNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNoticeView.swift; sourceTree = "<group>"; };
 		C66D3B7925F71C1E008F06E4 /* PhotoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerModel.swift; sourceTree = "<group>"; };
@@ -335,6 +349,7 @@
 				C6FEA68825ECCF0B007E7AB5 /* user_profile1.json */,
 				C6D2E42A25EF1265006182DA /* user_profile3.json */,
 				C63D477325FE253F001AE6E5 /* sound.json */,
+				C63D47B32601B508001AE6E5 /* language.json */,
 				C6D2E42225EE8E87006182DA /* user_data.json */,
 				C6FEA6AC25ECF2C0007E7AB5 /* itemCategory.json */,
 				C6FEA69825ECDBAF007E7AB5 /* user_profile2.json */,
@@ -393,6 +408,7 @@
 		C60C505725E36552005974B0 /* SupportingView */ = {
 			isa = PBXGroup;
 			children = (
+				C63D4783260187C3001AE6E5 /* BottomSheet */,
 				C63D473325F9F28B001AE6E5 /* TabView */,
 				C63D46D125F746C3001AE6E5 /* ImagePicker */,
 				C6FEA5AF25E77E2F007E7AB5 /* PofileComponent */,
@@ -511,8 +527,33 @@
 			isa = PBXGroup;
 			children = (
 				C63D477925FE25A1001AE6E5 /* PushSound.swift */,
+				C63D47B82601B53D001AE6E5 /* AppLanguage.swift */,
 			);
 			path = AppCore;
+			sourceTree = "<group>";
+		};
+		C63D4783260187C3001AE6E5 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				C63D4784260187D1001AE6E5 /* BottomSheet.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		C63D47992601AEFB001AE6E5 /* InterestItemsView */ = {
+			isa = PBXGroup;
+			children = (
+				C63D479A2601AF23001AE6E5 /* InterestItemView.swift */,
+			);
+			path = InterestItemsView;
+			sourceTree = "<group>";
+		};
+		C63D47A52601AF40001AE6E5 /* HateItemsView */ = {
+			isa = PBXGroup;
+			children = (
+				C63D47A62601AF4F001AE6E5 /* HateItemView.swift */,
+			);
+			path = HateItemsView;
 			sourceTree = "<group>";
 		};
 		C66D3B5025F5C8AA008F06E4 /* View */ = {
@@ -540,6 +581,8 @@
 		C6D2E40925EE4AC3006182DA /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				C63D47A52601AF40001AE6E5 /* HateItemsView */,
+				C63D47992601AEFB001AE6E5 /* InterestItemsView */,
 				C63D471C25F9DFEE001AE6E5 /* ItemSaled */,
 				C63D471B25F9DFD1001AE6E5 /* ItemPurchased */,
 				C6D2E46425F08E9C006182DA /* Configuration */,
@@ -575,6 +618,8 @@
 				C63D476925FE15AE001AE6E5 /* PushConfigurationView.swift */,
 				C63D476E25FE23AE001AE6E5 /* PushSoundConfigurationView.swift */,
 				C63D477E25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift */,
+				C63D47AE2601B144001AE6E5 /* AppLocaleConfigurationView.swift */,
+				C63D47BD2601B56D001AE6E5 /* AppLocaleConfigurationViewModel.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -829,6 +874,7 @@
 				C63D477425FE253F001AE6E5 /* sound.json in Resources */,
 				C6D2E42325EE8E87006182DA /* user_data.json in Resources */,
 				C6D2E42B25EF1265006182DA /* user_profile3.json in Resources */,
+				C63D47B42601B508001AE6E5 /* language.json in Resources */,
 				C6FEA63C25E8D7E1007E7AB5 /* products.json in Resources */,
 				C66D3B4C25F5C634008F06E4 /* GoogleService-Info.plist in Resources */,
 				C6FEA68925ECCF0B007E7AB5 /* user_profile1.json in Resources */,
@@ -997,6 +1043,7 @@
 				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
 				C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */,
 				C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */,
+				C63D47AF2601B144001AE6E5 /* AppLocaleConfigurationView.swift in Sources */,
 				C6D2E43E25F05064006182DA /* ProfileChangeView.swift in Sources */,
 				C60C505E25E36C9F005974B0 /* LabelDivider.swift in Sources */,
 				C6D2E41E25EE8E51006182DA /* MyPageViewModel.swift in Sources */,
@@ -1021,16 +1068,20 @@
 				C60C507725E37CB7005974B0 /* AuthSignUpView.swift in Sources */,
 				C6FEA5DC25E8AB65007E7AB5 /* TestDTO.swift in Sources */,
 				C60C510225E6353D005974B0 /* UserProfile.swift in Sources */,
+				C63D47A72601AF4F001AE6E5 /* HateItemView.swift in Sources */,
+				C63D47B92601B53D001AE6E5 /* AppLanguage.swift in Sources */,
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
 				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
 				C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */,
 				C6D2E49325F0A0CA006182DA /* ChattingThumbnailViewModel.swift in Sources */,
+				C63D479B2601AF23001AE6E5 /* InterestItemView.swift in Sources */,
 				C60C512F25E735DC005974B0 /* BottomTabBarItemView.swift in Sources */,
 				C6D2E40E25EE4BB2006182DA /* MyPageView.swift in Sources */,
 				C60C50DB25E60D69005974B0 /* ShoppingHomeView.swift in Sources */,
 				C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */,
 				C60C50C425E5E06D005974B0 /* DateDifference.swift in Sources */,
 				C6FEA64125E8DA9A007E7AB5 /* ProductLocal.swift in Sources */,
+				C63D47BE2601B56D001AE6E5 /* AppLocaleConfigurationViewModel.swift in Sources */,
 				C6FEA64C25E8DC27007E7AB5 /* ProductThumbnailViewModel.swift in Sources */,
 				C6FEA68125ECCEB1007E7AB5 /* UserProfileLocal.swift in Sources */,
 				C60C504725E35DB4005974B0 /* SceneDelegate.swift in Sources */,
@@ -1040,6 +1091,7 @@
 				C63D475425FCAC9F001AE6E5 /* TitleContentsContainer.swift in Sources */,
 				C60C50EE25E610F9005974B0 /* SearchExtension.swift in Sources */,
 				C60C514225E7691E005974B0 /* PagingImageView.swift in Sources */,
+				C63D4785260187D1001AE6E5 /* BottomSheet.swift in Sources */,
 				C60C50F925E626C7005974B0 /* SlidingTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
