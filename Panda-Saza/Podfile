@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Panda-Saza' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Panda-Saza
+  pod 'YPImagePicker'
+  
+  target 'Panda-SazaTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Panda-SazaUITests' do
+    # Pods for testing
+  end
+
+end

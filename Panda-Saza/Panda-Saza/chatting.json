@@ -1,0 +1,18 @@
+{
+    "chattingThumbnails": [
+        {
+            "roomId": 1,
+            "partnerName": "이재우",
+            "partnerProfileIcon": "https://pbs.twimg.com/media/DTlIUqnUMAAtG3Z.jpg",
+            "partnerLastDateTime": 1614830486,
+            "partnerLastMessage": "이거 지금 안 사시면 진짜 후회하실텐데... ㄹㅇ 개꿀쌉꿀따기에요"
+        },
+        {
+            "roomId": 2,
+            "partnerName": "이윤호",
+            "partnerProfileIcon": "https://lh3.googleusercontent.com/proxy/TWhHYb3tqgv7lJ02xcz6OR2OiQfV_lf7gWvMOBfhn6AWpvdxgcO_4vD0vey8bnXBxU4NMxplbodNg8NmUd0NpsOtJhwD-qOq6Cz-f23kkKh21W61RmgvrZ52O2Xot8Y0kw",
+            "partnerLastDateTime": 1614832779,
+            "partnerLastMessage": "언제 거래가능하신가요?"
+        }
+    ]
+}
