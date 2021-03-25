@@ -10,7 +10,7 @@ import Combine
 
 struct AppState: Equatable {
     var userData = UserData()
-    var routing = ViewRouting()
+    var routes = ViewRoutes()
     var system = System()
     var permissions = Permissions()
 }
@@ -24,7 +24,9 @@ extension AppState {
 
 // MARK: - View Routings
 extension AppState {
-    struct ViewRouting: Equatable {
+    struct ViewRoutes: Equatable {
+        
+        var selectedTab: Int = 0
         
     }
 }
@@ -33,13 +35,22 @@ extension AppState {
 extension AppState {
     struct System: Equatable {
         
+        var isActive: Bool = false
     }
 }
 
 // MARK: - Permission Manager
 extension AppState {
     struct Permissions: Equatable {
-        
+        var push: Permission.Status = .unknown
+    }
+    
+    static func permissionKeyPath(for permission: Permission) -> WritableKeyPath<AppState, Permission.Status> {
+        let pathToPermissions = \AppState.permissions
+        switch permission {
+        case .pushNotifications:
+            return pathToPermissions.appending(path: \.push)
+        }
     }
 }
 
@@ -47,7 +58,7 @@ extension AppState {
 
 func == (lhs: AppState, rhs: AppState) -> Bool {
     return lhs.userData == rhs.userData &&
-        lhs.routing == rhs.routing &&
+        lhs.routes == rhs.routes &&
         lhs.system == rhs.system &&
         lhs.permissions == rhs.permissions
 }

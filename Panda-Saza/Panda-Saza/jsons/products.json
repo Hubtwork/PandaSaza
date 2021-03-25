@@ -23,6 +23,18 @@
           "cnt_chat": 0,
           "cnt_like": 4,
           "thumbnailImageURL": "https://cdn.allets.com/commerce/goods/resize/900/20210122/1611304143038_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"
+      },
+      {
+          "itemId": 3,
+          "itemName": "교과서",
+          "itemNameTrans": "Korean Clothes",
+          "itemPrice": 34000,
+          "registrationTime": 1614124326,
+          "sellerLoc": "서강대학교",
+          "itemInterest": 2,
+          "cnt_chat": 0,
+          "cnt_like": 4,
+          "thumbnailImageURL": "https://cdn.allets.com/commerce/goods/resize/900/20210122/1611304143038_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"
       }
   ]
 }

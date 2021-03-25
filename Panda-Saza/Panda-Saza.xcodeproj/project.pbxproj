@@ -47,6 +47,19 @@
 		C63695592609B58E00CCA4FC /* user_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C63695582609B58E00CCA4FC /* user_data.json */; };
 		C636955E2609B6C400CCA4FC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636955D2609B6C400CCA4FC /* AppState.swift */; };
 		C63695652609DF6100CCA4FC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695642609DF6100CCA4FC /* UserModel.swift */; };
+		C636956A2609E7A300CCA4FC /* PermissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695692609E7A300CCA4FC /* PermissionInteractor.swift */; };
+		C636956F2609EA9400CCA4FC /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636956E2609EA9400CCA4FC /* DependencyInjector.swift */; };
+		C63695772609EBF500CCA4FC /* InteractorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695762609EBF500CCA4FC /* InteractorContainer.swift */; };
+		C6369580260B091900CCA4FC /* RootViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636957F260B091900CCA4FC /* RootViewModifier.swift */; };
+		C6369588260CB55000CCA4FC /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6369587260CB55000CCA4FC /* ProductsInteractor.swift */; };
+		C636958E260CB59800CCA4FC /* ProductsApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636958D260CB59800CCA4FC /* ProductsApiRepository.swift */; };
+		C6369596260CB61A00CCA4FC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6369595260CB61A00CCA4FC /* Product.swift */; };
+		C63695B3260CC5AC00CCA4FC /* ProductsApiRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695B2260CC5AC00CCA4FC /* ProductsApiRepositoryTests.swift */; };
+		C63695B9260CC8B600CCA4FC /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695B8260CC8B600CCA4FC /* Mock.swift */; };
+		C63695C1260CC90300CCA4FC /* MockedApiRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695C0260CC90300CCA4FC /* MockedApiRepositories.swift */; };
+		C63695C7260CC94500CCA4FC /* RequestMocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695C6260CC94500CCA4FC /* RequestMocking.swift */; };
+		C63695CF260CC97900CCA4FC /* MockedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695CE260CC97900CCA4FC /* MockedResponse.swift */; };
+		C63695D4260CCCDE00CCA4FC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63695D3260CCCDE00CCA4FC /* TestHelpers.swift */; };
 		C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D46C325F745D7001AE6E5 /* PhotopickerDemo.swift */; };
 		C63D46D325F746D9001AE6E5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D46D225F746D9001AE6E5 /* ImagePicker.swift */; };
 		C63D471425F761BE001AE6E5 /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63D471325F761BE001AE6E5 /* ProductItem.swift */; };
@@ -194,6 +207,19 @@
 		C63695582609B58E00CCA4FC /* user_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_data.json; sourceTree = "<group>"; };
 		C636955D2609B6C400CCA4FC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		C63695642609DF6100CCA4FC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C63695692609E7A300CCA4FC /* PermissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionInteractor.swift; sourceTree = "<group>"; };
+		C636956E2609EA9400CCA4FC /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		C63695762609EBF500CCA4FC /* InteractorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorContainer.swift; sourceTree = "<group>"; };
+		C636957F260B091900CCA4FC /* RootViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModifier.swift; sourceTree = "<group>"; };
+		C6369587260CB55000CCA4FC /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
+		C636958D260CB59800CCA4FC /* ProductsApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsApiRepository.swift; sourceTree = "<group>"; };
+		C6369595260CB61A00CCA4FC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C63695B2260CC5AC00CCA4FC /* ProductsApiRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsApiRepositoryTests.swift; sourceTree = "<group>"; };
+		C63695B8260CC8B600CCA4FC /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		C63695C0260CC90300CCA4FC /* MockedApiRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedApiRepositories.swift; sourceTree = "<group>"; };
+		C63695C6260CC94500CCA4FC /* RequestMocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMocking.swift; sourceTree = "<group>"; };
+		C63695CE260CC97900CCA4FC /* MockedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedResponse.swift; sourceTree = "<group>"; };
+		C63695D3260CCCDE00CCA4FC /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		C63D46C325F745D7001AE6E5 /* PhotopickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotopickerDemo.swift; sourceTree = "<group>"; };
 		C63D46D225F746D9001AE6E5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C63D471325F761BE001AE6E5 /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
@@ -325,6 +351,7 @@
 		C60C4FE025E35589005974B0 = {
 			isa = PBXGroup;
 			children = (
+				C636959D260CC45A00CCA4FC /* UnitTests */,
 				C60C4FEB25E35589005974B0 /* Panda-Saza */,
 				C60C4FFD25E3558C005974B0 /* Panda-SazaTests */,
 				C60C500825E3558C005974B0 /* Panda-SazaUITests */,
@@ -347,13 +374,15 @@
 		C60C4FEB25E35589005974B0 /* Panda-Saza */ = {
 			isa = PBXGroup;
 			children = (
+				C636958C260CB56300CCA4FC /* Repositories */,
+				C636957B260B08E700CCA4FC /* UI */,
 				C63695632609DCA600CCA4FC /* Model */,
 				C63695622609B82800CCA4FC /* Interactors */,
 				C63695572609B53000CCA4FC /* jsons */,
 				C63695432609B2C500CCA4FC /* Resources */,
 				C636953C2609AFD600CCA4FC /* Injected */,
 				C63695202609A8B800CCA4FC /* System */,
-				C63695132609A7EE00CCA4FC /* UI */,
+				C63695132609A7EE00CCA4FC /* oldUI */,
 				C66D3B4B25F5C634008F06E4 /* GoogleService-Info.plist */,
 				C60C504B25E35E13005974B0 /* Utils */,
 				C60C503225E359C4005974B0 /* Extension */,
@@ -503,7 +532,7 @@
 			path = PagingImageView;
 			sourceTree = "<group>";
 		};
-		C63695132609A7EE00CCA4FC /* UI */ = {
+		C63695132609A7EE00CCA4FC /* oldUI */ = {
 			isa = PBXGroup;
 			children = (
 				C6D2E46825F08EB5006182DA /* Chat */,
@@ -521,7 +550,7 @@
 				C60C508C25E54198005974B0 /* Models */,
 				C60C505725E36552005974B0 /* SupportingView */,
 			);
-			path = UI;
+			path = oldUI;
 			sourceTree = "<group>";
 		};
 		C63695202609A8B800CCA4FC /* System */ = {
@@ -536,7 +565,9 @@
 		C636953C2609AFD600CCA4FC /* Injected */ = {
 			isa = PBXGroup;
 			children = (
+				C636956E2609EA9400CCA4FC /* DependencyInjector.swift */,
 				C636955D2609B6C400CCA4FC /* AppState.swift */,
+				C63695762609EBF500CCA4FC /* InteractorContainer.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -571,6 +602,8 @@
 		C63695622609B82800CCA4FC /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				C63695692609E7A300CCA4FC /* PermissionInteractor.swift */,
+				C6369587260CB55000CCA4FC /* ProductsInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -579,8 +612,62 @@
 			isa = PBXGroup;
 			children = (
 				C63695642609DF6100CCA4FC /* UserModel.swift */,
+				C6369595260CB61A00CCA4FC /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C636957B260B08E700CCA4FC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C636957F260B091900CCA4FC /* RootViewModifier.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C636958C260CB56300CCA4FC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C636958D260CB59800CCA4FC /* ProductsApiRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C636959D260CC45A00CCA4FC /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				C63695C5260CC93500CCA4FC /* NetworkMocking */,
+				C63695B7260CC8A300CCA4FC /* Mocks */,
+				C636959E260CC46400CCA4FC /* Repositories */,
+				C63695D3260CCCDE00CCA4FC /* TestHelpers.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		C636959E260CC46400CCA4FC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C63695B2260CC5AC00CCA4FC /* ProductsApiRepositoryTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C63695B7260CC8A300CCA4FC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C63695B8260CC8B600CCA4FC /* Mock.swift */,
+				C63695C0260CC90300CCA4FC /* MockedApiRepositories.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C63695C5260CC93500CCA4FC /* NetworkMocking */ = {
+			isa = PBXGroup;
+			children = (
+				C63695C6260CC94500CCA4FC /* RequestMocking.swift */,
+				C63695CE260CC97900CCA4FC /* MockedResponse.swift */,
+			);
+			path = NetworkMocking;
 			sourceTree = "<group>";
 		};
 		C63D46D125F746C3001AE6E5 /* ImagePicker */ = {
@@ -1137,6 +1224,7 @@
 				C60C510B25E63652005974B0 /* UserManager.swift in Sources */,
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
+				C6369588260CB55000CCA4FC /* ProductsInteractor.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
 				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
 				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
@@ -1167,11 +1255,15 @@
 				C60C507C25E3918F005974B0 /* ViewExtension.swift in Sources */,
 				C60C502825E3595A005974B0 /* AuthMainView.swift in Sources */,
 				C60C50CC25E5F257005974B0 /* ScaledFont.swift in Sources */,
+				C63695772609EBF500CCA4FC /* InteractorContainer.swift in Sources */,
 				C60C507725E37CB7005974B0 /* AuthSignUpView.swift in Sources */,
 				C63695302609AEF000CCA4FC /* AppDelegate.swift in Sources */,
 				C6FEA5DC25E8AB65007E7AB5 /* TestDTO.swift in Sources */,
 				C60C510225E6353D005974B0 /* UserProfile.swift in Sources */,
+				C636956A2609E7A300CCA4FC /* PermissionInteractor.swift in Sources */,
 				C63D47A72601AF4F001AE6E5 /* HateItemView.swift in Sources */,
+				C636958E260CB59800CCA4FC /* ProductsApiRepository.swift in Sources */,
+				C6369596260CB61A00CCA4FC /* Product.swift in Sources */,
 				C63D47B92601B53D001AE6E5 /* AppLanguage.swift in Sources */,
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
 				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
@@ -1182,6 +1274,8 @@
 				C60C512F25E735DC005974B0 /* BottomTabBarItemView.swift in Sources */,
 				C6D2E40E25EE4BB2006182DA /* MyPageView.swift in Sources */,
 				C60C50DB25E60D69005974B0 /* ShoppingHomeView.swift in Sources */,
+				C6369580260B091900CCA4FC /* RootViewModifier.swift in Sources */,
+				C636956F2609EA9400CCA4FC /* DependencyInjector.swift in Sources */,
 				C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */,
 				C636955E2609B6C400CCA4FC /* AppState.swift in Sources */,
 				C63695382609AF0700CCA4FC /* SceneDelegate.swift in Sources */,
@@ -1208,7 +1302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63695B3260CC5AC00CCA4FC /* ProductsApiRepositoryTests.swift in Sources */,
 				C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */,
+				C63695D4260CCCDE00CCA4FC /* TestHelpers.swift in Sources */,
+				C63695B9260CC8B600CCA4FC /* Mock.swift in Sources */,
+				C63695CF260CC97900CCA4FC /* MockedResponse.swift in Sources */,
+				C63695C7260CC94500CCA4FC /* RequestMocking.swift in Sources */,
+				C63695C1260CC90300CCA4FC /* MockedApiRepositories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
