@@ -13,6 +13,15 @@ struct AppState: Equatable {
     var routes = ViewRoutes()
     var system = System()
     var permissions = Permissions()
+    var loadedData = LoadedData()
+}
+
+// MARK: - Loaded Data
+extension AppState {
+    struct LoadedData: Equatable {
+        var products: Loadable<[Product]> = .notRequested
+        var productDetails: Loadable<ProductDetails> = .notRequested
+    }
 }
 
 // MARK: - User Data
@@ -34,7 +43,7 @@ extension AppState {
 // MARK: - System Properties
 extension AppState {
     struct System: Equatable {
-        
+        var keyboardHeight: CGFloat = 0
         var isActive: Bool = false
     }
 }
@@ -60,5 +69,6 @@ func == (lhs: AppState, rhs: AppState) -> Bool {
     return lhs.userData == rhs.userData &&
         lhs.routes == rhs.routes &&
         lhs.system == rhs.system &&
-        lhs.permissions == rhs.permissions
+        lhs.permissions == rhs.permissions &&
+        lhs.loadedData == rhs.loadedData
 }

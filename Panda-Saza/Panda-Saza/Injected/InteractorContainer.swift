@@ -12,14 +12,14 @@
 extension DIContainer {
     struct Interactors {
         
-        let permissionsInteractor: PermissionsInteractor
+        let productsInteractor: ProductsInteractor
         
-        init(permissionsInteractor: PermissionsInteractor) {
-            self.permissionsInteractor = permissionsInteractor
+        init(productsInteractor: ProductsInteractor) {
+            self.productsInteractor = productsInteractor
         }
         
         static var stub: Self {
-            .init(permissionsInteractor: StubPermissionsInteractor())
+            .init(productsInteractor: StubProductsInteractor())
         }
     }
     
