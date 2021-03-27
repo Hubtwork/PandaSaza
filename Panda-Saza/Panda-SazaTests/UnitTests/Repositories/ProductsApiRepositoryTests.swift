@@ -20,12 +20,21 @@ class ProductsApiRepositoryTests: XCTestCase {
     override func setUp() {
         subscriptions = Set<AnyCancellable>()
         sut = PandasazaProductsApiRepository(session: .mockedResponsesOnly,
-                                             baseURL: "https://test.com")
+                                             baseURL: "http://localhost:3000/product")
     }
     
     override func tearDown() {
         // TearDown Contents
         RequestMocking.removeAllMocks()
+    }
+    
+    func test_testServerProductList() throws {
+        let exp = XCTestExpectation(description: "Completion")
+        sut.loadProducts().sinkToResult { result in
+            print(result)
+            exp.fulfill()
+        }.store(in: &subscriptions)
+        wait(for: [exp], timeout: 2)
     }
     
     func test_productList() throws {

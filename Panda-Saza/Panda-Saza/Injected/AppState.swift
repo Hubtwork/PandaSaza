@@ -34,7 +34,6 @@ extension AppState {
 // MARK: - View Routings
 extension AppState {
     struct ViewRoutes: Equatable {
-        
         var selectedTab: Int = 0
         
     }
@@ -44,7 +43,9 @@ extension AppState {
 extension AppState {
     struct System: Equatable {
         var keyboardHeight: CGFloat = 0
-        var isActive: Bool = false
+        var isActive: Bool = true
+        var isLogin: Bool = false
+        var isAuth: Bool = false
     }
 }
 
@@ -72,3 +73,13 @@ func == (lhs: AppState, rhs: AppState) -> Bool {
         lhs.permissions == rhs.permissions &&
         lhs.loadedData == rhs.loadedData
 }
+
+#if DEBUG
+extension AppState {
+    static var preview: AppState {
+        var state = AppState()
+        state.system.isActive = true
+        return state
+    }
+}
+#endif

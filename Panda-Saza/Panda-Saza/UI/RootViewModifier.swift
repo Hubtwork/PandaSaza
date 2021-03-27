@@ -28,4 +28,5 @@ struct RootViewAppearance: ViewModifier {
     private var stateUpdate: AnyPublisher<Bool, Never> {
         injected.appState.updates(for: \.system.isActive)
     }
+    
 }

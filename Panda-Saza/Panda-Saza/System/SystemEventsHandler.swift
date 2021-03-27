@@ -36,6 +36,10 @@ struct PandaSazaEventsHandler: SystemEventsHandler {
         
     }
     
+    func currentSelectedTabChanger(tabId: Int) {
+        appState[\.routes.selectedTab] = tabId
+    }
+    
     func sceneDidBecomeActive() {
         appState[\.system.isActive] = true
     }

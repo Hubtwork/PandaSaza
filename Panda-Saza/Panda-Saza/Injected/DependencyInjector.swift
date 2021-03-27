@@ -38,6 +38,12 @@ struct DIContainer: EnvironmentKey {
     
 }
 
+extension DIContainer {
+    static var preview: Self {
+        .init(appState: .init(AppState.preview), interactors: .stub)
+    }
+}
+
 extension EnvironmentValues {
     var injected: DIContainer {
         get { self[DIContainer.self] }

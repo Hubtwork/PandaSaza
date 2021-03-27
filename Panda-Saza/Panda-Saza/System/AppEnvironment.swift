@@ -40,7 +40,7 @@ extension AppEnvironment {
     private static func configuredApiRepositories(session: URLSession) -> ApiRepositoriesContainer {
         let productsApiRepository = PandasazaProductsApiRepository(
             session: session,
-            baseURL: "https://restcountries.eu/rest/v2")
+            baseURL: "http://localhost:3000/product")
         return ApiRepositoriesContainer(productsApiRepository: productsApiRepository)
     }
     
