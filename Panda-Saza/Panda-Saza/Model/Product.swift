@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Product: Codable, Equatable {
+struct Product: Hashable, Codable, Equatable {
     
     let itemId: ID
-    let thumbnailImageURL: URL?
+    let thumbnailImageURL: ImageUrlString
     let itemCategory: String
     let itemName: String
     let itemNameTrans: String
@@ -24,12 +24,13 @@ struct Product: Codable, Equatable {
     let cnt_like: Int
     
     typealias ID = Int
+    typealias ImageUrlString = String
 }
 
 struct ProductDetails: Codable, Equatable {
     
     let itemId: ID
-    let itemImages: [URL]
+    let itemImages: [ImageUrlString]
     let itemCategory: String
     let itemTitle: String
     let itemContents: String
@@ -43,13 +44,14 @@ struct ProductDetails: Codable, Equatable {
     /// Seller Reference
     let sellerId: ID
     let sellerName: String
-    let sellerProfileIcon: URL?
+    let sellerProfileIcon: ImageUrlString
     let sellerSchool: String
     let sellerLocale: String
     let sellerRating: Double
     
     
     typealias ID = Int
+    typealias ImageUrlString = String
 }
 
 // MARK:- Helpers
@@ -64,7 +66,7 @@ extension ProductDetails: Identifiable {
 // MARK: - MockedData
 extension Product {
     static let mockedData: [Product] = [
-        Product(itemId: 1, thumbnailImageURL: URL(string: "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1587569403/476433_DTDCT_1000_001_057_0000_Light-GG.jpg"), itemCategory: "악세서리", itemName: "구찌 가방", itemNameTrans: "Gucci Bag", itemPrice: 10000, registrationTime: 1614129326, sellerLoc: "동국대학교", cnt_chat: 1, cnt_like: 3),
-        Product(itemId: 2, thumbnailImageURL: URL(string: "https://cdn.allets.com/commerce/goods/resize/900/20210122/1611304143038_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"), itemCategory: "여성의류", itemName: "한복", itemNameTrans: "Korean Clothes", itemPrice: 34000, registrationTime: 1614124326, sellerLoc: "서강대학교", cnt_chat: 0, cnt_like: 4)
+        Product(itemId: 1, thumbnailImageURL:  "https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1587569403/476433_DTDCT_1000_001_057_0000_Light-GG.jpg", itemCategory: "악세서리", itemName: "구찌 가방", itemNameTrans: "Gucci Bag", itemPrice: 10000, registrationTime: 1614129326, sellerLoc: "동국대학교", cnt_chat: 1, cnt_like: 3),
+        Product(itemId: 2, thumbnailImageURL:  "https://cdn.allets.com/commerce/goods/resize/900/20210122/1611304143038_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg", itemCategory: "여성의류", itemName: "한복", itemNameTrans: "Korean Clothes", itemPrice: 34000, registrationTime: 1614124326, sellerLoc: "서강대학교", cnt_chat: 0, cnt_like: 4)
     ]
 }

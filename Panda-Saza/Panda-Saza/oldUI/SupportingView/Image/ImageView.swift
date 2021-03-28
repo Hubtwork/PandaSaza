@@ -36,7 +36,6 @@ private extension ImageView {
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 120, alignment: .top)
             
         }.onReceive(imageLoader.dataPublisher) { data in
             self.image = UIImage(data: data) ?? UIImage()
@@ -48,7 +47,8 @@ private extension ImageView {
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 300)
+                .frame(width: 150, height: 150)
+                .border(Color.black, width: 2)
             
         }.onReceive(imageLoader.dataPublisher) { data in
             self.image = UIImage(data: data) ?? UIImage()

@@ -27,8 +27,10 @@ struct TabViewContainer: View {
                     three
                 case 3:
                     fourth
-                default:
+                case 4:
                     fifth
+                default:
+                    EmptyView()
                 }
                 TabBar().inject(injected)
             }

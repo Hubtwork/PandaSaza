@@ -18,7 +18,7 @@ struct TabBar: View {
     
     public init() {
         let tabBarImages = ["cart", "doc.plaintext", "plus.circle", "message.fill", "person"]
-        let tabBarLabels = ["상품구매", "찜 목록", "상품판매", "채팅", "내 정보"]
+        let tabBarLabels = ["Purchase", "Likes", "Sale", "Chat", "Profile"]
         let color = Color.black
         /// check icon count == label count
         assert(tabBarImages.count == tabBarLabels.count)
@@ -42,7 +42,6 @@ struct TabBar: View {
     /// Skelleton View for TabBar
     var body: some View {
         VStack(spacing: 0) {
-            Text("\(self.selectedIndex) 번째 탭 선택")
             Divider()
             HStack {
                 ForEach(0..<tabBarItems.count) { idx in

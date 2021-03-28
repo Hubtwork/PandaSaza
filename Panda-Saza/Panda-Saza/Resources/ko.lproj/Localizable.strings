@@ -5,3 +5,16 @@
   Created by Jae Heo on 2021/03/23.
   
 */
+
+// 로그인 안내 문구
+"Sign In is required to use the trading function" = "거래 기능을 이용하기 위해 로그인이 필요합니다";
+// 인증 안내 문구
+"User authentication is required to use the trading function" = "거래 기능을 이용하기 위해 사용자 인증이 필요합니다";
+
+
+// MARK: - TabItemStrings
+"Purchase" = "구매하기";
+"Likes" = "찜 목록";
+"Sale" = "판매하기";
+"Chat" = "채팅";
+"Profile" = "내 정보";

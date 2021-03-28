@@ -6,3 +6,16 @@
   
 */
 
+// 로그인 안내 문구
+"Sign In is required to use the trading function" = "Sign In is required to use the trading function";
+// 인증 안내 문구
+"User authentication is required to use the trading function" = "User authentication is required to use the trading function";
+
+
+
+// MARK: - TabItemStrings
+"Purchase" = "Purchase";
+"Likes" = "Likes";
+"Sale" = "Sale";
+"Chat" = "Chat";
+"Profile" = "Profile";

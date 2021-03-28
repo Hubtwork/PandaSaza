@@ -12,6 +12,7 @@ import Combine
 class ProductsApiRepositoryTests: XCTestCase {
     
     private var sut: PandasazaProductsApiRepository!
+    private var localSut: PandasazaProductsApiRepository!
     private var subscriptions = Set<AnyCancellable>()
     
     typealias API = PandasazaProductsApiRepository.API
@@ -20,7 +21,17 @@ class ProductsApiRepositoryTests: XCTestCase {
     override func setUp() {
         subscriptions = Set<AnyCancellable>()
         sut = PandasazaProductsApiRepository(session: .mockedResponsesOnly,
-                                             baseURL: "http://localhost:3000/product")
+                                             baseURL: "https://test.com")
+        
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 60
+        configuration.timeoutIntervalForResource = 120
+        configuration.waitsForConnectivity = true
+        configuration.httpMaximumConnectionsPerHost = 5
+        configuration.requestCachePolicy = .returnCacheDataElseLoad
+        let session = URLSession(configuration: configuration)
+        localSut = PandasazaProductsApiRepository(session: session,
+                                                 baseURL: "http://localhost:3000/product")
     }
     
     override func tearDown() {
@@ -30,7 +41,7 @@ class ProductsApiRepositoryTests: XCTestCase {
     
     func test_testServerProductList() throws {
         let exp = XCTestExpectation(description: "Completion")
-        sut.loadProducts().sinkToResult { result in
+        localSut.loadProducts().sinkToResult { result in
             print(result)
             exp.fulfill()
         }.store(in: &subscriptions)
@@ -43,6 +54,7 @@ class ProductsApiRepositoryTests: XCTestCase {
         let exp = XCTestExpectation(description: "Completion")
         sut.loadProducts().sinkToResult { result in
             result.assertSuccess(value: response)
+            print(result)
             exp.fulfill()
         }.store(in: &subscriptions)
         wait(for: [exp], timeout: 2)
