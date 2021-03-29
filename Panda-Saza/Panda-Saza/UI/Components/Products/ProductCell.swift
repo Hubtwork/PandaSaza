@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ProductCell: View {
     
@@ -16,7 +17,7 @@ struct ProductCell: View {
     let fontName: String = "NanumGothic-Regular"
     
     var body: some View {
-        content
+        self.content
     }
 }
 
@@ -24,9 +25,9 @@ extension ProductCell {
     var content: some View {
         VStack(alignment: .leading, spacing: 5){
             /// Item Thumbnail Image Stack
-            ImageView(withURL: product.thumbnailImageURL, isComingFromHomepage: false)
-                .frame(height: cellWidth)
-                .background(Color(.white))
+            URLImageView(urlString: product.thumbnailImageURL)
+                .frame(width: cellWidth, height: cellWidth)
+                .background(Color.white)
             /// Item Name Stack
             HStack {
                 Text(product.itemNameTrans)

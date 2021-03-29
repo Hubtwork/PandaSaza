@@ -11,6 +11,7 @@ import Foundation
 protocol ProductsApiRepository: ApiRepository {
     
     func loadProducts() -> AnyPublisher<[Product], Error>
+    func loadPagedProdutcs(pageId: Int) -> AnyPublisher<[Product], Error>
     func loadProductsFiltered(categoryId: Int) -> AnyPublisher<[Product], Error>
     func loadProductDetails(productId: Int) -> AnyPublisher<ProductDetails, Error>
     
@@ -32,6 +33,10 @@ struct PandasazaProductsApiRepository: ProductsApiRepository {
         return request(endpoint: API.productList)
     }
     
+    func loadPagedProdutcs(pageId: Int) -> AnyPublisher<[Product], Error> {
+        return request(endpoint: API.pagedProductList(pageId))
+    }
+    
     func loadProductsFiltered(categoryId: Int) -> AnyPublisher<[Product], Error> {
         return request(endpoint: API.productFiltered(categoryId))
     }
@@ -48,6 +53,7 @@ struct PandasazaProductsApiRepository: ProductsApiRepository {
 extension PandasazaProductsApiRepository {
     enum API {
         case productList
+        case pagedProductList(Int)
         case productDetail(Int)
         case productFiltered(Int)
     }
@@ -59,6 +65,8 @@ extension PandasazaProductsApiRepository.API: ApiRequest {
         switch self {
         case .productList:
             return "/products"
+        case let .pagedProductList(pageId):
+            return "/productlist?loc=1&page=\(pageId)"
         case let .productDetail(productId):
             return "/\(productId)"
         case let .productFiltered(categoryId):
@@ -68,7 +76,7 @@ extension PandasazaProductsApiRepository.API: ApiRequest {
     
     var method: String {
         switch self {
-        case .productList, .productFiltered, .productDetail:
+        case .productList, .pagedProductList, .productFiltered, .productDetail:
             return "GET"
         }
     }

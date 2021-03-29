@@ -19,6 +19,7 @@ struct AppState: Equatable {
 // MARK: - Loaded Data
 extension AppState {
     struct LoadedData: Equatable {
+        var loadedPage: Int = 0
         var products: Loadable<[Product]> = .notRequested
         var productDetails: Loadable<ProductDetails> = .notRequested
     }
@@ -46,6 +47,7 @@ extension AppState {
         var isActive: Bool = true
         var isLogin: Bool = false
         var isAuth: Bool = false
+        var currentFont: String = "NanumGothic-Regular"
     }
 }
 

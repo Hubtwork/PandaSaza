@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,6 +100,20 @@
 		C6701BCF261061AA00B76753 /* NanumGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */; };
 		C6701BD0261061AA00B76753 /* NanumGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */; };
 		C6701BD1261061AA00B76753 /* NanumGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */; };
+		C6701BE32610B31300B76753 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C6701BE22610B31300B76753 /* URLImage */; };
+		C6701BE8261157DB00B76753 /* ProductsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701BE7261157DB00B76753 /* ProductsDetail.swift */; };
+		C6701BE9261157DB00B76753 /* ProductsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701BE7261157DB00B76753 /* ProductsDetail.swift */; };
+		C6701BEA261157DB00B76753 /* ProductsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701BE7261157DB00B76753 /* ProductsDetail.swift */; };
+		C6701C0326116CD700B76753 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C0226116CD700B76753 /* URLImageView.swift */; };
+		C6701C0426116CD700B76753 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C0226116CD700B76753 /* URLImageView.swift */; };
+		C6701C0526116CD700B76753 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C0226116CD700B76753 /* URLImageView.swift */; };
+		C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C122611773D00B76753 /* SellerProfileCell.swift */; };
+		C6701C142611773D00B76753 /* SellerProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C122611773D00B76753 /* SellerProfileCell.swift */; };
+		C6701C152611773D00B76753 /* SellerProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C122611773D00B76753 /* SellerProfileCell.swift */; };
+		C6701C2B26117AC400B76753 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
+		C6701C2C26117AC400B76753 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
+		C6701C502611E1E700B76753 /* ProductImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C4F2611E1E700B76753 /* ProductImageContainer.swift */; };
+		C6701C552611E98700B76753 /* ProductContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C542611E98700B76753 /* ProductContentCell.swift */; };
 		C6964E012603109D0090B45C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E002603109D0090B45C /* SplashView.swift */; };
 		C6964E06260310AE0090B45C /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E05260310AE0090B45C /* OnBoardingView.swift */; };
 		C6964E32260319DC0090B45C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E31260319DC0090B45C /* Store.swift */; };
@@ -273,6 +287,11 @@
 		C6701B8C261039BF00B76753 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C6701BA32610484F00B76753 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-Regular.ttf"; sourceTree = "<group>"; };
+		C6701BE7261157DB00B76753 /* ProductsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetail.swift; sourceTree = "<group>"; };
+		C6701C0226116CD700B76753 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		C6701C122611773D00B76753 /* SellerProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileCell.swift; sourceTree = "<group>"; };
+		C6701C4F2611E1E700B76753 /* ProductImageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageContainer.swift; sourceTree = "<group>"; };
+		C6701C542611E98700B76753 /* ProductContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductContentCell.swift; sourceTree = "<group>"; };
 		C6964E002603109D0090B45C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C6964E05260310AE0090B45C /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C6964E31260319DC0090B45C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -330,6 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6701BE32610B31300B76753 /* URLImage in Frameworks */,
 				004D774F75B0123EEF5B63A2 /* Pods_Panda_Saza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +574,6 @@
 		C60C514025E7690F005974B0 /* PagingImageView */ = {
 			isa = PBXGroup;
 			children = (
-				C60C514125E7691E005974B0 /* PagingImageView.swift */,
 			);
 			path = PagingImageView;
 			sourceTree = "<group>";
@@ -806,6 +825,7 @@
 			isa = PBXGroup;
 			children = (
 				C6701B582610189B00B76753 /* ProductsList.swift */,
+				C6701BE7261157DB00B76753 /* ProductsDetail.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -813,6 +833,7 @@
 		C6701B63261019A500B76753 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C6701C652611F19600B76753 /* Navigation */,
 				C6701B7626101D4900B76753 /* Products */,
 				C6701B64261019B100B76753 /* ErrorView.swift */,
 				C6701B6C261019D000B76753 /* ActivityIndicatorView.swift */,
@@ -824,6 +845,9 @@
 			isa = PBXGroup;
 			children = (
 				C6701B7126101AD200B76753 /* ProductCell.swift */,
+				C6701C122611773D00B76753 /* SellerProfileCell.swift */,
+				C6701C4F2611E1E700B76753 /* ProductImageContainer.swift */,
+				C6701C542611E98700B76753 /* ProductContentCell.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -831,6 +855,7 @@
 		C6701B912610425500B76753 /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
+				C6701BF726116C7300B76753 /* Images */,
 				C6701BAE26104A8100B76753 /* TabBar */,
 			);
 			path = SupportingViews;
@@ -860,6 +885,23 @@
 				C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C6701BF726116C7300B76753 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C60C514125E7691E005974B0 /* PagingImageView.swift */,
+				C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */,
+				C6701C0226116CD700B76753 /* URLImageView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C6701C652611F19600B76753 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		C6D2E40925EE4AC3006182DA /* MyPage */ = {
@@ -927,7 +969,6 @@
 		C6FEA5AF25E77E2F007E7AB5 /* PofileComponent */ = {
 			isa = PBXGroup;
 			children = (
-				C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */,
 			);
 			path = PofileComponent;
 			sourceTree = "<group>";
@@ -1065,6 +1106,9 @@
 			dependencies = (
 			);
 			name = "Panda-Saza";
+			packageProductDependencies = (
+				C6701BE22610B31300B76753 /* URLImage */,
+			);
 			productName = "Panda-Saza";
 			productReference = C60C4FE925E35589005974B0 /* Panda-Saza.app */;
 			productType = "com.apple.product-type.application";
@@ -1141,6 +1185,9 @@
 				"zh-Hant",
 			);
 			mainGroup = C60C4FE025E35589005974B0;
+			packageReferences = (
+				C6701BE12610B31300B76753 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = C60C4FEA25E35589005974B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1331,11 +1378,13 @@
 				C60C506425E36D42005974B0 /* ButtonStyle.swift in Sources */,
 				C6701B45260F416A00B76753 /* TabViewContainer.swift in Sources */,
 				C63D46D325F746D9001AE6E5 /* ImagePicker.swift in Sources */,
+				C6701C502611E1E700B76753 /* ProductImageContainer.swift in Sources */,
 				C60C50B425E54EAB005974B0 /* RoundedEdge.swift in Sources */,
 				C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */,
 				C60C510B25E63652005974B0 /* UserManager.swift in Sources */,
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
+				C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
 				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
 				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
@@ -1370,6 +1419,7 @@
 				C60C507C25E3918F005974B0 /* ViewExtension.swift in Sources */,
 				C60C502825E3595A005974B0 /* AuthMainView.swift in Sources */,
 				C60C50CC25E5F257005974B0 /* ScaledFont.swift in Sources */,
+				C6701C0326116CD700B76753 /* URLImageView.swift in Sources */,
 				C63695772609EBF500CCA4FC /* InteractorContainer.swift in Sources */,
 				C60C507725E37CB7005974B0 /* AuthSignUpView.swift in Sources */,
 				C63695302609AEF000CCA4FC /* AppDelegate.swift in Sources */,
@@ -1384,8 +1434,10 @@
 				C6701B7226101AD200B76753 /* ProductCell.swift in Sources */,
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
 				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
+				C6701C552611E98700B76753 /* ProductContentCell.swift in Sources */,
 				C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */,
 				C6964E74260340490090B45C /* Loadable.swift in Sources */,
+				C6701BE8261157DB00B76753 /* ProductsDetail.swift in Sources */,
 				C6701B9E2610429B00B76753 /* TabBar.swift in Sources */,
 				C6D2E49325F0A0CA006182DA /* ChattingThumbnailViewModel.swift in Sources */,
 				C63D479B2601AF23001AE6E5 /* InterestItemView.swift in Sources */,
@@ -1422,12 +1474,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6701C2B26117AC400B76753 /* CircleImageView.swift in Sources */,
 				C63695B3260CC5AC00CCA4FC /* ProductsApiRepositoryTests.swift in Sources */,
 				C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */,
+				C6701C0426116CD700B76753 /* URLImageView.swift in Sources */,
 				C63695D4260CCCDE00CCA4FC /* TestHelpers.swift in Sources */,
 				C63695B9260CC8B600CCA4FC /* Mock.swift in Sources */,
 				C63695CF260CC97900CCA4FC /* MockedResponse.swift in Sources */,
+				C6701C142611773D00B76753 /* SellerProfileCell.swift in Sources */,
 				C63695C7260CC94500CCA4FC /* RequestMocking.swift in Sources */,
+				C6701BE9261157DB00B76753 /* ProductsDetail.swift in Sources */,
 				C63695C1260CC90300CCA4FC /* MockedApiRepositories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1436,7 +1492,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6701BEA261157DB00B76753 /* ProductsDetail.swift in Sources */,
 				C60C500A25E3558C005974B0 /* Panda_SazaUITests.swift in Sources */,
+				C6701C152611773D00B76753 /* SellerProfileCell.swift in Sources */,
+				C6701C2C26117AC400B76753 /* CircleImageView.swift in Sources */,
+				C6701C0526116CD700B76753 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1761,6 +1821,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C6701BE12610B31300B76753 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6701BE22610B31300B76753 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6701BE12610B31300B76753 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C60C4FE125E35589005974B0 /* Project object */;
 }

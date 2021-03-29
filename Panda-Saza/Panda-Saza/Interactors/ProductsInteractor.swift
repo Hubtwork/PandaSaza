@@ -11,7 +11,9 @@ import SwiftUI
 
 protocol ProductsInteractor {
     func loadProducts()
-    func load(productDetail: LoadableSubject<ProductDetails>, productId: Int)
+    func load(productId: Int)
+    
+    func loadProductDetail(product: LoadableSubject<ProductDetails>, productId: Int)
     
 }
 
@@ -40,21 +42,32 @@ struct PandaSazaProductsInteractor: ProductsInteractor {
     }
     
     
-    func load(productDetail: LoadableSubject<ProductDetails>, productId: Int) {
+    func load(productId: Int) {
         let cancelBag = CancelBag()
-        productDetail.wrappedValue.setIsLoading(cancelBag: cancelBag)
+        appState[\.loadedData.productDetails].setIsLoading(cancelBag: cancelBag)
+        weak var weakAppState = appState
         apiRepository.loadProductDetails(productId: productId)
-            .sinkToLoadable { productDetail.wrappedValue = $0 }
+            .sinkToLoadable { weakAppState?[\.loadedData.productDetails] = $0 }
+            .store(in: cancelBag)
+    }
+    
+    func loadProductDetail(product: LoadableSubject<ProductDetails>, productId: Int) {
+        let cancelBag = CancelBag()
+        product.wrappedValue.setIsLoading(cancelBag: cancelBag)
+        apiRepository.loadProductDetails(productId: productId)
+            .sinkToLoadable { product.wrappedValue = $0 }
             .store(in: cancelBag)
     }
     
 }
 
 struct StubProductsInteractor: ProductsInteractor {
-    
+    func loadProductDetail(product: LoadableSubject<ProductDetails>, productId: Int) {
+        
+    }
     func loadProducts() {
     }
     
-    func load(productDetail: LoadableSubject<ProductDetails>, productId: Int) {
+    func load(productId: Int) {
     }
 }

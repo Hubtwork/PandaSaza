@@ -41,6 +41,7 @@ extension ProductList {
 }
 
 // MARK: - Check for Authentication / SignIn
+
 extension ProductList {
     private var loginNoticeView: some View {
         VStack(alignment: .leading) {
@@ -132,7 +133,7 @@ private extension ProductList {
             ], alignment: .center, spacing: cellSpace, content: {
                 ForEach(products, id: \.self) { product in
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: EmptyView() ){
+                        NavigationLink(destination: self.detailsView(productId: product.itemId) ){
                             ProductCell(product: product, cellWidth: cellWidth)
                         }
                     }
@@ -143,8 +144,8 @@ private extension ProductList {
         }
     }
     
-    func detailsView(product: Product) -> some View {
-        EmptyView()
+    func detailsView(productId: Int) -> some View {
+        ProductsDetailRoutedView(itemId: productId)
     }
 }
 

@@ -4,6 +4,7 @@ var productDetail = require('../data/product-detail')
 var categoryData = require('../data/category')
 var router = express.Router()
 var _ = require('lodash')
+const products = require('../data/product-list')
 
 router.get('/products', function(req, res, next) {
     // Change Category Id to Category String 
@@ -16,6 +17,20 @@ router.get('/products', function(req, res, next) {
     )
     res.json(products)
 });
+
+router.get('/productlist', function(req, res, next) {
+    let loc = req.query.loc
+    let page = req.query.page
+    var products = _.cloneDeep(productData)
+    var category = _.cloneDeep(categoryData)
+    products.forEach(function(data) {
+        data.itemId = data.itemId + page * 6
+        data.itemName = page + " / " + data.itemId + " : " + data.itemName
+        data.itemCategory = _.find(category, function(object) { return object.id == data.itemCategory }).categoryStr
+        }
+    )
+    res.json(products)
+})
 
 router.get('/:id', function(req, res, next) {
     console.log("ID : " + req.params.id)

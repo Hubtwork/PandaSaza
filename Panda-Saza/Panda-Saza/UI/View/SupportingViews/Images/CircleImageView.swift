@@ -25,7 +25,7 @@ struct CircleImageView: View {
     var body: some View {
         VStack {
             if imageString != nil {
-                ImageView(withURL: imageString!, isComingFromHomepage: false)
+                URLImageView(urlString: imageString!)
                     .scaledToFill()
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.white, lineWidth: 0.1))
