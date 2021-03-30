@@ -120,27 +120,31 @@ private extension ProductList {
 
 private extension ProductList {
     func loadedView(_ products: [Product]) -> some View {
-        VStack(spacing: 0){
-            if injected.appState[\.system].isLogin == false {
-                self.loginNoticeView
-            } else if injected.appState[\.system].isAuth == false {
-                self.authNoticeView
-            }
-            ScrollView {
-            LazyVGrid(columns: [
-                GridItem(.fixed(cellWidth), spacing: cellSpace),
-                GridItem(.fixed(cellWidth))
-            ], alignment: .center, spacing: cellSpace, content: {
-                ForEach(products, id: \.self) { product in
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: self.detailsView(productId: product.itemId) ){
-                            ProductCell(product: product, cellWidth: cellWidth)
+        NavigationView {
+            VStack(spacing: 0){
+                if injected.appState[\.system].isLogin == false {
+                    self.loginNoticeView
+                } else if injected.appState[\.system].isAuth == false {
+                    self.authNoticeView
+                }
+                ScrollView {
+                LazyVGrid(columns: [
+                    GridItem(.fixed(cellWidth), spacing: cellSpace),
+                    GridItem(.fixed(cellWidth))
+                ], alignment: .center, spacing: cellSpace, content: {
+                    ForEach(products, id: \.self) { product in
+                        VStack(alignment: .leading) {
+                            NavigationLink(destination: self.detailsView(productId: product.itemId) ){
+                                ProductCell(product: product, cellWidth: cellWidth)
+                            }
                         }
                     }
+                })
+                .padding(.vertical, cellSpace)
                 }
-            })
-            .padding(.vertical, cellSpace)
             }
+            
+            .navigationBarHidden(true)
         }
     }
     

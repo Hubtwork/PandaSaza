@@ -2,6 +2,7 @@ var users = [
     {
         "uId": 1,
         "userEmail": "pandasaza@naver.com",
+        "userPassword": "123456789a",
         "userPhone": "010-5882-7272",
         "userName": "이경섭",
         "userSchool": "서강대학교",
@@ -10,6 +11,7 @@ var users = [
     {
         "uId": 2,
         "userEmail": "sexking@gmail.com",
+        "userPassword": "sexisBest!",
         "userPhone": "010-8282-6974",
         "userName": "이도현",
         "userSchool": "동국대학교",
@@ -19,6 +21,7 @@ var users = [
         "uId": 3,
         "userEmail": "asdasd103@gmail.com",
         "userPhone": "010-3131-2424",
+        "userPassword": "lostArcMania12#",
         "userName": "정동민",
         "userSchool": "서울대학교",
         "userProfileIcon": "https://file3.instiz.net/data/cached_img/upload/2019/09/21/22/f5ce7f9944770d1c575d9ada78c97b65.jpg"
@@ -26,6 +29,7 @@ var users = [
     {
         "uId": 4,
         "userEmail": "healthking@gmail.com",
+        "userPassword": "health#King1",
         "userPhone": "010-5252-4882",
         "userName": "이재우",
         "userSchool": "고려대학교",

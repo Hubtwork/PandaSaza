@@ -12,12 +12,15 @@ struct ProductsDetailRoutedView: View {
     
     @Environment(\.locale) private var locale: Locale
     @Environment(\.injected) private var injected: DIContainer
+    @Environment(\.presentationMode) var presentation
     
     @State private var productDetail: Loadable<ProductDetails>
     
     @State var imageIndex = 0
     
     @State private var loadedStatus = LoadedStatus()
+    
+    @State var navBarChange = false
 
     let fontName: String = "NanumGothic-Regular"
     let itemId: Int
@@ -84,16 +87,51 @@ private extension ProductsDetailRoutedView {
 private extension ProductsDetailRoutedView {
     
     func loadedView(_ product: ProductDetails) -> some View {
-        ScrollView {
-            VStack(spacing: 0){
-                ProductImageContainer(imageUrlStrings: product.itemImages)
-                SellerProfileCell(profileImageUrlString: product.sellerProfileIcon, userName: product.sellerName, userLocale: product.sellerLocale, schoolName: product.sellerSchool, rating: product.sellerRating)
+        ZStack {
+            /// Layer 1 : 
+            VStack(spacing: 0) {
+                ScrollView {
+                    VStack(spacing: 0){
+                        ProductImageContainer(imageUrlStrings: product.itemImages)
+                            .onAppear {
+                                withAnimation {
+                                    self.navBarChange = true
+                                }
+                            }
+                            .onDisappear {
+                                withAnimation {
+                                    self.navBarChange = false
+                                }
+                            }
+                        
+                        SellerProfileCell(profileImageUrlString: product.sellerProfileIcon, userName: product.sellerName, userLocale: product.sellerLocale, schoolName: product.sellerSchool, rating: product.sellerRating)
+                        
+                        Divider()
+                            .padding(.horizontal, 10)
+                        
+                        ProductContentCell(itemName: product.itemTitle, itemCategory: product.itemCategory, itemRegistrationTime: product.registrationTime, itemContents: product.itemContents, chatCount: product.cnt_chat, likeCount: product.cnt_like, viewCount: product.cnt_show)
+                    }
+                }
+            }.edgesIgnoringSafeArea(.top)
+            /// Layer 2 :
+            self.navBar
+        }
+        .navigationBarHidden(true)
+    }
+    
+    var navBar: some View {
+        VStack {
+            HStack{
+                Button(action: { presentation.wrappedValue.dismiss() }) {
+                    Image(systemName: "chevron.left")
+                        .frame(width: 15, height: 15)
+                }.foregroundColor(.black)
+                .padding(.top, 10)
+                .padding(.leading, 15)
+                Spacer()
                 
-                Divider()
-                    .padding(.horizontal, 10)
-                
-                ProductContentCell(itemName: product.itemTitle, itemCategory: product.itemCategory, itemRegistrationTime: product.registrationTime, itemContents: product.itemContents, chatCount: product.cnt_chat, likeCount: product.cnt_like, viewCount: product.cnt_show)
             }
+            Spacer()
         }
     }
     
