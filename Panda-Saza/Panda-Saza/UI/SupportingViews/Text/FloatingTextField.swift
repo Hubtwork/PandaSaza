@@ -29,7 +29,7 @@ struct FloatingTextField: View {
         ZStack(alignment: .leading) {
             Text(title)
                 .font(.custom("NunumGothicBold", size: fontSize))
-                .foregroundColor(text.wrappedValue.isEmpty ? hintTextColor : textColor)
+                .foregroundColor(text.wrappedValue.isEmpty ? textColor : hintTextColor)
                 .offset(y: text.wrappedValue.isEmpty ? 0 : -(fontSize+5))
                 .scaleEffect(text.wrappedValue.isEmpty ? 1 : 0.8, anchor: .leading)
             // Input Area
@@ -42,7 +42,7 @@ struct FloatingTextField: View {
                         Divider()
                             .frame(height:2)
                             .background(underbarColor)
-                            .offset(x: 0, y: 15)
+                            .offset(x: 0, y: 20)
                     }
                 )
         }
