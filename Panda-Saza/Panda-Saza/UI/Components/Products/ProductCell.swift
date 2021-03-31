@@ -14,7 +14,7 @@ struct ProductCell: View {
     let cellWidth: CGFloat
     let fgColor: Color = .black
     
-    let fontName: String = "NanumGothic-Regular"
+    let fontName: String = "NanumGothic"
     
     var body: some View {
         self.content

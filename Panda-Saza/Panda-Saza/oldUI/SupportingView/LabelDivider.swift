@@ -22,12 +22,14 @@ struct LabelledDivider: View {
     var body: some View {
         HStack {
             line
-            Text(label).foregroundColor(color)
+            Text(label)
+                .font(.custom("NanumGothicBold", size: 25))
+                .foregroundColor(color)
             line
         }
     }
 
     var line: some View {
-        VStack { Divider().background(color) }.padding(horizontalPadding)
+        VStack { Divider().frame(height: 2).background(color) }.padding(horizontalPadding)
     }
 }

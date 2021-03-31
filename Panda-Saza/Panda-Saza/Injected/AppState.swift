@@ -47,7 +47,7 @@ extension AppState {
         var isActive: Bool = true
         var isLogin: Bool = false
         var isAuth: Bool = false
-        var currentFont: String = "NanumGothic-Regular"
+        var currentFont: String = "NanumGothic"
     }
 }
 

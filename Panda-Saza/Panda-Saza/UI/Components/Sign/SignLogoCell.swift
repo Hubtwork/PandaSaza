@@ -17,10 +17,10 @@ struct SignLogoCell: View {
     // Texts
     let logo: String
     
-    let fontName: String = "NanumGothic-Regular"
+    let fontName: String = "NanumGothic"
     
     init(width: CGFloat = UIScreen.screenWidth * 0.8,
-         height: CGFloat = 200,
+         height: CGFloat = 250,
          fg: Color = .gray,
          bg: Color = .white,
          logo: String
@@ -37,18 +37,18 @@ struct SignLogoCell: View {
             // Logo Frame
             VStack {
                 Text("Logo Frame")
-            }.frame(width: 100, height: 50)
+            }.frame(width: 140, height: 70)
             .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-            VStack(spacing: 0) {
+            VStack(spacing: 5) {
                 Text(logo)
-                    .font(.custom(fontName, size: 18))
+                    .font(.custom("NanumGothicBold", size: 20))
                     .foregroundColor(Color.black.opacity(0.6))
                 
                 Text("Used-Stuff Trading Partner")
                     .font(.custom(fontName, size: 15))
                     .foregroundColor(Color.black.opacity(0.6))
             }
-            VStack(spacing: 5) {
+            VStack(spacing: 10) {
                 Text("Purchase for Efficient Life")
                     .font(.custom(fontName, size: 18))
                 Text("Sell for Wealthy Life")
@@ -57,7 +57,7 @@ struct SignLogoCell: View {
         }
         .frame(width: width, height: height)
         .cornerRadius(25)
-        .background(bg.opacity(0.8))
+        .background(bg.opacity(0.9))
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

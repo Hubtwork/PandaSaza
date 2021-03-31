@@ -9,37 +9,48 @@ import SwiftUI
 
 struct RoundedButton: View {
     
-    let color: Color
+    let textColor: Color
+    let bgColor: Color
     let width: CGFloat
     let height: CGFloat
+    let strokeColor: Color
+    let strokeWidth: CGFloat
     let text: String
     
-    let fontName: String = "NanumGothic-Regular"
+    let fontName: String = "NanumGothicBold"
     
-    init(color: Color = .black,
+    init(textColor: Color = .black,
+         bgColor: Color = .white,
          width: CGFloat = UIScreen.screenWidth * 0.8,
          height: CGFloat = 50,
+         strokeColor: Color = .black,
+         strokeWidth: CGFloat = 2,
          text: String
     ) {
-        self.color = color
+        self.textColor = textColor
+        self.bgColor = bgColor
         self.width = width
         self.height = height
+        self.strokeColor = strokeColor
+        self.strokeWidth = strokeWidth
         self.text = text
     }
     
     var body: some View {
-        Text(text)
-            .font(.custom(fontName, size: 20))
-            .bold()
-            .padding()
-            .frame(minWidth: 0, maxWidth: width, minHeight: 0, maxHeight: height, alignment: .center)
-            .background(Color.white)
-            .foregroundColor(color)
-            .clipShape(RoundedRectangle(cornerRadius: 100))
-            .overlay(
-              RoundedRectangle(cornerRadius: 100)
-                .stroke(Color.black, lineWidth: 2)
-            )
+        GeometryReader { geometry in
+            Text(text)
+                .font(.custom(fontName, size: 20))
+                .bold()
+                .padding()
+                .frame(minWidth: 0, maxWidth: geometry.size.width, minHeight: 0, maxHeight: height, alignment: .center)
+                .background(bgColor)
+                .foregroundColor(textColor)
+                .clipShape(RoundedRectangle(cornerRadius: 100))
+                .overlay(
+                  RoundedRectangle(cornerRadius: 100)
+                    .stroke(strokeColor, lineWidth: strokeWidth)
+                )
+        }.frame(width: width, height: height)
     }
 }
 

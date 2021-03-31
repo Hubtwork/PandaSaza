@@ -13,7 +13,7 @@ struct ProductList: View {
     @Environment(\.locale) private var locale: Locale
     @Environment(\.injected) private var injected: DIContainer
     
-    let fontName: String = "NanumGothic-Regular"
+    let fontName: String = "NanumGothic"
     
     //  UI Values
     var cellWidth: CGFloat = UIScreen.screenWidth * 0.47

@@ -119,6 +119,9 @@
 		C6701C992612B74800B76753 /* LineSeparators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701C982612B74800B76753 /* LineSeparators.swift */; };
 		C6701CA52612B8BF00B76753 /* SignLogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701CA42612B8BF00B76753 /* SignLogoCell.swift */; };
 		C6701CAD261301C500B76753 /* BackgroundImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6701CAC261301C500B76753 /* BackgroundImageCarousel.swift */; };
+		C6701CB32614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
+		C6701CB42614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
+		C6701CB52614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
 		C6964E012603109D0090B45C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E002603109D0090B45C /* SplashView.swift */; };
 		C6964E06260310AE0090B45C /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E05260310AE0090B45C /* OnBoardingView.swift */; };
 		C6964E32260319DC0090B45C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E31260319DC0090B45C /* Store.swift */; };
@@ -302,6 +305,7 @@
 		C6701C982612B74800B76753 /* LineSeparators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSeparators.swift; sourceTree = "<group>"; };
 		C6701CA42612B8BF00B76753 /* SignLogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLogoCell.swift; sourceTree = "<group>"; };
 		C6701CAC261301C500B76753 /* BackgroundImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageCarousel.swift; sourceTree = "<group>"; };
+		C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-Bold.ttf"; sourceTree = "<group>"; };
 		C6964E002603109D0090B45C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C6964E05260310AE0090B45C /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C6964E31260319DC0090B45C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 		C60C4FEB25E35589005974B0 /* Panda-Saza */ = {
 			isa = PBXGroup;
 			children = (
+				C6701BCD2610619100B76753 /* Fonts */,
 				C636958C260CB56300CCA4FC /* Repositories */,
 				C636957B260B08E700CCA4FC /* UI */,
 				C63695632609DCA600CCA4FC /* Model */,
@@ -515,7 +520,6 @@
 				C60C514025E7690F005974B0 /* PagingImageView */,
 				C60C512525E73538005974B0 /* BottomTabBar */,
 				C60C509E25E5440F005974B0 /* Image */,
-				C60C505825E3655E005974B0 /* FloatingTextField.swift */,
 				C60C505D25E36C9F005974B0 /* LabelDivider.swift */,
 				C60C506325E36D42005974B0 /* ButtonStyle.swift */,
 				C60C50B325E54EAB005974B0 /* RoundedEdge.swift */,
@@ -634,7 +638,6 @@
 		C63695432609B2C500CCA4FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C6701BCD2610619100B76753 /* Fonts */,
 				C60C4FF025E3558C005974B0 /* Assets.xcassets */,
 				C636954E2609B2EA00CCA4FC /* Localizable.strings */,
 			);
@@ -866,6 +869,7 @@
 		C6701B912610425500B76753 /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
+				C6701CC826147EAC00B76753 /* Text */,
 				C6701C972612B73C00B76753 /* Divider */,
 				C6701C8E2612AAF500B76753 /* Button */,
 				C6701C652611F19600B76753 /* Navigation */,
@@ -896,6 +900,7 @@
 		C6701BCD2610619100B76753 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */,
 				C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */,
 			);
 			path = Fonts;
@@ -949,6 +954,14 @@
 				C6701CAC261301C500B76753 /* BackgroundImageCarousel.swift */,
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		C6701CC826147EAC00B76753 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				C60C505825E3655E005974B0 /* FloatingTextField.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 		C6D2E40925EE4AC3006182DA /* MyPage */ = {
@@ -1262,6 +1275,7 @@
 				C6FEA68925ECCF0B007E7AB5 /* user_profile1.json in Resources */,
 				C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */,
 				C636954C2609B2EA00CCA4FC /* Localizable.strings in Resources */,
+				C6701CB32614329000B76753 /* NanumGothic-Bold.ttf in Resources */,
 				C6FEA69925ECDBAF007E7AB5 /* user_profile2.json in Resources */,
 				C6FEA65A25E8DF07007E7AB5 /* product_detail1.json in Resources */,
 				C6FEA6AD25ECF2C0007E7AB5 /* itemCategory.json in Resources */,
@@ -1275,6 +1289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6701BD0261061AA00B76753 /* NanumGothic-Regular.ttf in Resources */,
+				C6701CB42614329000B76753 /* NanumGothic-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1283,6 +1298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6701BD1261061AA00B76753 /* NanumGothic-Regular.ttf in Resources */,
+				C6701CB52614329000B76753 /* NanumGothic-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

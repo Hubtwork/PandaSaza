@@ -12,7 +12,7 @@ struct SellerProfileCell: View {
     @Environment(\.locale) private var locale: Locale
     @Environment(\.injected) private var injected: DIContainer
     
-    let currentFont: String = "NanumGothic-Regular"
+    let currentFont: String = "NanumGothic"
     
     let profileImageUrlString: String
     let profileImageSize: CGFloat = 35

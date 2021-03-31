@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductContentCell: View {
     
-    let currentFont: String = "NanumGothic-Regular"
+    let currentFont: String = "NanumGothic"
     
     // UI reference
     let width: CGFloat = UIScreen.screenWidth

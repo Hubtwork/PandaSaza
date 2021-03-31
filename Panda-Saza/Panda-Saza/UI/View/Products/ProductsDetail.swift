@@ -22,7 +22,7 @@ struct ProductsDetailRoutedView: View {
     
     @State var navBarChange = false
 
-    let fontName: String = "NanumGothic-Regular"
+    let fontName: String = "NanumGothic"
     let itemId: Int
     
     init(itemId: Int, product: Loadable<ProductDetails> = .notRequested) {

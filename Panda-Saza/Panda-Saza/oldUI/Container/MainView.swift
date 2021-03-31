@@ -76,6 +76,12 @@ struct MainView: View {
             }
             BottomTabBar(selectedIndex: $selectedIdx, isLogin: $isLogin, shouldLoginModal: $shouldLoginWithModal, itemSellingModal: $sellItemModal, tabBarSystemIcons: tabBarImages, tabBarLabels: tabBarLabels, color: .black)
                 .padding(.top, 10)
+        }.onAppear() {
+          for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            // print array of names
+            print("Family: \(family) Font names: \(names)")
+          }
         }
         
         .navigationBarHidden(true)

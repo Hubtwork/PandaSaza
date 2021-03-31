@@ -8,6 +8,18 @@
 import SwiftUI
 import Combine
 
+// MARK:- Custom Font Moudlize
+
+extension Font {
+    func nanum(size: Int) -> Font {
+        return Font.custom("NanumGothic", size: CGFloat(size))
+    }
+    
+    func nunumBolud(size: Int) -> Font {
+        return Font.custom("NanumGothicBold", size: CGFloat(size))
+    }
+}
+
 extension String {
     func localized(_ locale: Locale) -> String {
         let localeId = String(locale.identifier.prefix(2))
