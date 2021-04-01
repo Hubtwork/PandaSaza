@@ -15,25 +15,16 @@ struct VisualEffectView: UIViewRepresentable {
 
 struct SignMain: View {
     
-    
     @Environment(\.injected) private var injected: DIContainer
     
     @State private var viewState = SignViewState.main
     
+    @ObservedObject private var signUpValidation: SignUpValidation = SignUpValidation()
+    @State private var signUpAgreeAll: Bool = false
+    
     @State private var signInEmail: String = ""
     @State private var signInPassword: String = ""
     
-    @State private var signUpEmail: String = ""
-    @State private var signUpName: String = ""
-    @State private var signUpPassword: String = ""
-    @State private var signUpPasswordCheck: String = ""
-    @State private var signUpPhone: String = ""
-    @State private var signUpSchool: String = "CHOOSE >"
-    
-    @State private var signUpAgreeAll: Bool = false
-    @State private var signUpAgreeUsage: Bool = false
-    @State private var signUpAgreePersonal: Bool = false
-    @State private var signUpAgreeEventNotice: Bool = false
     
     let fontName: String = "NanumGothic"
     
@@ -54,6 +45,7 @@ private extension SignMain {
 private extension SignMain {
     
     var content: some View {
+        NavigationView {
             ZStack {
                 switch self.viewState {
                 case .main:
@@ -74,9 +66,10 @@ private extension SignMain {
                         }
                     }
                 }
-                
-            }
-            .ignoresSafeArea()
+            }.ignoresSafeArea()
+            
+            .navigationBarHidden(true)
+        }
     }
 }
 
@@ -85,7 +78,7 @@ private extension SignMain {
 private extension SignMain {
     var signMainBG: some View {
         BackgroundImageCarousel(imageStrings: ["bgEx1", "bgEx2", "bgEx3", "bgEx4"])
-            .frame(width: .infinity, height: .infinity)
+            .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
     }
     
     var signInBG: some View {
@@ -186,28 +179,33 @@ private extension SignMain {
     
     var signUpScreen: some View {
         VStack(alignment: .leading, spacing: 20) {
-            FloatingTextField(title: "Email", text: $signUpEmail, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
+            FloatingTextField(title: "Email", text: $signUpValidation.signUpEmail, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
             
-            FloatingTextField(title: "Name", text: $signUpName, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
+            FloatingTextField(title: "Name", text: $signUpValidation.signUpName, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
             
-            FloatingTextField(title: "Password ( over 8 characters )", text: $signUpPassword, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
+            FloatingTextField(title: "Password ( over 8 characters )", text: $signUpValidation.signUpPassword, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18, isPassword: true)
             
-            FloatingTextField(title: "Password Check", text: $signUpPasswordCheck, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
+            FloatingTextField(title: "Password Check", text: $signUpValidation.signUpPasswordCheck, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18, isPassword: true)
             
-            FloatingTextField(title: "Phone", text: $signUpPhone, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
+            FloatingTextField(title: "Phone", text: $signUpValidation.signUpPhone, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 18)
             
             HStack {
                 Text("School")
                     .font(.custom("NanumGothicBold", size: 20))
                     .foregroundColor(.white)
                 Spacer()
-                Text(signUpSchool)
+                Text($signUpValidation.signUpSchool.wrappedValue)
                     .font(.custom("NanumGothicBold", size: 20))
                     .foregroundColor(.white)
-            }.padding(.top, 20)
+            }.padding(.vertical, 20)
+            
+            // MARK:- Policies Box Screening
             
             VStack(spacing: 10) {
                 HStack(spacing: 10) {
+                    Button (action: {
+                        signUpValidation.agreeAll()
+                    }) {
                     Image(systemName: signUpAgreeAll ? "checkmark.square": "square")
                         .resizable()
                         .frame(width: 25, height: 25)
@@ -216,7 +214,7 @@ private extension SignMain {
                     Text("Agree all")
                         .font(.custom("NanumGothicBold", size: 22))
                         .foregroundColor(.white)
-                    
+                    }
                     Spacer()
                 }.padding(.leading, 5)
                 
@@ -225,7 +223,10 @@ private extension SignMain {
                     .background(Color.white)
                 
                 HStack(spacing: 10) {
-                    Image(systemName: signUpAgreeUsage ? "checkmark.square": "square")
+                    Button(action: {
+                        
+                    }) {
+                    Image(systemName: $signUpValidation.signUpAgreeUsage.wrappedValue ? "checkmark.square": "square")
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color.white)
@@ -233,11 +234,12 @@ private extension SignMain {
                     Text("(Required) Terms Of Use")
                         .font(.custom("NanumGothicBold", size: 18))
                         .foregroundColor(.white)
+                    }
                     Spacer()
                 }.padding(.leading, 10)
                 
                 HStack(spacing: 10) {
-                    Image(systemName: signUpAgreePersonal ? "checkmark.square": "square")
+                    Image(systemName: $signUpValidation.signUpAgreePersonal.wrappedValue ? "checkmark.square": "square")
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color.white)
@@ -250,7 +252,7 @@ private extension SignMain {
                 
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(spacing: 10) {
-                        Image(systemName: signUpAgreeEventNotice ? "checkmark.square": "square")
+                        Image(systemName: $signUpValidation.signUpAgreeEventNotice.wrappedValue ? "checkmark.square": "square")
                             .resizable()
                             .frame(width: 20, height: 20)
                             .foregroundColor(Color.white)
@@ -283,17 +285,8 @@ private extension SignMain {
         }.frame(width:UIScreen.screenWidth * 0.8)
         .transition(.move(edge:.top))
         .onAppear {
-            self.signUpName = ""
-            self.signUpEmail = ""
-            self.signUpPassword = ""
-            self.signUpPasswordCheck = ""
-            self.signUpPhone = ""
-            self.signUpSchool = ""
-            
-            self.signUpAgreeAll = false
-            self.signUpAgreeUsage = false
-            self.signUpAgreePersonal = false
-            self.signUpAgreeEventNotice = false
+            signUpValidation.clearAll()
+            signUpAgreeAll = false
         }
     }
     
@@ -309,12 +302,5 @@ private extension SignMain {
             }
             Spacer()
         }
-    }
-}
-
-struct SignMain_Previews: PreviewProvider {
-    static var previews: some View {
-        SignMain().inject(AppEnvironment.bootstrap().container).previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
-            .previewDisplayName("iPhone 12 Pro Max")
     }
 }

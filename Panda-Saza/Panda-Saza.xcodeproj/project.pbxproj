@@ -122,6 +122,8 @@
 		C6701CB32614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
 		C6701CB42614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
 		C6701CB52614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
+		C680CC08261553D7007498CC /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680CC07261553D7007498CC /* SignUpValidation.swift */; };
+		C680CC18261616BC007498CC /* PolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680CC17261616BC007498CC /* PolicyView.swift */; };
 		C6964E012603109D0090B45C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E002603109D0090B45C /* SplashView.swift */; };
 		C6964E06260310AE0090B45C /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E05260310AE0090B45C /* OnBoardingView.swift */; };
 		C6964E32260319DC0090B45C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E31260319DC0090B45C /* Store.swift */; };
@@ -306,6 +308,8 @@
 		C6701CA42612B8BF00B76753 /* SignLogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLogoCell.swift; sourceTree = "<group>"; };
 		C6701CAC261301C500B76753 /* BackgroundImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageCarousel.swift; sourceTree = "<group>"; };
 		C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-Bold.ttf"; sourceTree = "<group>"; };
+		C680CC07261553D7007498CC /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
+		C680CC17261616BC007498CC /* PolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyView.swift; sourceTree = "<group>"; };
 		C6964E002603109D0090B45C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C6964E05260310AE0090B45C /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C6964E31260319DC0090B45C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -927,6 +931,8 @@
 			isa = PBXGroup;
 			children = (
 				C6701C862612AA2500B76753 /* SignMain.swift */,
+				C680CC07261553D7007498CC /* SignUpValidation.swift */,
+				C680CC17261616BC007498CC /* PolicyView.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1421,6 +1427,7 @@
 				C60C504D25E35E26005974B0 /* HostingController.swift in Sources */,
 				C63D471425F761BE001AE6E5 /* ProductItem.swift in Sources */,
 				C6D2E48B25F09D19006182DA /* ChattingListViewModel.swift in Sources */,
+				C680CC18261616BC007498CC /* PolicyView.swift in Sources */,
 				C63D471E25F9E052001AE6E5 /* ItemSaledView.swift in Sources */,
 				C63D476A25FE15AE001AE6E5 /* PushConfigurationView.swift in Sources */,
 				C6FEA6A525ECF2AD007E7AB5 /* ProductRegistView.swift in Sources */,
@@ -1442,6 +1449,7 @@
 				C6701B45260F416A00B76753 /* TabViewContainer.swift in Sources */,
 				C63D46D325F746D9001AE6E5 /* ImagePicker.swift in Sources */,
 				C6701C992612B74800B76753 /* LineSeparators.swift in Sources */,
+				C680CC08261553D7007498CC /* SignUpValidation.swift in Sources */,
 				C6701C502611E1E700B76753 /* ProductImageContainer.swift in Sources */,
 				C60C50B425E54EAB005974B0 /* RoundedEdge.swift in Sources */,
 				C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */,

@@ -18,7 +18,8 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            
+            SignMain()
+                .inject(container)
         }
     }
 }
