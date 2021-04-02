@@ -1,5 +1,5 @@
 //
-//  SignUpValidation.swift
+//  Validation.swift
 //  Panda-Saza
 //
 //  Created by Jae Heo on 2021/04/01.
@@ -13,17 +13,17 @@ class SignUpValidation: ObservableObject {
     // MARK: - Form Input
     
     // values
-    @Published var signUpEmail: String = ""
-    @Published var signUpName: String = ""
-    @Published var signUpPassword: String = ""
-    @Published var signUpPasswordCheck: String = ""
-    @Published var signUpPhone: String = ""
-    @Published var signUpSchool: String = ""
+    @Published var email: String = ""
+    @Published var name: String = ""
+    @Published var password: String = ""
+    @Published var passwordCheck: String = ""
+    @Published var phone: String = ""
+    @Published var school: String = ""
     
     // Policies
-    @Published var signUpAgreeUsage: Bool = false
-    @Published var signUpAgreePersonal: Bool = false
-    @Published var signUpAgreeEventNotice: Bool = false
+    @Published var agreeUsage: Bool = false
+    @Published var agreePersonal: Bool = false
+    @Published var agreeEventNotice: Bool = false
     
     // MARK: - Validation Output
     
@@ -41,7 +41,7 @@ class SignUpValidation: ObservableObject {
         isNameEmptyPublisher
             .receive(on: RunLoop.main)
             .map { usernameEmpty in
-                usernameEmpty ? "" : "Username must not be empty"
+                usernameEmpty ? "Username must not be empty" : ""
             }
             .assign(to: \.nameAlert, on: self)
             .store(in: cancelBag)
@@ -49,7 +49,7 @@ class SignUpValidation: ObservableObject {
         isSchoolEmptyPublisher
             .receive(on: RunLoop.main)
             .map { schoolEmpty in
-                schoolEmpty ? "" : "School must be selected"
+                schoolEmpty ? "School must be selected" : ""
             }
             .assign(to: \.schoolAlert, on: self)
             .store(in: cancelBag)
@@ -76,7 +76,7 @@ class SignUpValidation: ObservableObject {
                 default: return ""
                 }
             }
-            .assign(to: \.emailAlert, on: self)
+            .assign(to: \.passwordAlert, on: self)
             .store(in: cancelBag)
         
         isRequiredPoliciesCheckedPublisher
@@ -97,14 +97,14 @@ class SignUpValidation: ObservableObject {
     }
     
     func clearAll() {
-        signUpName = ""
-        signUpSchool = ""
-        signUpEmail = ""
-        signUpPassword = ""
-        signUpPasswordCheck = ""
-        signUpAgreeUsage = false
-        signUpAgreePersonal = false
-        signUpAgreeEventNotice = false
+        name = ""
+        school = ""
+        email = ""
+        password = ""
+        passwordCheck = ""
+        agreeUsage = false
+        agreePersonal = false
+        agreeEventNotice = false
         
         isValid = false
         nameAlert = ""
@@ -114,21 +114,22 @@ class SignUpValidation: ObservableObject {
         agreeAlert = ""
     }
     
-    func agreeAll() {
-        signUpAgreePersonal.toggle()
-        signUpAgreeUsage.toggle()
-        signUpAgreeEventNotice.toggle()
+    func agreeAll(state: Bool) {
+        agreePersonal = state
+        agreeUsage = state
+        agreeEventNotice = state
     }
+    
     // MARK:- Name and School Validation
     
-    enum UserDataCheck {
+    enum UserDataStatus {
         case valid
         case nameEmpty
         case schoolEmpty
     }
     
     private var isNameEmptyPublisher: AnyPublisher<Bool, Never> {
-        $signUpName
+        $name
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { name in
@@ -138,7 +139,7 @@ class SignUpValidation: ObservableObject {
     }
     
     private var isSchoolEmptyPublisher: AnyPublisher<Bool, Never> {
-        $signUpSchool
+        $school
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { school in
@@ -147,7 +148,7 @@ class SignUpValidation: ObservableObject {
           .eraseToAnyPublisher()
     }
     
-    private var isNameAndSchoolValidPublisher: AnyPublisher<UserDataCheck, Never> {
+    private var isNameAndSchoolValidPublisher: AnyPublisher<UserDataStatus, Never> {
         Publishers.CombineLatest(isNameEmptyPublisher, isSchoolEmptyPublisher)
             .map { nameIsEmpty, schoolIsEmpty in
                 if (nameIsEmpty) {
@@ -164,14 +165,14 @@ class SignUpValidation: ObservableObject {
     
     // MARK:- Email Validation
     
-    enum EmailCheck {
+    enum EmailStatus {
         case valid
         case empty
         case noFulfilRule
     }
     
     private var isEmailEmptyPublisher: AnyPublisher<Bool, Never> {
-        $signUpEmail
+        $email
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { email in
@@ -181,18 +182,18 @@ class SignUpValidation: ObservableObject {
     }
     
     private var isEmailFulfilRulePublisher: AnyPublisher<Bool, Never> {
-        $signUpEmail
+        $email
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { input in
-            let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$"
+            let emailRegEx = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
             let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             return emailPred.evaluate(with: input)
           }
           .eraseToAnyPublisher()
       }
     
-    private var isEmailValidPublisher: AnyPublisher<EmailCheck, Never> {
+    private var isEmailValidPublisher: AnyPublisher<EmailStatus, Never> {
         Publishers.CombineLatest(isEmailEmptyPublisher, isEmailFulfilRulePublisher)
             .map { emailIsEmpty, emailFulfilRules in
                 if (emailIsEmpty) {
@@ -214,7 +215,7 @@ class SignUpValidation: ObservableObject {
                 1. At least 8 characters
                 2. contains 1 letter, 1 number, 1 special character
      */
-    enum PasswordCheck {
+    enum PasswordStatus {
         case valid
         case empty
         case noMatch
@@ -222,7 +223,7 @@ class SignUpValidation: ObservableObject {
       }
     
     private var isPasswordFulfilRulesPublisher: AnyPublisher<Bool, Never> {
-        $signUpPassword
+        $password
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .removeDuplicates()
             .map { password in
@@ -234,7 +235,7 @@ class SignUpValidation: ObservableObject {
     }
     
     private var isPasswordEmptyPublisher: AnyPublisher<Bool, Never> {
-        $signUpPassword
+        $password
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { password in
@@ -244,7 +245,7 @@ class SignUpValidation: ObservableObject {
       }
     
     private var isPasswordCheckEmptyPublisher: AnyPublisher<Bool, Never> {
-        $signUpPasswordCheck
+        $passwordCheck
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { passwordCheck in
@@ -254,7 +255,7 @@ class SignUpValidation: ObservableObject {
       }
     
     private var arePasswordEqualPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest($signUpPassword, $signUpPasswordCheck)
+        Publishers.CombineLatest($password, $passwordCheck)
               .debounce(for: 0.2, scheduler: RunLoop.main)
               .map { password, passwordCheck in
                 return password == passwordCheck
@@ -262,7 +263,7 @@ class SignUpValidation: ObservableObject {
               .eraseToAnyPublisher()
       }
     
-    private var isPasswordValidPublisher: AnyPublisher<PasswordCheck, Never> {
+    private var isPasswordValidPublisher: AnyPublisher<PasswordStatus, Never> {
         Publishers.CombineLatest3(isPasswordEmptyPublisher, arePasswordEqualPublisher, isPasswordFulfilRulesPublisher)
             .map { passwordIsEmpty, passwordsAreEqual, passwordFulfilRules in
                 if (passwordIsEmpty) {
@@ -284,7 +285,7 @@ class SignUpValidation: ObservableObject {
     // MARK: - Policies Checker
     
     private var isRequiredPoliciesCheckedPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest($signUpAgreeUsage, $signUpAgreePersonal)
+        Publishers.CombineLatest($agreeUsage, $agreePersonal)
           .debounce(for: 0.8, scheduler: RunLoop.main)
           .map { usage, personal in
             return usage == true && personal == true

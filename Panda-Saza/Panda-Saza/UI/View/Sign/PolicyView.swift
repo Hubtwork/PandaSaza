@@ -31,15 +31,16 @@ extension PolicyView {
 
 extension PolicyView {
     var content: some View {
-        NavigationView {
             ZStack {
                 VStack{}
                     .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
                     .background(Color.white).ignoresSafeArea()
                 
-                VStack(spacing: 10) {
+                VStack(spacing: 0) {
                     self.navBar
+                        .padding(.top, 60)
                     Divider()
+                        .padding(.top, 10)
                     ScrollView {
                         if policyType == .termsOfPrivacy {
                             self.privacyPolicy
@@ -51,7 +52,8 @@ extension PolicyView {
                 }
                 .background(Color.white)
             }
-        }
+            
+            .navigationBarHidden(true)
     }
     
     var usagePolicy: some View {

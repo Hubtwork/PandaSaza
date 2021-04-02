@@ -124,6 +124,8 @@
 		C6701CB52614329000B76753 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */; };
 		C680CC08261553D7007498CC /* SignUpValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680CC07261553D7007498CC /* SignUpValidation.swift */; };
 		C680CC18261616BC007498CC /* PolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680CC17261616BC007498CC /* PolicyView.swift */; };
+		C680CC252616DB6C007498CC /* SignInValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680CC242616DB6B007498CC /* SignInValidation.swift */; };
+		C680CC2A26170424007498CC /* SignApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680CC2926170424007498CC /* SignApiRepository.swift */; };
 		C6964E012603109D0090B45C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E002603109D0090B45C /* SplashView.swift */; };
 		C6964E06260310AE0090B45C /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E05260310AE0090B45C /* OnBoardingView.swift */; };
 		C6964E32260319DC0090B45C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6964E31260319DC0090B45C /* Store.swift */; };
@@ -310,6 +312,8 @@
 		C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-Bold.ttf"; sourceTree = "<group>"; };
 		C680CC07261553D7007498CC /* SignUpValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidation.swift; sourceTree = "<group>"; };
 		C680CC17261616BC007498CC /* PolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyView.swift; sourceTree = "<group>"; };
+		C680CC242616DB6B007498CC /* SignInValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInValidation.swift; sourceTree = "<group>"; };
+		C680CC2926170424007498CC /* SignApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignApiRepository.swift; sourceTree = "<group>"; };
 		C6964E002603109D0090B45C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C6964E05260310AE0090B45C /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		C6964E31260319DC0090B45C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -699,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				C636958D260CB59800CCA4FC /* ProductsApiRepository.swift */,
+				C680CC2926170424007498CC /* SignApiRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				C6701C862612AA2500B76753 /* SignMain.swift */,
 				C680CC07261553D7007498CC /* SignUpValidation.swift */,
 				C680CC17261616BC007498CC /* PolicyView.swift */,
+				C680CC242616DB6B007498CC /* SignInValidation.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1480,6 +1486,7 @@
 				C6701CAD261301C500B76753 /* BackgroundImageCarousel.swift in Sources */,
 				C60C513425E736AF005974B0 /* BottomTabBar.swift in Sources */,
 				C66D3B8525F7220E008F06E4 /* LivePhotoView.swift in Sources */,
+				C680CC252616DB6C007498CC /* SignInValidation.swift in Sources */,
 				C6FEA6C025ECF42C007E7AB5 /* Category.swift in Sources */,
 				C6701B592610189B00B76753 /* ProductsList.swift in Sources */,
 				C6701B35260DFEF700B76753 /* DeepLinksHandler.swift in Sources */,
@@ -1521,6 +1528,7 @@
 				C6D2E40E25EE4BB2006182DA /* MyPageView.swift in Sources */,
 				C60C50DB25E60D69005974B0 /* ShoppingHomeView.swift in Sources */,
 				C6369580260B091900CCA4FC /* RootViewModifier.swift in Sources */,
+				C680CC2A26170424007498CC /* SignApiRepository.swift in Sources */,
 				C636956F2609EA9400CCA4FC /* DependencyInjector.swift in Sources */,
 				C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */,
 				C636955E2609B6C400CCA4FC /* AppState.swift in Sources */,

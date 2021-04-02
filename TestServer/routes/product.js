@@ -4,7 +4,6 @@ var productDetail = require('../data/product-detail')
 var categoryData = require('../data/category')
 var router = express.Router()
 var _ = require('lodash')
-const products = require('../data/product-list')
 
 router.get('/products', function(req, res, next) {
     // Change Category Id to Category String 
