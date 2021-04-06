@@ -122,7 +122,7 @@ private extension ProductList {
     func loadedView(_ products: [Product]) -> some View {
         NavigationView {
             VStack(spacing: 0){
-                if injected.appState[\.system].isLogin == false {
+                if injected.appState[\.system].isSigned == false {
                     self.loginNoticeView
                 } else if injected.appState[\.system].isAuth == false {
                     self.authNoticeView

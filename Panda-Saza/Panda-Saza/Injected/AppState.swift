@@ -28,6 +28,8 @@ extension AppState {
 // MARK: - User Data
 extension AppState {
     struct UserData: Equatable {
+        var userData: Loadable<UserModel> = .notRequested
+        
         
     }
 }
@@ -45,7 +47,7 @@ extension AppState {
     struct System: Equatable {
         var keyboardHeight: CGFloat = 0
         var isActive: Bool = true
-        var isLogin: Bool = false
+        var isSigned: Bool = false
         var isAuth: Bool = false
         var currentFont: String = "NanumGothic"
     }

@@ -6,18 +6,15 @@
 //
 
 import SwiftUI
-
-struct VisualEffectView: UIViewRepresentable {
-    var effect: UIVisualEffect?
-    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
-    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
-}
+import Combine
 
 struct SignMain: View {
     
     @Environment(\.injected) private var injected: DIContainer
     
-    @State private var viewState = SignViewState.main
+    @State private var signedUser: Loadable<UserModel> = .notRequested
+    
+    @State private var viewState = SignViewState.signIn
     
     @ObservedObject private var signUpValidation: SignUpValidation = SignUpValidation()
     @State private var signUpAgreeAll: Bool = false
@@ -27,12 +24,12 @@ struct SignMain: View {
     @ObservedObject private var signInValidation: SignInValidation = SignInValidation()
     @State private var showSignInAlert: Bool = false
     @State private var signInAlertMessage: String = ""
-    
+    @State private var showSignInError: Bool = false
     
     let fontName: String = "NanumGothic"
     
     var body: some View {
-        content
+        signView
     }
 }
 
@@ -47,7 +44,7 @@ private extension SignMain {
 
 private extension SignMain {
     
-    var content: some View {
+    var signView: some View {
         NavigationView {
             ZStack {
                 switch self.viewState {
@@ -63,6 +60,7 @@ private extension SignMain {
                         Spacer()
                     }
                     self.signInScreen
+                    self.signing
                 case .signUp:
                     self.signUpBG
                     VStack {
@@ -74,11 +72,14 @@ private extension SignMain {
                             self.signUpScreen
                         }
                     }
+                    self.signing
                 }
             }.ignoresSafeArea()
             
             .navigationBarHidden(true)
-        }.alert(isPresented: $showSignUpAlert, content: { self.signUpAlert })
+        }
+        .onReceive(signInUpdate) { self.signedUser = $0 }
+        .alert(isPresented: $showSignUpAlert, content: { self.signUpAlert })
         .alert(isPresented: $showSignInAlert, content: { self.signInAlert })
     }
 }
@@ -152,7 +153,7 @@ private extension SignMain {
                 FloatingTextField(title: "Password", text: $signInValidation.password, underbarColor:  Color.white, textColor: Color.white, hintColor: Color.white, fontSize: 20)
             }.frame(width: UIScreen.screenWidth * 0.8)
             Button(action: {
-                validateSignIn()
+                self.validateSignIn()
             } ) {
                 RoundedButton(textColor: Color.white, bgColor: Color.black.opacity(0.2), height: 50, strokeColor: Color.white, text: "Sign In")
             }
@@ -185,9 +186,6 @@ private extension SignMain {
             }
         }
         .transition(.move(edge:.bottom))
-        .onAppear {
-            
-        }
     }
     
     var signUpScreen: some View {
@@ -315,6 +313,15 @@ private extension SignMain {
         }
     }
     
+    private var signing: AnyView {
+        switch signedUser {
+        case .notRequested: return AnyView(VStack{Text("NotYet")})
+        case .isLoading(_, _): return AnyView(VStack{Text("Loading")})
+        case .loaded(_): return AnyView(VStack{Text("Loaded")}.onAppear{ signedSuccess() })
+        case .failed(_): return AnyView(VStack{Text("Failed")}.onAppear{ print("실패") })
+        }
+    }
+    
     var signToolBar: some View {
         HStack{
             Button(action: {
@@ -347,7 +354,7 @@ extension SignMain {
             self.showSignInAlert.toggle()
         } else {
             // SignIn Interaction
-            print("SignIn!")
+            self.signIn(id: signInValidation.email, pw: signInValidation.password)
         }
     }
     
@@ -386,4 +393,29 @@ extension SignMain {
         else if signUpValidation.agreeAlert != "" { return signUpValidation.agreeAlert }
         else { return "" }
     }
+}
+
+// MARK: - Side Effects
+
+private extension SignMain {
+    
+    func signIn(id: String, pw: String) {
+        injected.interactors.signInteractor.signIn(user: $signedUser, id: id, pw: pw)
+    }
+    
+    func signedSuccess() {
+        print("이거 넘어왓냐?")
+        injected.appState[\.system.isSigned] = true
+    }
+    
+}
+
+// MARK: - State Updates
+
+private extension SignMain {
+    
+    var signInUpdate: AnyPublisher<Loadable<UserModel>, Never> {
+        injected.appState.updates(for: \.userData.userData)
+    }
+    
 }

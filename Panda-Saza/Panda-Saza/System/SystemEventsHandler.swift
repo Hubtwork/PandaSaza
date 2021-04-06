@@ -49,6 +49,12 @@ struct PandaSazaEventsHandler: SystemEventsHandler {
     }
 }
 
+// MARK: - SignInHandler
+private extension PandaSazaEventsHandler {
+    
+}
+
+
 // MARK: - Notifications
 
 private extension NotificationCenter {

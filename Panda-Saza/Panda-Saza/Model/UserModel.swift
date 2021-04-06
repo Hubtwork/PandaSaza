@@ -24,14 +24,15 @@ import Foundation
 struct UserModel: Codable, Equatable {
     
     /// User Relevant
-    let uid: IDKey
-    let email: String
-    let password: String
-    let phone: String
+    let uId: IDKey
+    let userName: String
+    let userEmail: String
+    let userPassword: String
+    let userPhone: String
     /// Auth Relevant
-    let school: String
-    let schoolTranslations: [String: String?]
-    let authHistory: [String]
+    let userSchool: String
+    // let schoolTranslations: [String: String?]
+    // let authHistory: [String]
     
     typealias IDKey = Int
 }
@@ -58,10 +59,11 @@ extension UserModel {
 
 // MARK: - Helpers
 extension UserModel: Identifiable {
-    var id: Int { uid }
+    var id: Int { uId }
 }
 
 extension UserModel {
+    /*
     func school(locale: Locale) -> String {
         let localeId = locale.identifier
         if let trans = schoolTranslations[localeId], let translated = trans {
@@ -69,4 +71,5 @@ extension UserModel {
         }
         return school
     }
+     */
 }

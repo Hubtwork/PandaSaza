@@ -13,13 +13,17 @@ extension DIContainer {
     struct Interactors {
         
         let productsInteractor: ProductsInteractor
+        let signInteractor: SignInteractor
         
-        init(productsInteractor: ProductsInteractor) {
+        init(productsInteractor: ProductsInteractor,
+             signInteractor: SignInteractor
+        ) {
             self.productsInteractor = productsInteractor
+            self.signInteractor = signInteractor
         }
         
         static var stub: Self {
-            .init(productsInteractor: StubProductsInteractor())
+            .init(productsInteractor: StubProductsInteractor(), signInteractor: StubSignInteractor())
         }
     }
     

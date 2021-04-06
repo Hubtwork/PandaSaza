@@ -55,6 +55,10 @@ class SignInValidation: ObservableObject {
             .store(in: cancelBag)
     }
     
+    // MARK: - SignIn Request
+    
+    
+    
     func clearAll() {
         email = ""
         password = ""
@@ -75,7 +79,7 @@ class SignInValidation: ObservableObject {
     
     private var isEmailEmptyPublisher: AnyPublisher<Bool, Never> {
         $email
-          .debounce(for: 0.8, scheduler: RunLoop.main)
+          .debounce(for: 0.2, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { email in
             return email == ""
@@ -85,7 +89,7 @@ class SignInValidation: ObservableObject {
     
     private var isEmailFulfilRulePublisher: AnyPublisher<Bool, Never> {
         $email
-          .debounce(for: 0.8, scheduler: RunLoop.main)
+          .debounce(for: 0.2, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { input in
             let emailRegEx = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
@@ -114,7 +118,7 @@ class SignInValidation: ObservableObject {
     
     private var isPasswordEmptyPublisher: AnyPublisher<Bool, Never> {
         $password
-          .debounce(for: 0.8, scheduler: RunLoop.main)
+          .debounce(for: 0.2, scheduler: RunLoop.main)
           .removeDuplicates()
           .map { password in
             return password == ""

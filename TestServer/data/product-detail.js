@@ -1,5 +1,6 @@
 var productDetails = [
     {
+        // item
         "itemId": 1,
         "itemTitle": "구찌 가방",
         "itemImages": [
@@ -14,12 +15,22 @@ var productDetails = [
         "cnt_chat": 1,
         "cnt_like": 3,
         "cnt_show": 32,
+        // seller
         "sellerId": 1,
         "sellerName": "이경섭",
         "sellerProfileIcon": "https://image.news1.kr/system/photos/2019/2/11/3504326/article.jpg/dims/optimize",
         "sellerSchool": "서강대학교",
         "sellerLocale": "kr",
         "sellerRating": 3.1
+        // seller ref 
+        /*
+        "seller_ref": {
+            [
+                {"itemId", "itemTitle", "thumbnailImage", "itmePrice"},
+            ]
+        }
+        */
+        // producr ref
     },
     {
         "itemId": 2,

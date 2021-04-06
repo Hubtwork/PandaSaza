@@ -43,11 +43,8 @@ struct TabViewContainer: View {
 
 extension TabViewContainer {
     var first: some View {
-        VStack {
-            Spacer()
-            Text("첫번째 View")
-            Spacer()
-        }
+        ProductList()
+            .inject(injected)
     }
     var two: some View {
         VStack {

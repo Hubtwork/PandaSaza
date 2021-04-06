@@ -33,7 +33,7 @@ extension AppEnvironment {
         configuration.timeoutIntervalForResource = 120
         configuration.waitsForConnectivity = true
         configuration.httpMaximumConnectionsPerHost = 5
-        configuration.requestCachePolicy = .returnCacheDataElseLoad
+        //configuration.requestCachePolicy = .returnCacheDataElseLoad
         return URLSession(configuration: configuration)
     }
     
@@ -41,7 +41,10 @@ extension AppEnvironment {
         let productsApiRepository = PandasazaProductsApiRepository(
             session: session,
             baseURL: "http://localhost:3000/product")
-        return ApiRepositoriesContainer(productsApiRepository: productsApiRepository)
+        let signApiRepository = PandasazaSignApiRepository(
+            session: session,
+            baseURL: "http://localhost:3000/sign")
+        return .init(productsApiRepository: productsApiRepository, signApiRepository: signApiRepository)
     }
     
     private static func configuredInteractors(appState: Store<AppState>,
@@ -50,13 +53,17 @@ extension AppEnvironment {
         let productsInteractor = PandaSazaProductsInteractor(
             apiRepository: apiRepositories.productsApiRepository,
             appState: appState)
-        return .init(productsInteractor: productsInteractor)
+        let signInteractor = PandaSazaSignInteractor(
+            apiRepository: apiRepositories.signApiRepository,
+            appState: appState)
+        return .init(productsInteractor: productsInteractor, signInteractor: signInteractor)
     }
 }
 
 private extension AppEnvironment {
     struct ApiRepositoriesContainer {
         let productsApiRepository: ProductsApiRepository
+        let signApiRepository: SignApiRepository
     }
 }
 

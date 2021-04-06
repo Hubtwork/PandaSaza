@@ -76,7 +76,9 @@ extension PandasazaProductsApiRepository.API: ApiRequest {
     
     var method: String {
         switch self {
-        case .productList, .pagedProductList, .productFiltered, .productDetail:
+        case .productDetail:
+            return "GET"
+        case .productList, .pagedProductList, .productFiltered:
             return "GET"
         }
     }
@@ -85,7 +87,7 @@ extension PandasazaProductsApiRepository.API: ApiRequest {
         return ["Accept": "application/json"]
     }
     
-    func body() throws -> Data? {
+    func body(params: [String: Any]) throws -> Data? {
         return nil
     }
 }

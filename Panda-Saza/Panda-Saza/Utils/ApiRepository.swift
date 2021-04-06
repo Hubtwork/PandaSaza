@@ -14,16 +14,34 @@ protocol ApiRepository {
     var backgroundQueue: DispatchQueue { get }
 }
 
-// MARK: - 
+// MARK: - Http Request Implementation
 
 extension ApiRepository {
-    func request<Value>(endpoint: ApiRequest, httpStatusCodes: HttpStatusCodes = .success) -> AnyPublisher<Value, Error>
+    func request<Value>(endpoint: ApiRequest, httpStatusCodes: HttpStatusCodes = .success, params: [String: Any] = [:]) -> AnyPublisher<Value, Error>
         where Value: Decodable {
         do {
-            let request = try endpoint.urlRequest(baseURL: baseURL)
+            let request = try endpoint.urlRequest(baseURL: baseURL, params: params)
+            print("URL Request: [\(String(describing: request.httpMethod))] \(String(describing: request.url))")
+            print("Params : \(params)")
             return session
                 .dataTaskPublisher(for: request)
                 .requestJSON(httpStatusCodes: httpStatusCodes)
+                .ensureTimeSpan(0.5)
+        } catch let error {
+            return Fail<Value, Error>(error: error).eraseToAnyPublisher()
+        }
+    }
+    
+    func postRequest<Value>(endpoint: ApiRequest, params: [String: Any], httpStatusCodes: HttpStatusCodes = .success) -> AnyPublisher<Value, Error>
+        where Value: Decodable {
+        do {
+            let request = try endpoint.postRequest(baseURL: baseURL, params: params)
+            print("URL Request: [\(String(describing: request.httpMethod))] \(String(describing: request.url))")
+            print("Params : \(params)")
+            return session
+                .dataTaskPublisher(for: request)
+                .requestJSON(httpStatusCodes: httpStatusCodes)
+                .ensureTimeSpan(0.5)
         } catch let error {
             return Fail<Value, Error>(error: error).eraseToAnyPublisher()
         }

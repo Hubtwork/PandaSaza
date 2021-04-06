@@ -150,6 +150,11 @@
 		C6D2E48225F09C6F006182DA /* ChattingThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E48125F09C6F006182DA /* ChattingThumbnail.swift */; };
 		C6D2E48B25F09D19006182DA /* ChattingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E48A25F09D19006182DA /* ChattingListViewModel.swift */; };
 		C6D2E49325F0A0CA006182DA /* ChattingThumbnailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E49225F0A0CA006182DA /* ChattingThumbnailViewModel.swift */; };
+		C6EECCC626184C8C0011EFCB /* SignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCC526184C8C0011EFCB /* SignHelper.swift */; };
+		C6EECCCB261856140011EFCB /* SignInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCCA261856140011EFCB /* SignInteractor.swift */; };
+		C6EECCD0261AC7F90011EFCB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCCF261AC7F90011EFCB /* SignInView.swift */; };
+		C6EECCEE261C30470011EFCB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCED261C30470011EFCB /* SignUpView.swift */; };
+		C6EECCF3261C9B6F0011EFCB /* SignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */; };
 		C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */; };
 		C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
 		C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */; };
@@ -338,6 +343,11 @@
 		C6D2E48125F09C6F006182DA /* ChattingThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingThumbnail.swift; sourceTree = "<group>"; };
 		C6D2E48A25F09D19006182DA /* ChattingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewModel.swift; sourceTree = "<group>"; };
 		C6D2E49225F0A0CA006182DA /* ChattingThumbnailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingThumbnailViewModel.swift; sourceTree = "<group>"; };
+		C6EECCC526184C8C0011EFCB /* SignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignHelper.swift; sourceTree = "<group>"; };
+		C6EECCCA261856140011EFCB /* SignInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInteractor.swift; sourceTree = "<group>"; };
+		C6EECCCF261AC7F90011EFCB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		C6EECCED261C30470011EFCB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMainView.swift; sourceTree = "<group>"; };
 		C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -675,6 +685,7 @@
 			children = (
 				C63695692609E7A300CCA4FC /* PermissionInteractor.swift */,
 				C6701B1D260D74C800B76753 /* ProductsInteractor.swift */,
+				C6EECCCA261856140011EFCB /* SignInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -939,6 +950,10 @@
 				C680CC07261553D7007498CC /* SignUpValidation.swift */,
 				C680CC17261616BC007498CC /* PolicyView.swift */,
 				C680CC242616DB6B007498CC /* SignInValidation.swift */,
+				C6EECCC526184C8C0011EFCB /* SignHelper.swift */,
+				C6EECCCF261AC7F90011EFCB /* SignInView.swift */,
+				C6EECCED261C30470011EFCB /* SignUpView.swift */,
+				C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1448,8 +1463,10 @@
 				C6D2E47C25F09C32006182DA /* ChattingLocal.swift in Sources */,
 				C63695652609DF6100CCA4FC /* UserModel.swift in Sources */,
 				C60C50F425E62137005974B0 /* LikeView.swift in Sources */,
+				C6EECCCB261856140011EFCB /* SignInteractor.swift in Sources */,
 				C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */,
 				C6D2E46A25F08EC8006182DA /* ChattingThumbnailView.swift in Sources */,
+				C6EECCD0261AC7F90011EFCB /* SignInView.swift in Sources */,
 				C6FEA66C25EBBB74007E7AB5 /* UserProfileView.swift in Sources */,
 				C60C506425E36D42005974B0 /* ButtonStyle.swift in Sources */,
 				C6701B45260F416A00B76753 /* TabViewContainer.swift in Sources */,
@@ -1476,6 +1493,7 @@
 				C60C508F25E541C0005974B0 /* ProductThumbnail.swift in Sources */,
 				C63D474925FA0D49001AE6E5 /* ConfigurationView.swift in Sources */,
 				C6964E5F260325630090B45C /* APIRequest.swift in Sources */,
+				C6EECCF3261C9B6F0011EFCB /* SignMainView.swift in Sources */,
 				C6964E57260323BB0090B45C /* ApiRepository.swift in Sources */,
 				C6964E012603109D0090B45C /* SplashView.swift in Sources */,
 				C63D477A25FE25A1001AE6E5 /* PushSound.swift in Sources */,
@@ -1515,7 +1533,9 @@
 				C63D47B92601B53D001AE6E5 /* AppLanguage.swift in Sources */,
 				C6701B7226101AD200B76753 /* ProductCell.swift in Sources */,
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
+				C6EECCEE261C30470011EFCB /* SignUpView.swift in Sources */,
 				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
+				C6EECCC626184C8C0011EFCB /* SignHelper.swift in Sources */,
 				C6701C552611E98700B76753 /* ProductContentCell.swift in Sources */,
 				C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */,
 				C6964E74260340490090B45C /* Loadable.swift in Sources */,

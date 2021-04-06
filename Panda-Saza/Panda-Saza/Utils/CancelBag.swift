@@ -11,6 +11,7 @@ final class CancelBag {
     fileprivate(set) var subscriptions = Set<AnyCancellable>()
     
     func cancel() {
+        subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
     }
 }
