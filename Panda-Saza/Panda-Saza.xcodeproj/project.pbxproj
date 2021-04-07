@@ -150,11 +150,15 @@
 		C6D2E48225F09C6F006182DA /* ChattingThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E48125F09C6F006182DA /* ChattingThumbnail.swift */; };
 		C6D2E48B25F09D19006182DA /* ChattingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E48A25F09D19006182DA /* ChattingListViewModel.swift */; };
 		C6D2E49325F0A0CA006182DA /* ChattingThumbnailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D2E49225F0A0CA006182DA /* ChattingThumbnailViewModel.swift */; };
-		C6EECCC626184C8C0011EFCB /* SignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCC526184C8C0011EFCB /* SignHelper.swift */; };
 		C6EECCCB261856140011EFCB /* SignInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCCA261856140011EFCB /* SignInteractor.swift */; };
 		C6EECCD0261AC7F90011EFCB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCCF261AC7F90011EFCB /* SignInView.swift */; };
 		C6EECCEE261C30470011EFCB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCED261C30470011EFCB /* SignUpView.swift */; };
 		C6EECCF3261C9B6F0011EFCB /* SignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */; };
+		C6EECD05261D25110011EFCB /* SignContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD04261D25110011EFCB /* SignContainer.swift */; };
+		C6EECD0A261D51C10011EFCB /* UbuntuCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6EECD09261D51C10011EFCB /* UbuntuCondensed-Regular.ttf */; };
+		C6EECD21261D57D90011EFCB /* SocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */; };
+		C6EECD41261D7AFD0011EFCB /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */; };
+		C6EECD46261D9F950011EFCB /* SignIn_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD45261D9F950011EFCB /* SignIn_Email.swift */; };
 		C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */; };
 		C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
 		C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */; };
@@ -343,11 +347,15 @@
 		C6D2E48125F09C6F006182DA /* ChattingThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingThumbnail.swift; sourceTree = "<group>"; };
 		C6D2E48A25F09D19006182DA /* ChattingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListViewModel.swift; sourceTree = "<group>"; };
 		C6D2E49225F0A0CA006182DA /* ChattingThumbnailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingThumbnailViewModel.swift; sourceTree = "<group>"; };
-		C6EECCC526184C8C0011EFCB /* SignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignHelper.swift; sourceTree = "<group>"; };
 		C6EECCCA261856140011EFCB /* SignInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInteractor.swift; sourceTree = "<group>"; };
 		C6EECCCF261AC7F90011EFCB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C6EECCED261C30470011EFCB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMainView.swift; sourceTree = "<group>"; };
+		C6EECD04261D25110011EFCB /* SignContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignContainer.swift; sourceTree = "<group>"; };
+		C6EECD09261D51C10011EFCB /* UbuntuCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButton.swift; sourceTree = "<group>"; };
+		C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractor.swift; sourceTree = "<group>"; };
+		C6EECD45261D9F950011EFCB /* SignIn_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_Email.swift; sourceTree = "<group>"; };
 		C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -686,6 +694,7 @@
 				C63695692609E7A300CCA4FC /* PermissionInteractor.swift */,
 				C6701B1D260D74C800B76753 /* ProductsInteractor.swift */,
 				C6EECCCA261856140011EFCB /* SignInteractor.swift */,
+				C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -920,6 +929,7 @@
 		C6701BCD2610619100B76753 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C6EECD09261D51C10011EFCB /* UbuntuCondensed-Regular.ttf */,
 				C6701CB22614329000B76753 /* NanumGothic-Bold.ttf */,
 				C6701BCE261061AA00B76753 /* NanumGothic-Regular.ttf */,
 			);
@@ -946,14 +956,10 @@
 		C6701C852612AA1300B76753 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
-				C6701C862612AA2500B76753 /* SignMain.swift */,
-				C680CC07261553D7007498CC /* SignUpValidation.swift */,
+				C6EECD03261D249D0011EFCB /* First-Design */,
 				C680CC17261616BC007498CC /* PolicyView.swift */,
-				C680CC242616DB6B007498CC /* SignInValidation.swift */,
-				C6EECCC526184C8C0011EFCB /* SignHelper.swift */,
-				C6EECCCF261AC7F90011EFCB /* SignInView.swift */,
-				C6EECCED261C30470011EFCB /* SignUpView.swift */,
-				C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */,
+				C6EECD04261D25110011EFCB /* SignContainer.swift */,
+				C6EECD45261D9F950011EFCB /* SignIn_Email.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -962,6 +968,7 @@
 			isa = PBXGroup;
 			children = (
 				C6701C8F2612AB0100B76753 /* RoundedButton.swift */,
+				C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -977,8 +984,7 @@
 		C6701CA32612B8AA00B76753 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
-				C6701CA42612B8BF00B76753 /* SignLogoCell.swift */,
-				C6701CAC261301C500B76753 /* BackgroundImageCarousel.swift */,
+				C6EECCFF261D248E0011EFCB /* First-Design */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1051,6 +1057,28 @@
 				C6D2E48125F09C6F006182DA /* ChattingThumbnail.swift */,
 			);
 			path = Chatting;
+			sourceTree = "<group>";
+		};
+		C6EECCFF261D248E0011EFCB /* First-Design */ = {
+			isa = PBXGroup;
+			children = (
+				C6701CA42612B8BF00B76753 /* SignLogoCell.swift */,
+				C6701CAC261301C500B76753 /* BackgroundImageCarousel.swift */,
+			);
+			path = "First-Design";
+			sourceTree = "<group>";
+		};
+		C6EECD03261D249D0011EFCB /* First-Design */ = {
+			isa = PBXGroup;
+			children = (
+				C6701C862612AA2500B76753 /* SignMain.swift */,
+				C680CC07261553D7007498CC /* SignUpValidation.swift */,
+				C680CC242616DB6B007498CC /* SignInValidation.swift */,
+				C6EECCCF261AC7F90011EFCB /* SignInView.swift */,
+				C6EECCED261C30470011EFCB /* SignUpView.swift */,
+				C6EECCF2261C9B6F0011EFCB /* SignMainView.swift */,
+			);
+			path = "First-Design";
 			sourceTree = "<group>";
 		};
 		C6FEA5AF25E77E2F007E7AB5 /* PofileComponent */ = {
@@ -1299,6 +1327,7 @@
 				C63D47B42601B508001AE6E5 /* language.json in Resources */,
 				C6FEA63C25E8D7E1007E7AB5 /* products.json in Resources */,
 				C66D3B4C25F5C634008F06E4 /* GoogleService-Info.plist in Resources */,
+				C6EECD0A261D51C10011EFCB /* UbuntuCondensed-Regular.ttf in Resources */,
 				C6FEA68925ECCF0B007E7AB5 /* user_profile1.json in Resources */,
 				C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */,
 				C636954C2609B2EA00CCA4FC /* Localizable.strings in Resources */,
@@ -1447,6 +1476,7 @@
 				C6964E3826031C450090B45C /* CancelBag.swift in Sources */,
 				C60C504D25E35E26005974B0 /* HostingController.swift in Sources */,
 				C63D471425F761BE001AE6E5 /* ProductItem.swift in Sources */,
+				C6EECD21261D57D90011EFCB /* SocialLoginButton.swift in Sources */,
 				C6D2E48B25F09D19006182DA /* ChattingListViewModel.swift in Sources */,
 				C680CC18261616BC007498CC /* PolicyView.swift in Sources */,
 				C63D471E25F9E052001AE6E5 /* ItemSaledView.swift in Sources */,
@@ -1493,6 +1523,7 @@
 				C60C508F25E541C0005974B0 /* ProductThumbnail.swift in Sources */,
 				C63D474925FA0D49001AE6E5 /* ConfigurationView.swift in Sources */,
 				C6964E5F260325630090B45C /* APIRequest.swift in Sources */,
+				C6EECD05261D25110011EFCB /* SignContainer.swift in Sources */,
 				C6EECCF3261C9B6F0011EFCB /* SignMainView.swift in Sources */,
 				C6964E57260323BB0090B45C /* ApiRepository.swift in Sources */,
 				C6964E012603109D0090B45C /* SplashView.swift in Sources */,
@@ -1508,6 +1539,7 @@
 				C6FEA6C025ECF42C007E7AB5 /* Category.swift in Sources */,
 				C6701B592610189B00B76753 /* ProductsList.swift in Sources */,
 				C6701B35260DFEF700B76753 /* DeepLinksHandler.swift in Sources */,
+				C6EECD46261D9F950011EFCB /* SignIn_Email.swift in Sources */,
 				C6D2E43525EF1378006182DA /* UserData.swift in Sources */,
 				C6701B6D261019D000B76753 /* ActivityIndicatorView.swift in Sources */,
 				C60C50AF25E54534005974B0 /* ImageView.swift in Sources */,
@@ -1518,6 +1550,7 @@
 				C60C502825E3595A005974B0 /* AuthMainView.swift in Sources */,
 				C60C50CC25E5F257005974B0 /* ScaledFont.swift in Sources */,
 				C6701C872612AA2500B76753 /* SignMain.swift in Sources */,
+				C6EECD41261D7AFD0011EFCB /* UserDefaultsInteractor.swift in Sources */,
 				C6701C0326116CD700B76753 /* URLImageView.swift in Sources */,
 				C6701CA52612B8BF00B76753 /* SignLogoCell.swift in Sources */,
 				C63695772609EBF500CCA4FC /* InteractorContainer.swift in Sources */,
@@ -1535,7 +1568,6 @@
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
 				C6EECCEE261C30470011EFCB /* SignUpView.swift in Sources */,
 				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
-				C6EECCC626184C8C0011EFCB /* SignHelper.swift in Sources */,
 				C6701C552611E98700B76753 /* ProductContentCell.swift in Sources */,
 				C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */,
 				C6964E74260340490090B45C /* Loadable.swift in Sources */,

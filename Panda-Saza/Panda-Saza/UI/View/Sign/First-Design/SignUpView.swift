@@ -39,6 +39,7 @@ extension SignUp {
             .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
             .clipped()
             .blur(radius: 10)
+            .opacity(0.5)
     }
     
     var signToolBar: some View {
@@ -52,7 +53,7 @@ extension SignUp {
                     Image(systemName: "multiply")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                 }
                 Spacer()
             }

@@ -34,21 +34,21 @@ struct FloatingTextField: View {
             Text(title)
                 .font(.custom("NunumGothicBold", size: fontSize))
                 .foregroundColor(text.wrappedValue.isEmpty ? textColor : hintTextColor)
-                .offset(y: text.wrappedValue.isEmpty ? 0 : -(fontSize+5))
-                .scaleEffect(text.wrappedValue.isEmpty ? 1 : 0.8, anchor: .leading)
+                .offset(y: text.wrappedValue.isEmpty ? 0 : -(fontSize+7))
+                .scaleEffect(text.wrappedValue.isEmpty ? 1 : 0.9, anchor: .leading)
             
             if !isPassword {
                 // Input Area
                 TextField("", text: text) // give TextField an empty placeholder
                     .font(.custom("NunumGothicBold", size: fontSize))
                     .foregroundColor(textColor)
-                    .background(Color.black.opacity(0.1))
+                    .background(Color.white.opacity(0.1))
                     .overlay(
                         VStack{
                             Divider()
                                 .frame(height:2)
                                 .background(underbarColor)
-                                .offset(x: 0, y: 20)
+                                .offset(x: 0, y: 15)
                         }
                     )
             }
@@ -58,13 +58,13 @@ struct FloatingTextField: View {
                 SecureField("", text: text) // give TextField an empty placeholder
                     .font(.custom("NunumGothicBold", size: fontSize))
                     .foregroundColor(textColor)
-                    .background(Color.black.opacity(0.1))
+                    .background(Color.white.opacity(0.1))
                     .overlay(
                         VStack{
                             Divider()
                                 .frame(height:2)
                                 .background(underbarColor)
-                                .offset(x: 0, y: 20)
+                                .offset(x: 0, y: 15)
                         }
                     )
             }

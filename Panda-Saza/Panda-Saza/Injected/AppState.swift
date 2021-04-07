@@ -16,6 +16,7 @@ struct AppState: Equatable {
     var loadedData = LoadedData()
 }
 
+
 // MARK: - Loaded Data
 extension AppState {
     struct LoadedData: Equatable {
@@ -47,9 +48,17 @@ extension AppState {
     struct System: Equatable {
         var keyboardHeight: CGFloat = 0
         var isActive: Bool = true
-        var isSigned: Bool = false
-        var isAuth: Bool = false
         var currentFont: String = "NanumGothic"
+        
+        /*
+         System Setting Flow
+         
+         - !isSigned & !activateContent : Base Mode. Just Sign-Main View will be displayed for App
+         - !isSigned && activateContent : Look around without SignIn. The mode can display just thumbnail of items
+         - isSigned && activateContent : Signed Mode. All tabs can be reached.
+         */
+        var isSigned: Bool = false
+        var activateContent: Bool = false
     }
 }
 

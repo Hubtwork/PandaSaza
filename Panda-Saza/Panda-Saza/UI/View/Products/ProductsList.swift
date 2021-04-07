@@ -124,9 +124,13 @@ private extension ProductList {
             VStack(spacing: 0){
                 if injected.appState[\.system].isSigned == false {
                     self.loginNoticeView
-                } else if injected.appState[\.system].isAuth == false {
+                }
+                // MARK:- TODO : AuthNoti
+                /*
+                else if injected.appState[\.system].isAuth == false {
                     self.authNoticeView
                 }
+ */
                 ScrollView {
                 LazyVGrid(columns: [
                     GridItem(.fixed(cellWidth), spacing: cellSpace),

@@ -19,3 +19,10 @@
 "Sale" = "Sale";
 "Chat" = "Chat";
 "Profile" = "Profile";
+
+
+// MARK: - Social Login Buttons
+"Start with KakaoTalk" = "Start with KakaoTalk";
+"Start with Facebook" = "Start with Facebook";
+"Start with Google+" = "Start with Google+";
+"Start with Email" = "Start with Email";

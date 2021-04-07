@@ -22,7 +22,7 @@ struct SignLogoCell: View {
     init(width: CGFloat = UIScreen.screenWidth * 0.8,
          height: CGFloat = 250,
          fg: Color = .gray,
-         bg: Color = .white,
+         bg: Color = Color.white,
          logo: String
     ) {
         self.fg = fg
@@ -58,7 +58,11 @@ struct SignLogoCell: View {
         .frame(width: width, height: height)
         .cornerRadius(25)
         .background(bg.opacity(0.9))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .overlay(
+          RoundedRectangle(cornerRadius: 20)
+            .stroke(Color.white, lineWidth: 1)
+        )
     }
 }
 
