@@ -161,6 +161,7 @@
 		C6EECD46261D9F950011EFCB /* SignIn_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD45261D9F950011EFCB /* SignIn_Email.swift */; };
 		C6EECD51261F190F0011EFCB /* SignUp_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD50261F190F0011EFCB /* SignUp_Email.swift */; };
 		C6EECD56261FCD890011EFCB /* HintTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD55261FCD890011EFCB /* HintTextField.swift */; };
+		C6EECD5B261FE8CD0011EFCB /* SIgnUpValidationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */; };
 		C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */; };
 		C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
 		C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */; };
@@ -360,6 +361,7 @@
 		C6EECD45261D9F950011EFCB /* SignIn_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_Email.swift; sourceTree = "<group>"; };
 		C6EECD50261F190F0011EFCB /* SignUp_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_Email.swift; sourceTree = "<group>"; };
 		C6EECD55261FCD890011EFCB /* HintTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTextField.swift; sourceTree = "<group>"; };
+		C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIgnUpValidationModel.swift; sourceTree = "<group>"; };
 		C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -965,6 +967,7 @@
 				C6EECD04261D25110011EFCB /* SignContainer.swift */,
 				C6EECD45261D9F950011EFCB /* SignIn_Email.swift */,
 				C6EECD50261F190F0011EFCB /* SignUp_Email.swift */,
+				C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1524,6 +1527,7 @@
 				C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */,
 				C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */,
 				C63D47AF2601B144001AE6E5 /* AppLocaleConfigurationView.swift in Sources */,
+				C6EECD5B261FE8CD0011EFCB /* SIgnUpValidationModel.swift in Sources */,
 				C6D2E43E25F05064006182DA /* ProfileChangeView.swift in Sources */,
 				C60C505E25E36C9F005974B0 /* LabelDivider.swift in Sources */,
 				C6D2E41E25EE8E51006182DA /* MyPageViewModel.swift in Sources */,

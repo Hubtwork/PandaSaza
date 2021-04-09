@@ -12,8 +12,13 @@ struct SignUp_Email: View {
     @Environment(\.injected) private var injected: DIContainer
     @Environment(\.presentationMode) private var presentation
     
+    
+    @ObservedObject private var validation: SignUpValidationModel = SignUpValidationModel()
+    
+    @State private var authCodeSent: Bool = false
+    
     @State private var signPhase: Int = 0
-    private var signTitle: [String] = ["School Validation", "Locale Validation", "Language Validation"]
+    private var signTitle: [String] = ["Phone Validation", "School Validation", "Locale Validation", "Language Validation"]
     
     var body: some View {
         content
@@ -27,11 +32,53 @@ private extension SignUp_Email {
     var content: some View {
         ZStack {
             
+            ScrollView {
+                VStack {
+                    self.phoneValidation
+                    Spacer()
+                }
+            }
+            .padding(.top, 60)  // consier toolbar height
+            .frame(height: .infinity)
             
             self.signToolBar
             
             .navigationBarHidden(true)
         }
+    }
+    
+    var phoneValidation: some View {
+        VStack(spacing: 20) {
+            HintTextField(text: $validation.phone, hint: "Phone Number ( Numbers Only )", isNumber: true)
+                .padding(.horizontal, 20)
+            
+            Button(action: {
+                self.authSMS_sent()
+            }) {
+                RoundedButton(textColor: .white,
+                              bgColor: !$validation.validPhone.wrappedValue ? Color.black.opacity(0.2) : Color.black.opacity(0.6),
+                              width: .infinity, height: 60, strokeColor: .black, strokeWidth: 0, radius: 5, text: "Send Auth SMS", textSize: 22)
+                    .padding(.horizontal, 20)
+            }.disabled(!$validation.validPhone.wrappedValue)
+            
+            if authCodeSent {
+                VStack(alignment: .leading, spacing: 5) {
+                    HintTextField(text: $validation.phoneAuthCode, hint: "Auth Code ( Numbers Only )", isNumber: true)
+                    Text("Please don't share it with others")
+                        .font(.custom("NanumGothic", size: 18))
+                    
+                    RoundedButton(textColor: .white,
+                                  bgColor: $validation.phoneAuthCode.wrappedValue.isEmpty ? Color.black.opacity(0.2) : Color.black.opacity(0.6),
+                                  width: .infinity, height: 60,
+                                  strokeColor: .black, strokeWidth: 0, radius: 5, text: "Check Auth SMS", textSize: 22)
+                        .disabled($validation.phoneAuthCode.wrappedValue.isEmpty)
+                        .padding(.top, 20)
+                }.padding(.top, 20)
+                .padding(.horizontal, 20)
+            }
+        }
+        .padding(.top, 30)
+        .animation(.spring())
     }
     
     
@@ -42,7 +89,7 @@ private extension SignUp_Email {
                 
                 self.toolBarButton
             }
-            .padding(.vertical, 10)
+            .padding(.vertical, 15)
             Spacer()
         }
     }
@@ -78,6 +125,10 @@ private extension SignUp_Email {
 
 // MARK:- Actions
 private extension SignUp_Email {
+    
+    func authSMS_sent() {
+        authCodeSent = true
+    }
     
     func phase_back() {
         if self.signPhase == 0 { presentation.wrappedValue.dismiss() }

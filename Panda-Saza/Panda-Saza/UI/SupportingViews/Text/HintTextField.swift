@@ -14,34 +14,43 @@ struct HintTextField: View {
     let hint: String
     let infoNeeded: Binding<Bool>
     let info: Binding<String>
+    let isNumber: Bool
     
     // UI Reference
     let textFieldHeight: CGFloat
     let width: CGFloat = 500
+    @State private var isEditing: Bool = false
     
     init(text: Binding<String>,
          hint: String,
          infoNeeded: Binding<Bool> = .constant(false),
-         info: Binding<String> = .constant("check the email"),
-         textFieldHeight: CGFloat = 60
+         info: Binding<String> = .constant(""),
+         textFieldHeight: CGFloat = 55,
+         isNumber: Bool = false
     ) {
         self.text = text
         self.hint = hint
         self.infoNeeded = infoNeeded
         self.info = info
         self.textFieldHeight = textFieldHeight
+        self.isNumber = isNumber
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            TextField(hint, text: text)
-                .font(.custom("NanumGothic", size: 25))
-                .padding(.horizontal, 15)
+            TextField(hint,
+                      text: text,
+                      onEditingChanged: { _ in isEditing.toggle() },
+                      onCommit: { isEditing.toggle() }
+                      )
+                .keyboardType(isNumber ? .numberPad : .default)
+                .font(.custom("NanumGothic", size: 22))
+                .padding(.horizontal, 18)
                 .frame(height: textFieldHeight)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .overlay(
                   RoundedRectangle(cornerRadius: 5)
-                    .stroke(infoNeeded.wrappedValue ? Color.red : Color.black,
+                    .stroke(infoNeeded.wrappedValue ? Color.red : (isEditing ? Color.black : Color.gray),
                             lineWidth: infoNeeded.wrappedValue ? 2 : 1)
                 )
             
@@ -62,7 +71,7 @@ struct HintTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             Text("hi")
-            HintTextField(text: .constant(""), hint: "write your email", infoNeeded: .constant(true))
+            HintTextField(text: .constant(""), hint: "write your email", infoNeeded: .constant(false))
                 .frame(width: UIScreen.screenWidth*0.8)
             Text("end")
         }
