@@ -159,6 +159,8 @@
 		C6EECD21261D57D90011EFCB /* SocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */; };
 		C6EECD41261D7AFD0011EFCB /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */; };
 		C6EECD46261D9F950011EFCB /* SignIn_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD45261D9F950011EFCB /* SignIn_Email.swift */; };
+		C6EECD51261F190F0011EFCB /* SignUp_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD50261F190F0011EFCB /* SignUp_Email.swift */; };
+		C6EECD56261FCD890011EFCB /* HintTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD55261FCD890011EFCB /* HintTextField.swift */; };
 		C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */; };
 		C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
 		C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */; };
@@ -356,6 +358,8 @@
 		C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButton.swift; sourceTree = "<group>"; };
 		C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractor.swift; sourceTree = "<group>"; };
 		C6EECD45261D9F950011EFCB /* SignIn_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_Email.swift; sourceTree = "<group>"; };
+		C6EECD50261F190F0011EFCB /* SignUp_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_Email.swift; sourceTree = "<group>"; };
+		C6EECD55261FCD890011EFCB /* HintTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTextField.swift; sourceTree = "<group>"; };
 		C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -960,6 +964,7 @@
 				C680CC17261616BC007498CC /* PolicyView.swift */,
 				C6EECD04261D25110011EFCB /* SignContainer.swift */,
 				C6EECD45261D9F950011EFCB /* SignIn_Email.swift */,
+				C6EECD50261F190F0011EFCB /* SignUp_Email.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -993,6 +998,7 @@
 			isa = PBXGroup;
 			children = (
 				C60C505825E3655E005974B0 /* FloatingTextField.swift */,
+				C6EECD55261FCD890011EFCB /* HintTextField.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -1490,6 +1496,7 @@
 				C60C50D325E6072F005974B0 /* MainView.swift in Sources */,
 				C6FEA5F325E8BAAD007E7AB5 /* APIClient.swift in Sources */,
 				C63D477F25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift in Sources */,
+				C6EECD56261FCD890011EFCB /* HintTextField.swift in Sources */,
 				C6D2E47C25F09C32006182DA /* ChattingLocal.swift in Sources */,
 				C63695652609DF6100CCA4FC /* UserModel.swift in Sources */,
 				C60C50F425E62137005974B0 /* LikeView.swift in Sources */,
@@ -1510,6 +1517,7 @@
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
 				C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */,
+				C6EECD51261F190F0011EFCB /* SignUp_Email.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
 				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
 				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
