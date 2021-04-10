@@ -16,7 +16,7 @@ struct HintTextField: View {
     let info: Binding<String>
     let isNumber: Bool
     
-    // UI Reference
+    // UI References
     let textFieldHeight: CGFloat
     let width: CGFloat = 500
     @State private var isEditing: Bool = false

@@ -17,7 +17,7 @@ struct SignUp_Email: View {
     
     @State private var authCodeSent: Bool = false
     
-    @State private var signPhase: Int = 0
+    @State private var signPhase: Int = 1
     private var signTitle: [String] = ["Phone Validation", "School Validation", "Locale Validation", "Language Validation"]
     
     var body: some View {
@@ -34,11 +34,15 @@ private extension SignUp_Email {
             
             ScrollView {
                 VStack {
-                    self.phoneValidation
+                    switch self.signPhase {
+                    case 0: self.phoneValidation
+                    case 1: self.schoolValidation
+                    default: self.phoneValidation
+                    }
                     Spacer()
                 }
             }
-            .padding(.top, 60)  // consier toolbar height
+            .padding(.top, 60)  // consider toolbar height
             .frame(height: .infinity)
             
             self.signToolBar
@@ -81,6 +85,11 @@ private extension SignUp_Email {
         .animation(.spring())
     }
     
+    var schoolValidation: some View {
+        VStack(spacing: 20) {
+            
+        }
+    }
     
     var signToolBar: some View {
         VStack(spacing: 0) {
@@ -127,7 +136,17 @@ private extension SignUp_Email {
 private extension SignUp_Email {
     
     func authSMS_sent() {
+        // api call
+        
+        // if vaild
         authCodeSent = true
+    }
+    
+    func authSMS_check() {
+        // api call
+        
+        // if valid
+        self.signPhase += 1
     }
     
     func phase_back() {
