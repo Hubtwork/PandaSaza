@@ -10,7 +10,7 @@ import Foundation
 
 protocol StaticApiRepository: ApiRepository {
     
-    func getSchools() -> AnyPublisher<[Schools], Error>
+    func getSchools() -> AnyPublisher<[School], Error>
     
 }
 
@@ -25,8 +25,7 @@ struct PandasazaStaticApiRepository: StaticApiRepository {
         self.baseURL = baseURL
     }
     
-    
-    func getSchools() -> AnyPublisher<[Schools], Error> {
+    func getSchools() -> AnyPublisher<[School], Error> {
         return request(endpoint: API.schools)
     }
     

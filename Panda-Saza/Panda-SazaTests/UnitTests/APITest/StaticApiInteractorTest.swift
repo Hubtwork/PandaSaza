@@ -25,7 +25,6 @@ class StaticApiInteractorTest: XCTestCase {
         configuration.timeoutIntervalForResource = 120
         configuration.waitsForConnectivity = true
         configuration.httpMaximumConnectionsPerHost = 5
-        configuration.requestCachePolicy = .returnCacheDataElseLoad
         let session = URLSession(configuration: configuration)
         
         appState.value = AppState()
@@ -39,10 +38,40 @@ class StaticApiInteractorTest: XCTestCase {
     func test_connectionTest() throws {
         let exp = XCTestExpectation(description: "Completion")
         apiRepository.getSchools()
-            .sinkToResult {
-                print($0)
+            .sinkToResult { result in
+                print(result)
                 exp.fulfill()
-            }.store(in: cancelBag)
+            }
+            .store(in: cancelBag)
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func test_getSchools_and_mappingSuccessfulResult() throws {
+        
+        var schools: [School] = []
+        let exp = XCTestExpectation(description: "Completion")
+        apiRepository.getSchools()
+            .sinkToResult { result in
+                if result.isSuccess {
+                    try? schools = result.get()
+                    print(schools)
+                    exp.fulfill()
+                }
+            }
+            .store(in: cancelBag)
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func test_getSchools_toLoadable() throws {
+        var schools: Loadable<[School]> = .notRequested
+        let exp = XCTestExpectation(description: "Completion")
+        apiRepository.getSchools()
+            .sinkToLoadable {
+                schools = $0
+                print(schools)
+                exp.fulfill()
+            }
+            .store(in: cancelBag)
         wait(for: [exp], timeout: 2)
     }
 

@@ -9,13 +9,6 @@ import Foundation
 
 // MARK:- Models
 
-struct Schools: Hashable, Codable, Equatable {
-    
-    let area: String
-    let schools: [School]
-    
-}
-
 struct School: Hashable, Codable, Equatable {
     
     let sId: ID

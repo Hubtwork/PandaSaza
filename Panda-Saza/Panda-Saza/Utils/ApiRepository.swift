@@ -22,7 +22,7 @@ extension ApiRepository {
         do {
             let request = try endpoint.urlRequest(baseURL: baseURL, params: params)
             print("URL Request: [\(String(describing: request.httpMethod))] \(String(describing: request.url))")
-            print("Params : \(params)")
+            if !params.isEmpty { print("Params: \(params)")}
             return session
                 .dataTaskPublisher(for: request)
                 .requestJSON(httpStatusCodes: httpStatusCodes)

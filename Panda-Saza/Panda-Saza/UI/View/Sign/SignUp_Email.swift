@@ -15,7 +15,7 @@ struct SignUp_Email: View {
     
     @ObservedObject private var validation: SignUpValidationModel = SignUpValidationModel()
     
-    
+    @State private var schoolSearch: SchoolSearch = SchoolSearch()
     
     @State private var authCodeSent: Bool = false
     
@@ -24,6 +24,9 @@ struct SignUp_Email: View {
     
     var body: some View {
         content
+            .onAppear {
+                self.loadSchools()
+            }
     }
 }
 
@@ -45,7 +48,6 @@ private extension SignUp_Email {
                 }
             }
             .padding(.top, 60)  // consider toolbar height
-            .frame(height: .infinity)
             
             self.signToolBar
             
@@ -56,7 +58,6 @@ private extension SignUp_Email {
     var phoneValidation: some View {
         VStack(spacing: 20) {
             HintTextField(text: $validation.phone, hint: "Phone Number ( Numbers Only )", isNumber: true)
-                .padding(.horizontal, 20)
             
             Button(action: {
                 self.authSMS_sent()
@@ -80,17 +81,33 @@ private extension SignUp_Email {
                         .disabled($validation.phoneAuthCode.wrappedValue.isEmpty)
                         .padding(.top, 20)
                 }.padding(.top, 20)
-                .padding(.horizontal, 20)
             }
         }
         .padding(.top, 30)
+        .padding(.horizontal, 20)
         .animation(.spring())
     }
     
     var schoolValidation: some View {
         VStack(spacing: 20) {
+            SearchBar(searchText: $schoolSearch.searchText,
+                      hintText: "Search your school")
+                .padding(.bottom, 20)
             
+            Button(action: { loadSchools() }) {
+                Text("버튼")
+            }
+            
+            switch schoolSearch.filtered {
+            case .notRequested: Text("로딩안됨")
+            case .isLoading(_, _): Text("로딩중")
+            case .loaded(_): Text("로딩됨")
+            default: Text("오미")
+            }
+                
         }
+        .padding(.top, 30)
+        .padding(.horizontal, 20)
     }
     
     var signToolBar: some View {
@@ -156,10 +173,15 @@ private extension SignUp_Email {
         else { self.signPhase -= 1 }
     }
     
+    func loadSchools() {
+        injected.interactors.staticInteractor.getSchools(schools: $schoolSearch.allSchools)
+    }
+    
 }
 
 struct SignUp_Email_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp_Email().inject(AppEnvironment.bootstrap().container)
+        SignUp_Email()
+            .inject(AppEnvironment.bootstrap().container)
     }
 }

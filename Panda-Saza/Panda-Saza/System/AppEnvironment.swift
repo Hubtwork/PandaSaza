@@ -44,7 +44,12 @@ extension AppEnvironment {
         let signApiRepository = PandasazaSignApiRepository(
             session: session,
             baseURL: "http://localhost:3000/sign")
-        return .init(productsApiRepository: productsApiRepository, signApiRepository: signApiRepository)
+        let staticApiRepository = PandasazaStaticApiRepository(
+            session: session,
+            baseURL: "http://localhost:3000/static")
+        return .init(productsApiRepository: productsApiRepository,
+                     signApiRepository: signApiRepository,
+                     staticApiRepository: staticApiRepository)
     }
     
     private static func configuredInteractors(appState: Store<AppState>,
@@ -56,7 +61,12 @@ extension AppEnvironment {
         let signInteractor = PandaSazaSignInteractor(
             apiRepository: apiRepositories.signApiRepository,
             appState: appState)
-        return .init(productsInteractor: productsInteractor, signInteractor: signInteractor)
+        let staticInteractor = PandaSazaStaticApiInteractor(
+            apiRepository: apiRepositories.staticApiRepository,
+            appState: appState)
+        return .init(productsInteractor: productsInteractor,
+                     signInteractor: signInteractor,
+                     staticInteractor: staticInteractor)
     }
 }
 
@@ -64,6 +74,7 @@ private extension AppEnvironment {
     struct ApiRepositoriesContainer {
         let productsApiRepository: ProductsApiRepository
         let signApiRepository: SignApiRepository
+        let staticApiRepository: StaticApiRepository
     }
 }
 

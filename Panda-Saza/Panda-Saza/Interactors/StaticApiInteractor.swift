@@ -11,7 +11,7 @@ import SwiftUI
 
 protocol StaticApiInteractor {
     
-    func getSchools()
+    func getSchools(schools: LoadableSubject<[School]>)
     
 }
 
@@ -29,18 +29,21 @@ struct PandaSazaStaticApiInteractor: StaticApiInteractor {
         self.appState = appState
     }
     
-    func getSchools() {
+    func getSchools(schools: LoadableSubject<[School]>) {
         let cancelBag = CancelBag()
+        schools.wrappedValue.setIsLoading(cancelBag: cancelBag)
         apiRepository.getSchools()
-            .sinkToResult { print($0) }
+            .sinkToLoadable {
+                schools.wrappedValue = $0
+            }
             .store(in: cancelBag)
     }
     
 }
 
-struct StubPandaSazaStaticApiInteractor: StaticApiInteractor {
+struct StubStaticApiInteractor: StaticApiInteractor {
     
-    func getSchools() {
+    func getSchools(schools: LoadableSubject<[School]>) {
         
     }
     
