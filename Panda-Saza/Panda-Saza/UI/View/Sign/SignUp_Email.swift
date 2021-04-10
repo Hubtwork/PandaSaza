@@ -15,6 +15,8 @@ struct SignUp_Email: View {
     
     @ObservedObject private var validation: SignUpValidationModel = SignUpValidationModel()
     
+    
+    
     @State private var authCodeSent: Bool = false
     
     @State private var signPhase: Int = 1

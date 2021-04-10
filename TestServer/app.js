@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product')
+var staticRouter = require('./routes/static')
 
 var app = express();
 
@@ -37,10 +38,14 @@ app.use(function (req, res, next) {
 
 app.use('/product', productRouter);
 app.use('/sign', usersRouter);
+app.use('/static', staticRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404).json({
+      error: 'Not Found'
+  })
+  next()
 });
 
 // error handler
