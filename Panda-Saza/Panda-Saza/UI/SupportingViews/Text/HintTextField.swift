@@ -52,7 +52,7 @@ struct HintTextField: View {
                   RoundedRectangle(cornerRadius: 5)
                     .stroke(infoNeeded.wrappedValue ? Color.red : (isEditing ? Color.black : Color.gray),
                             lineWidth: infoNeeded.wrappedValue ? 2 : 1)
-                )
+                ).textContentType(isNumber ? .oneTimeCode : .none)
             
             if infoNeeded.wrappedValue {
                 Text(info.wrappedValue)
@@ -61,7 +61,6 @@ struct HintTextField: View {
                     .padding(.leading, 10)
             }
         }
-        .frame(width: .infinity)
         .animation(.easeInOut)
 
     }

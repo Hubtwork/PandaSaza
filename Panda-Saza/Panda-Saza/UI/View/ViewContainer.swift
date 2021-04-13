@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if !isSigned {
-                SignUp_Email()
+                SignNavMain()
                     .inject(container)
             } else {
                 TabViewContainer()

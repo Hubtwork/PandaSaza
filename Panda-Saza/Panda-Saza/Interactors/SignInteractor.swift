@@ -13,6 +13,7 @@ protocol SignInteractor {
     
     func signIn(user: LoadableSubject<UserModel>, id: String, pw: String)
     func sign(id: String, pw: String)
+    func authSMS(phone: String, response: LoadableSubject<JsonSmsValidation>)
     
 }
 
@@ -45,6 +46,14 @@ struct PandaSazaSignInteractor: SignInteractor {
             .store(in: cancelBag)
     }
     
+    func authSMS(phone: String, response: LoadableSubject<JsonSmsValidation>) {
+        let cancelBag = CancelBag()
+        response.wrappedValue.setIsLoading(cancelBag: cancelBag)
+        apiRepository.auth(phone: phone)
+            .ensureTimeSpan(1)
+            .sinkToLoadable { response.wrappedValue = $0 }
+            .store(in: cancelBag)
+    }
 }
 
 struct StubSignInteractor: SignInteractor {
@@ -53,6 +62,9 @@ struct StubSignInteractor: SignInteractor {
     }
     
     func signIn(user: LoadableSubject<UserModel>, id: String, pw: String) {
+        
+    }
+    func authSMS(phone: String, response: LoadableSubject<JsonSmsValidation>) {
         
     }
     

@@ -49,7 +49,7 @@ private extension SignIn_Email {
                 
                 FloatingTextField(title: "Password", text: $signInValidation.password, underbarColor:  Color.black, textColor: Color.black, hintColor: Color.blue, fontSize: 22)
                 
-                SocialLoginButton(height: 40, type: .email)
+                SocialLoginButton(height: 40, type: .phone)
                     .frame(height: 40)
             }
             

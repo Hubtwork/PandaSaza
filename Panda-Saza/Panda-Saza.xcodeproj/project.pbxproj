@@ -157,6 +157,14 @@
 		C6EECDCD2621B0690011EFCB /* Panda_SazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECDCC2621B0690011EFCB /* Panda_SazaUITests.swift */; };
 		C6EECE412621F1DB0011EFCB /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE402621F1DB0011EFCB /* SchoolCell.swift */; };
 		C6EECE462621F8310011EFCB /* SchoolList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE452621F8310011EFCB /* SchoolList.swift */; };
+		C6EECE4B2622CE3F0011EFCB /* SchoolValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE4A2622CE3F0011EFCB /* SchoolValidation.swift */; };
+		C6EECE502622DC4D0011EFCB /* PhoneValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE4F2622DC4D0011EFCB /* PhoneValidation.swift */; };
+		C6EECE552622E5B40011EFCB /* PhoneValidationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE542622E5B40011EFCB /* PhoneValidationModel.swift */; };
+		C6EECE5A26250AB60011EFCB /* JSONModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE5926250AB60011EFCB /* JSONModels.swift */; };
+		C6EECE5F262567A50011EFCB /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE5E262567A50011EFCB /* PhoneTextField.swift */; };
+		C6EECE6426257CCE0011EFCB /* ProfileRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE6326257CCE0011EFCB /* ProfileRegisterView.swift */; };
+		C6EECE6A2625A3F20011EFCB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE692625A3F20011EFCB /* ProfileCell.swift */; };
+		C6EECE722625A4030011EFCB /* ProfileModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECE712625A4030011EFCB /* ProfileModificationView.swift */; };
 		C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */; };
 		C6FEA5B125E77E40007E7AB5 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */; };
 		C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */; };
@@ -360,6 +368,14 @@
 		C6EECDCC2621B0690011EFCB /* Panda_SazaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panda_SazaUITests.swift; sourceTree = "<group>"; };
 		C6EECE402621F1DB0011EFCB /* SchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
 		C6EECE452621F8310011EFCB /* SchoolList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolList.swift; sourceTree = "<group>"; };
+		C6EECE4A2622CE3F0011EFCB /* SchoolValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolValidation.swift; sourceTree = "<group>"; };
+		C6EECE4F2622DC4D0011EFCB /* PhoneValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidation.swift; sourceTree = "<group>"; };
+		C6EECE542622E5B40011EFCB /* PhoneValidationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidationModel.swift; sourceTree = "<group>"; };
+		C6EECE5926250AB60011EFCB /* JSONModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModels.swift; sourceTree = "<group>"; };
+		C6EECE5E262567A50011EFCB /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		C6EECE6326257CCE0011EFCB /* ProfileRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterView.swift; sourceTree = "<group>"; };
+		C6EECE692625A3F20011EFCB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		C6EECE712625A4030011EFCB /* ProfileModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModificationView.swift; sourceTree = "<group>"; };
 		C6FEA5A725E77C7A007E7AB5 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		C6FEA5B025E77E40007E7AB5 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		C6FEA5D125E8A8B9007E7AB5 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
@@ -710,6 +726,7 @@
 				C63695642609DF6100CCA4FC /* UserModel.swift */,
 				C6369595260CB61A00CCA4FC /* Product.swift */,
 				C6EECD862621A4700011EFCB /* Statics.swift */,
+				C6EECE5926250AB60011EFCB /* JSONModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -855,6 +872,7 @@
 		C6701B63261019A500B76753 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C6EECE682625A33E0011EFCB /* Profile */,
 				C6701CA32612B8AA00B76753 /* Sign */,
 				C6701B7626101D4900B76753 /* Products */,
 				C6701B64261019B100B76753 /* ErrorView.swift */,
@@ -942,6 +960,10 @@
 				C6EECD50261F190F0011EFCB /* SignUp_Email.swift */,
 				C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */,
 				C6EECD7926213B170011EFCB /* SchoolSearch.swift */,
+				C6EECE4A2622CE3F0011EFCB /* SchoolValidation.swift */,
+				C6EECE4F2622DC4D0011EFCB /* PhoneValidation.swift */,
+				C6EECE542622E5B40011EFCB /* PhoneValidationModel.swift */,
+				C6EECE6326257CCE0011EFCB /* ProfileRegisterView.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -969,6 +991,7 @@
 				C6EECCFF261D248E0011EFCB /* First-Design */,
 				C6EECE402621F1DB0011EFCB /* SchoolCell.swift */,
 				C6EECE452621F8310011EFCB /* SchoolList.swift */,
+				C6EECE5E262567A50011EFCB /* PhoneTextField.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1073,6 +1096,15 @@
 				C6EECD912621AA740011EFCB /* StaticApiInteractorTest.swift */,
 			);
 			path = APITest;
+			sourceTree = "<group>";
+		};
+		C6EECE682625A33E0011EFCB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C6EECE692625A3F20011EFCB /* ProfileCell.swift */,
+				C6EECE712625A4030011EFCB /* ProfileModificationView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C6FEA5AF25E77E2F007E7AB5 /* PofileComponent */ = {
@@ -1464,6 +1496,7 @@
 			files = (
 				C6701B1E260D74C800B76753 /* ProductsInteractor.swift in Sources */,
 				C6701B3D260F3BC000B76753 /* ViewContainer.swift in Sources */,
+				C6EECE5A26250AB60011EFCB /* JSONModels.swift in Sources */,
 				C6FEA64725E8DC14007E7AB5 /* ProductThumbnailView.swift in Sources */,
 				C6EECE412621F1DB0011EFCB /* SchoolCell.swift in Sources */,
 				C6D2E46025F0836C006182DA /* EmailChangeView.swift in Sources */,
@@ -1488,6 +1521,7 @@
 				C63D477F25FE25CF001AE6E5 /* PushSoundConfigurationViewModel.swift in Sources */,
 				C6EECD56261FCD890011EFCB /* HintTextField.swift in Sources */,
 				C6D2E47C25F09C32006182DA /* ChattingLocal.swift in Sources */,
+				C6EECE502622DC4D0011EFCB /* PhoneValidation.swift in Sources */,
 				C63695652609DF6100CCA4FC /* UserModel.swift in Sources */,
 				C60C50F425E62137005974B0 /* LikeView.swift in Sources */,
 				C6EECCCB261856140011EFCB /* SignInteractor.swift in Sources */,
@@ -1504,13 +1538,16 @@
 				C6701C502611E1E700B76753 /* ProductImageContainer.swift in Sources */,
 				C60C50B425E54EAB005974B0 /* RoundedEdge.swift in Sources */,
 				C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */,
+				C6EECE552622E5B40011EFCB /* PhoneValidationModel.swift in Sources */,
 				C60C510B25E63652005974B0 /* UserManager.swift in Sources */,
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
 				C6EECD7F2621A2570011EFCB /* StaticApiRepository.swift in Sources */,
 				C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */,
 				C6EECD51261F190F0011EFCB /* SignUp_Email.swift in Sources */,
+				C6EECE6426257CCE0011EFCB /* ProfileRegisterView.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
+				C6EECE6A2625A3F20011EFCB /* ProfileCell.swift in Sources */,
 				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
 				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
 				C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */,
@@ -1560,6 +1597,7 @@
 				C63695302609AEF000CCA4FC /* AppDelegate.swift in Sources */,
 				C6701B8D261039BF00B76753 /* Helper.swift in Sources */,
 				C6FEA5DC25E8AB65007E7AB5 /* TestDTO.swift in Sources */,
+				C6EECE722625A4030011EFCB /* ProfileModificationView.swift in Sources */,
 				C60C510225E6353D005974B0 /* UserProfile.swift in Sources */,
 				C636956A2609E7A300CCA4FC /* PermissionInteractor.swift in Sources */,
 				C63D47A72601AF4F001AE6E5 /* HateItemView.swift in Sources */,
@@ -1577,6 +1615,7 @@
 				C6701BE8261157DB00B76753 /* ProductsDetail.swift in Sources */,
 				C6701B9E2610429B00B76753 /* TabBar.swift in Sources */,
 				C6701C902612AB0100B76753 /* RoundedButton.swift in Sources */,
+				C6EECE5F262567A50011EFCB /* PhoneTextField.swift in Sources */,
 				C6D2E49325F0A0CA006182DA /* ChattingThumbnailViewModel.swift in Sources */,
 				C63D479B2601AF23001AE6E5 /* InterestItemView.swift in Sources */,
 				C60C512F25E735DC005974B0 /* BottomTabBarItemView.swift in Sources */,
@@ -1598,6 +1637,7 @@
 				C6FEA64C25E8DC27007E7AB5 /* ProductThumbnailViewModel.swift in Sources */,
 				C6FEA68125ECCEB1007E7AB5 /* UserProfileLocal.swift in Sources */,
 				C6964E64260327DD0090B45C /* NetworkHelpers.swift in Sources */,
+				C6EECE4B2622CE3F0011EFCB /* SchoolValidation.swift in Sources */,
 				C6FEA63725E8D70B007E7AB5 /* ShoppingHomeViewModel.swift in Sources */,
 				C63D473525F9F2B5001AE6E5 /* SlidingTab.swift in Sources */,
 				C6FEA5E825E8B803007E7AB5 /* ImageLoader.swift in Sources */,

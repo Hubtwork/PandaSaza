@@ -15,16 +15,16 @@ struct SchoolCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(school.name.localized(locale))
-                .font(.custom("NanumGothic", size: 25))
+                .font(.custom("NanumGothic", size: 20))
         }
-        .padding(.leading, 20)
-        .frame(maxWidth: .infinity, maxHeight: 60, alignment: .leading)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
 struct SchoolCell_Previews: PreviewProvider {
     static var previews: some View {
         SchoolCell(school: School(sId: 1, name: "Dongguk University"))
-            .previewLayout(.fixed(width: UIScreen.screenWidth, height: 60))
+            .previewLayout(.fixed(width: UIScreen.screenWidth, height: 100))
     }
 }

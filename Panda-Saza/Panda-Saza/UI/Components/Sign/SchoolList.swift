@@ -10,9 +10,14 @@ import SwiftUI
 struct SchoolList: View {
     
     @Binding var schools: [School]
+    @Binding var selectedSchool: String
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            List(schools) { school in
+                SchoolCell(school: school)
+            }
+        }
     }
 }
 
@@ -24,6 +29,6 @@ struct SchoolList_Previews: PreviewProvider {
             School(sId: 3, name: "Kyunghee University"),
             School(sId: 4, name: "Seoul University"),
             School(sId: 5, name: "Kangwon University"),
-        ]))
+        ]), selectedSchool: .constant(""))
     }
 }

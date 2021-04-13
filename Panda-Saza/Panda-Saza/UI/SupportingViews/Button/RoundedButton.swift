@@ -57,7 +57,7 @@ struct RoundedButton: View {
                   RoundedRectangle(cornerRadius: radius)
                     .stroke(strokeColor, lineWidth: strokeWidth)
                 )
-        }.frame(width: width, height: height)
+        }.frame(height: height)
     }
 }
 
