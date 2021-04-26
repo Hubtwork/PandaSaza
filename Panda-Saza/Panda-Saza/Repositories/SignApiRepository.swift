@@ -12,6 +12,8 @@ protocol SignApiRepository: ApiRepository {
     
     func signIn(id: String, password: String) -> AnyPublisher<UserModel, Error>
     
+    func auth(phone: String) -> AnyPublisher<JsonSmsValidation, Error>
+    
 }
 
 struct PandasazaSignApiRepository: SignApiRepository {
@@ -30,6 +32,11 @@ struct PandasazaSignApiRepository: SignApiRepository {
         return request(endpoint: API.signIn, params: signInParams)
     }
     
+    
+    func auth(phone: String) -> AnyPublisher<JsonSmsValidation, Error> {
+        return request(endpoint: API.authSMS(phone))
+    }
+    
 }
 
 // MARK: - Endpoints
@@ -38,6 +45,7 @@ extension PandasazaSignApiRepository {
     enum API {
         case signIn
         case signUp
+        case authSMS(String)
     }
 }
 
@@ -49,11 +57,15 @@ extension PandasazaSignApiRepository.API: ApiRequest {
             return "/signIn"
         case .signUp:
             return "/sign/signUp"
+        case let .authSMS(phone):
+            return "/auth/sms/\(phone)"
         }
     }
     
     var method: String {
         switch self {
+        case .authSMS:
+            return "GET"
         case .signIn, .signUp:
             return "POST"
         }

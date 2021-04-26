@@ -17,7 +17,7 @@ struct TabViewContainer: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
+            VStack(spacing:0) {
                 switch selectedTab {
                 case 0:
                     first
@@ -78,7 +78,8 @@ extension TabViewContainer {
 
 struct TabViewContainer_Previews: PreviewProvider {
     static var previews: some View {
-        TabViewContainer().inject(.preview)
+        TabViewContainer()
+            .inject(AppEnvironment.bootstrap().container)
     }
 }
 

@@ -3,9 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var crypto = require('crypto');
 
+//create signature2
+var CryptoJS = require('crypto-js');
+var SHA256 = require('crypto-js/sha256');
+var Base64 = require('crypto-js/enc-base64');
+
+var authRouter = require('./routes/verification')
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product')
+var staticRouter = require('./routes/static')
 
 var app = express();
 
@@ -35,12 +43,17 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use('/auth', authRouter)
 app.use('/product', productRouter);
 app.use('/sign', usersRouter);
+app.use('/static', staticRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404).json({
+      error: 'Not Found'
+  })
+  next()
 });
 
 // error handler

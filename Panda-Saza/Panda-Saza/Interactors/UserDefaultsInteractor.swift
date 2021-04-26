@@ -11,17 +11,29 @@ protocol UserDefaultsInteractor {
     
     func checkIsSignInfoSaved() -> Bool
     func signOut()
-    func signIn(id: String, pw: String)
+    func signIn(auth: UserAuthType, loginInfo: String)
     
 }
 
+enum UserAuthType {
+    case kakao
+    case facebook
+    case google
+    case email
+}
+
 struct PandasazaUserDefaultsInteractor: UserDefaultsInteractor {
+
     func signOut() {
         UserDefaults.standard.removeObject(forKey: "signInData")
     }
     
-    func signIn(id: String, pw: String) {
-        let signString: String = "id=\(id)&pw=\(pw)"
+    func signIn(auth: UserAuthType, loginInfo: String) {
+        var signString: String = ""
+        switch auth {
+        case .email: signString += "EMAIL )" + loginInfo
+        default: signString += ""
+        }
         UserDefaults.standard.set(signString, forKey: "signInData")
     }
     

@@ -59,7 +59,7 @@ struct SocialLoginButton: View {
                 case .kakao: self.kakao
                 case .facebook: self.facebook
                 case .google: self.google
-                case .email: self.email
+                case .phone: self.phone
                 }
             }.frame(width: geometry.size.width, height: height)
         }
@@ -67,19 +67,19 @@ struct SocialLoginButton: View {
     
     var kakao: some View {
         Text("Start with KakaoTalk".localized(Locale.current))
-            .font(.custom("NanumGothicBold", size: 20))
+            .font(.custom("NanumGothicBold", size: 18))
             .kakaoStyle()
     }
     
     var facebook: some View {
         Text("Start with Facebook".localized(Locale.current))
-            .font(.custom("NanumGothicBold", size: 20))
+            .font(.custom("NanumGothicBold", size: 18))
             .facebookStyle()
     }
     
     var google: some View {
         Text("Start with Google+".localized(Locale.current))
-            .font(.custom("NanumGothicBold", size: 20))
+            .font(.custom("NanumGothicBold", size: 18))
             .padding()
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             .foregroundColor(Color.black)
@@ -91,10 +91,10 @@ struct SocialLoginButton: View {
             )
     }
     
-    var email: some View {
+    var phone: some View {
         
-        Text("Start with Email".localized(Locale.current))
-            .font(.custom("NanumGothicBold", size: 20))
+        Text("Start with Phone".localized(Locale.current))
+            .font(.custom("NanumGothicBold", size: 18))
             .padding()
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             .foregroundColor(Color.black)
@@ -113,7 +113,7 @@ extension SocialLoginButton {
         case kakao
         case facebook
         case google
-        case email
+        case phone
     }
 }
 

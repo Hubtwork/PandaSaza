@@ -14,16 +14,21 @@ extension DIContainer {
         
         let productsInteractor: ProductsInteractor
         let signInteractor: SignInteractor
+        let staticInteractor: StaticApiInteractor
         
         init(productsInteractor: ProductsInteractor,
-             signInteractor: SignInteractor
+             signInteractor: SignInteractor,
+             staticInteractor: StaticApiInteractor
         ) {
             self.productsInteractor = productsInteractor
             self.signInteractor = signInteractor
+            self.staticInteractor = staticInteractor
         }
         
         static var stub: Self {
-            .init(productsInteractor: StubProductsInteractor(), signInteractor: StubSignInteractor())
+            .init(productsInteractor: StubProductsInteractor(),
+                  signInteractor: StubSignInteractor(),
+                  staticInteractor: StubStaticApiInteractor())
         }
     }
     

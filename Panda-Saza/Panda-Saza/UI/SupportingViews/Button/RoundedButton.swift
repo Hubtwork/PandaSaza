@@ -15,7 +15,10 @@ struct RoundedButton: View {
     let height: CGFloat
     let strokeColor: Color
     let strokeWidth: CGFloat
+    let radius: CGFloat
+    
     let text: String
+    let textSize: CGFloat
     
     let fontName: String = "NanumGothicBold"
     
@@ -25,7 +28,9 @@ struct RoundedButton: View {
          height: CGFloat = 50,
          strokeColor: Color = .black,
          strokeWidth: CGFloat = 2,
-         text: String
+         radius: CGFloat = 100,
+         text: String,
+         textSize: CGFloat = 20
     ) {
         self.textColor = textColor
         self.bgColor = bgColor
@@ -34,23 +39,25 @@ struct RoundedButton: View {
         self.strokeColor = strokeColor
         self.strokeWidth = strokeWidth
         self.text = text
+        self.radius = radius
+        self.textSize = textSize
     }
     
     var body: some View {
         GeometryReader { geometry in
             Text(text)
-                .font(.custom(fontName, size: 20))
+                .font(.custom(fontName, size: textSize))
                 .bold()
                 .padding()
                 .frame(minWidth: 0, maxWidth: geometry.size.width, minHeight: 0, maxHeight: height, alignment: .center)
                 .background(bgColor)
                 .foregroundColor(textColor)
-                .clipShape(RoundedRectangle(cornerRadius: 100))
+                .clipShape(RoundedRectangle(cornerRadius: radius))
                 .overlay(
-                  RoundedRectangle(cornerRadius: 100)
+                  RoundedRectangle(cornerRadius: radius)
                     .stroke(strokeColor, lineWidth: strokeWidth)
                 )
-        }.frame(width: width, height: height)
+        }.frame(height: height)
     }
 }
 

@@ -22,6 +22,8 @@ extension SignNavMain {
     var content: some View {
         NavigationView {
             ZStack {
+                
+                
                 GeometryReader { geometry in
                     VStack(alignment: .center, spacing: 0) {
                         self.logo
@@ -40,9 +42,11 @@ extension SignNavMain {
                     }.frame(width: geometry.size.width, height: geometry.size.height)
                 }
                 self.signToolBar
-            }
+            }.foregroundColor(Color.black)
+            .background(Color.white.edgesIgnoringSafeArea(.all))
             .navigationBarHidden(true)
-        }
+            
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     var logo: some View {
@@ -69,10 +73,12 @@ extension SignNavMain {
             
             SocialLoginButton(height: 40, type: .kakao)
             
-            SocialLoginButton(height: 40, type: .email)
+            NavigationLink(destination: PhoneValidationView()) {
+                SocialLoginButton(height: 40, type: .phone)
+            }
             
         }.frame(height: 220)
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 30)
     }
     
     var lookAroungBtn: some View {
@@ -80,7 +86,7 @@ extension SignNavMain {
             self.lookAroundWithoutSignIn()
         } ) {
             Text("Look around without Sign In")
-                .font(.custom("NanumGothicBold", size: 22))
+                .font(.custom("NanumGothicBold", size: 16))
                 .foregroundColor(Color.black)
                 .overlay(
                     Rectangle().frame(height: 2)
