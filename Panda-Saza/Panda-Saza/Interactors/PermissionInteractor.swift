@@ -22,7 +22,7 @@ extension Permission {
     }
 }
 
-protocol PermissionsInteractor: class {
+protocol PermissionsInteractor: AnyObject {
     func resolveStatus(for permission: Permission)
     func request(permission: Permission)
 }

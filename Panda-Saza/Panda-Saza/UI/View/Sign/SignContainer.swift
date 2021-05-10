@@ -22,26 +22,33 @@ extension SignNavMain {
     var content: some View {
         NavigationView {
             ZStack {
-                
-                
                 GeometryReader { geometry in
                     VStack(alignment: .center, spacing: 0) {
-                        self.logo
-                            .padding(.top, geometry.size.height*0.1)
                         
-                        self.title
-                            .padding(.top, geometry.size.height*0.1)
+                        VStack {
+                            self.logo
+                        }.frame(width: geometry.size.width * 0.8, height: geometry.size.height*0.1)
+                        .border(Color.black, width: 1)
                         
-                        self.signMenu
-                            .padding(.top, geometry.size.height*0.2)
+                        Spacer()
                         
-                        self.lookAroungBtn
-                            .padding(.top, geometry.size.height*0.05)
-                            .padding(.bottom, 70)
-                    
-                    }.frame(width: geometry.size.width, height: geometry.size.height)
+                        VStack {
+                            self.title
+                        }.frame(width: geometry.size.width * 0.8, height: geometry.size.height*0.3)
+                        .border(Color.black, width: 1)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            self.signMenu
+                        }.frame(width: geometry.size.width * 0.9,
+                                height: geometry.size.height*0.1)
+                        .border(Color.black, width: 1)
+                        
+                    }
+                    .padding(.vertical, geometry.size.height*0.1)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                 }
-                self.signToolBar
             }.foregroundColor(Color.black)
             .background(Color.white.edgesIgnoringSafeArea(.all))
             .navigationBarHidden(true)
@@ -50,72 +57,25 @@ extension SignNavMain {
     }
     
     var logo: some View {
-        Text("PandaSaza")
-            .font(.custom("NanumGothicBold", size: 44))
+        Text("App Name")
+            .font(.custom("NanumGothicBold", size: 20))
     }
     
     var title: some View {
         VStack(spacing: 20) {
-            Text("Used-Stuff Trading Partner")
-                .font(.custom("NanumGothicBold", size: 22))
-            Text("Your efficient life Manager")
-                .font(.custom("NanumGothic", size: 18))
-                .foregroundColor(Color.black.opacity(0.8))
+            Text("Introducing image, texts, etc.")
+                .font(.system(size:15))
         }
     }
     
     var signMenu: some View {
         VStack(spacing: 20) {
-            
-            SocialLoginButton(height: 40, type: .facebook)
-            
-            SocialLoginButton(height: 40, type: .google)
-            
-            SocialLoginButton(height: 40, type: .kakao)
-            
             NavigationLink(destination: PhoneValidationView()) {
-                SocialLoginButton(height: 40, type: .phone)
+                RoundedButton(textColor: .black, bgColor: .white, height: 30, strokeColor: .black, strokeWidth: 1, radius: 5, text: "Start with Phone", textSize: 15)
             }
-            
-        }.frame(height: 220)
-        .padding(.horizontal, 30)
-    }
-    
-    var lookAroungBtn: some View {
-        Button(action: {
-            self.lookAroundWithoutSignIn()
-        } ) {
-            Text("Look around without Sign In")
-                .font(.custom("NanumGothicBold", size: 16))
-                .foregroundColor(Color.black)
-                .overlay(
-                    Rectangle().frame(height: 2)
-                        .foregroundColor(Color.black)
-                        .offset(y: 4)
-                    , alignment: .bottom)
         }
     }
     
-    var signToolBar: some View {
-        VStack {
-            HStack{
-                Button(action: {
-                    withAnimation {
-                        presentation.wrappedValue.dismiss()
-                    }
-                }) {
-                    Image(systemName: "multiply")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(Color.black)
-                }
-                Spacer()
-            }
-            Spacer()
-        }
-        .padding(.leading, 30)
-        .padding(.top, 10)
-    }
 }
 
 // MARK:- Side Effect

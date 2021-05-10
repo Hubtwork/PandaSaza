@@ -144,8 +144,6 @@
 		C6EECD0A261D51C10011EFCB /* UbuntuCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6EECD09261D51C10011EFCB /* UbuntuCondensed-Regular.ttf */; };
 		C6EECD21261D57D90011EFCB /* SocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */; };
 		C6EECD41261D7AFD0011EFCB /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */; };
-		C6EECD46261D9F950011EFCB /* SignIn_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD45261D9F950011EFCB /* SignIn_Email.swift */; };
-		C6EECD51261F190F0011EFCB /* SignUp_Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD50261F190F0011EFCB /* SignUp_Email.swift */; };
 		C6EECD56261FCD890011EFCB /* HintTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD55261FCD890011EFCB /* HintTextField.swift */; };
 		C6EECD5B261FE8CD0011EFCB /* SIgnUpValidationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */; };
 		C6EECD7226211BB50011EFCB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECD7126211BB50011EFCB /* SearchBar.swift */; };
@@ -355,8 +353,6 @@
 		C6EECD09261D51C10011EFCB /* UbuntuCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		C6EECD20261D57D90011EFCB /* SocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButton.swift; sourceTree = "<group>"; };
 		C6EECD40261D7AFD0011EFCB /* UserDefaultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractor.swift; sourceTree = "<group>"; };
-		C6EECD45261D9F950011EFCB /* SignIn_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_Email.swift; sourceTree = "<group>"; };
-		C6EECD50261F190F0011EFCB /* SignUp_Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_Email.swift; sourceTree = "<group>"; };
 		C6EECD55261FCD890011EFCB /* HintTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTextField.swift; sourceTree = "<group>"; };
 		C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIgnUpValidationModel.swift; sourceTree = "<group>"; };
 		C6EECD7126211BB50011EFCB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -433,6 +429,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33ED980D2648CC5300A4067E /* PhoneNumberField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhoneNumberField;
+			sourceTree = "<group>";
+		};
 		48BFFAF1C248F28C9F491DD7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -895,10 +898,9 @@
 		C6701B912610425500B76753 /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
-				C6701CC826147EAC00B76753 /* Text */,
+				C6701CC826147EAC00B76753 /* TextField */,
 				C6701C972612B73C00B76753 /* Divider */,
 				C6701C8E2612AAF500B76753 /* Button */,
-				C6701C652611F19600B76753 /* Navigation */,
 				C6701BF726116C7300B76753 /* Images */,
 				C6701BAE26104A8100B76753 /* TabBar */,
 			);
@@ -943,21 +945,12 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		C6701C652611F19600B76753 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		C6701C852612AA1300B76753 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
 				C6EECD03261D249D0011EFCB /* First-Design */,
 				C680CC17261616BC007498CC /* PolicyView.swift */,
 				C6EECD04261D25110011EFCB /* SignContainer.swift */,
-				C6EECD45261D9F950011EFCB /* SignIn_Email.swift */,
-				C6EECD50261F190F0011EFCB /* SignUp_Email.swift */,
 				C6EECD5A261FE8CD0011EFCB /* SIgnUpValidationModel.swift */,
 				C6EECD7926213B170011EFCB /* SchoolSearch.swift */,
 				C6EECE4A2622CE3F0011EFCB /* SchoolValidation.swift */,
@@ -996,14 +989,15 @@
 			path = Sign;
 			sourceTree = "<group>";
 		};
-		C6701CC826147EAC00B76753 /* Text */ = {
+		C6701CC826147EAC00B76753 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				33ED980D2648CC5300A4067E /* PhoneNumberField */,
 				C60C505825E3655E005974B0 /* FloatingTextField.swift */,
 				C6EECD55261FCD890011EFCB /* HintTextField.swift */,
 				C6EECD7126211BB50011EFCB /* SearchBar.swift */,
 			);
-			path = Text;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		C6D2E40925EE4AC3006182DA /* MyPage */ = {
@@ -1544,7 +1538,6 @@
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
 				C6EECD7F2621A2570011EFCB /* StaticApiRepository.swift in Sources */,
 				C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */,
-				C6EECD51261F190F0011EFCB /* SignUp_Email.swift in Sources */,
 				C6EECE6426257CCE0011EFCB /* ProfileRegisterView.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
 				C6EECE6A2625A3F20011EFCB /* ProfileCell.swift in Sources */,
@@ -1577,7 +1570,6 @@
 				C6FEA6C025ECF42C007E7AB5 /* Category.swift in Sources */,
 				C6701B592610189B00B76753 /* ProductsList.swift in Sources */,
 				C6701B35260DFEF700B76753 /* DeepLinksHandler.swift in Sources */,
-				C6EECD46261D9F950011EFCB /* SignIn_Email.swift in Sources */,
 				C6D2E43525EF1378006182DA /* UserData.swift in Sources */,
 				C6701B6D261019D000B76753 /* ActivityIndicatorView.swift in Sources */,
 				C60C50AF25E54534005974B0 /* ImageView.swift in Sources */,

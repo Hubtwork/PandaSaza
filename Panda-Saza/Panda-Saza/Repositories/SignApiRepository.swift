@@ -10,10 +10,10 @@ import Foundation
 
 protocol SignApiRepository: ApiRepository {
     
+    func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error>
+    func smsValidation(phone: String) -> AnyPublisher<JsonSMSValidation, Error>
+    
     func signIn(id: String, password: String) -> AnyPublisher<UserModel, Error>
-    
-    func auth(phone: String) -> AnyPublisher<JsonSmsValidation, Error>
-    
 }
 
 struct PandasazaSignApiRepository: SignApiRepository {
@@ -32,20 +32,24 @@ struct PandasazaSignApiRepository: SignApiRepository {
         return request(endpoint: API.signIn, params: signInParams)
     }
     
-    
-    func auth(phone: String) -> AnyPublisher<JsonSmsValidation, Error> {
-        return request(endpoint: API.authSMS(phone))
+    func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error> {
+        return request(endpoint: API.smsVerification(phone))
     }
     
+    func smsVerification(phone: String) -> AnyPublisher<JsonSMSValidation, Error> {
+        return request(endpoint: API.smsValidation(phone))
+    }
 }
 
 // MARK: - Endpoints
 
 extension PandasazaSignApiRepository {
     enum API {
-        case signIn
-        case signUp
-        case authSMS(String)
+        case register
+        case logout
+        case refreshToken
+        case smsVerification(String)
+        case smsValidation(String)
     }
 }
 
@@ -53,20 +57,24 @@ extension PandasazaSignApiRepository.API: ApiRequest {
     
     var path: String {
         switch self {
-        case .signIn:
-            return "/signIn"
-        case .signUp:
-            return "/sign/signUp"
-        case let .authSMS(phone):
-            return "/auth/sms/\(phone)"
+        case .register:
+            return "/register"
+        case .logout:
+            return "/logout"
+        case .refreshToken:
+            return "/refresh"
+        case let .smsVerification(phone):
+            return "/sms/authenticate/\(phone)"
+        case let .smsValidation(phone):
+            return "/sms/validation/\(phone)"
         }
     }
     
     var method: String {
         switch self {
-        case .authSMS:
+        case .smsVerification, .smsValidation:
             return "GET"
-        case .signIn, .signUp:
+        case .register, .logout, .refreshToken:
             return "POST"
         }
     }

@@ -20,6 +20,7 @@ struct PhoneValidationView: View {
     @State private var authCodeSent: Bool = false
     @State private var isAuthComplete: Bool = false
     @State private var authFailedAlert: Bool = false
+    @State private var phoneNumber: String = ""
     
     var body: some View {
         content
@@ -49,59 +50,70 @@ private extension PhoneValidationView {
     
     var content: some View {
         ZStack {
-            /// Empty Navigation LInk
-            NavigationLink(
-                destination: SchoolValidationView(phoneNumber: $validation.phone.wrappedValue),
-                isActive: $isAuthComplete) {
-                    EmptyView()
+            GeometryReader { geometry in
+                /// Empty Navigation LInk
+                NavigationLink(
+                    destination: SchoolValidationView(phoneNumber: $validation.phone.wrappedValue),
+                    isActive: $isAuthComplete) {
+                        EmptyView()
+                    }
+                ScrollView {
+                    VStack(spacing: 20){
+                        self.phoneValidationIntroduceView
+                            .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.2)
+                            .border(Color.black, width: 1)
+                        self.phoneValidation
+                        Spacer()
+                    }.padding(.horizontal, geometry.size.width * 0.05)
                 }
-            ScrollView {
-                VStack {
-                    self.phoneValidation
-                    Spacer()
-                }
+                .padding(.top, 60)  // consider toolbar height
+                
+                self.signToolBar
+            
             }
-            .padding(.top, 60)  // consider toolbar height
-            
-            self.signToolBar
-            
             .navigationBarHidden(true)
         }
     }
     
+    var phoneValidationIntroduceView: some View {
+        VStack {
+            Text("Images for introuce").font(.system(size: 15))
+        }
+    }
+    
     var phoneValidation: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 15) {
             PhoneTextField(text: $validation.phone,
-                           hint: "Phone Number ( Numbers Only )")
+                           hint: "Phone Number ( Numbers Only )", textFieldHeight: 40, textSize: 15
+                           )
             
             Button(action: {
                 self.authSMS_sent()
             }) {
                 RoundedButton(textColor: .white,
                               bgColor: !$validation.validPhone.wrappedValue ? Color.black.opacity(0.2) : Color.black.opacity(0.6),
-                              width: .infinity, height: 45, strokeColor: .black, strokeWidth: 0, radius: 5, text: "Send Auth SMS", textSize: 18)
+                               height: 34, strokeColor: .black, strokeWidth: 0, radius: 5, text: "Send SMS", textSize: 17)
             }.disabled(!$validation.validPhone.wrappedValue)
             
             if authCodeSent {
                 VStack(alignment: .leading, spacing: 5) {
                     PhoneTextField(text: $validation.phoneAuthCode,
                                    hint: "Auth Code ( Numbers Only )",
+                                   textSize: 15,
                                    isAuth: true)
                     Text("Please don't share it with others")
-                        .font(.custom("NanumGothic", size: 18))
+                        .font(.custom("NanumGothic", size: 17))
                     Button(action: { self.authSMS_check() }) {
                         RoundedButton(textColor: .white,
                                       bgColor: $validation.phoneAuthCode.wrappedValue.isEmpty ? Color.black.opacity(0.2) : Color.black.opacity(0.6),
-                                      width: .infinity, height: 45,
-                                      strokeColor: .black, strokeWidth: 0, radius: 5, text: "Check Auth SMS", textSize: 18)
+                                      height: 34,
+                                      strokeColor: .black, strokeWidth: 0, radius: 5, text: "Check Auth SMS", textSize: 17)
                             .disabled($validation.phoneAuthCode.wrappedValue.isEmpty)
                             .padding(.top, 20)
                     }
                 }.padding(.top, 20)
             }
         }
-        .padding(.top, 30)
-        .padding(.horizontal, 30)
         .animation(.spring())
     }
     
@@ -127,12 +139,12 @@ private extension PhoneValidationView {
             }) {
                 Image(systemName: "arrow.left")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 15, height: 15)
                     .foregroundColor(Color.black)
             }
             Spacer()
         }
-        .padding(.leading, 30)
+        .padding(.leading, 20)
     }
     
     func toolBarTitle(title: String) -> some View {
@@ -140,7 +152,7 @@ private extension PhoneValidationView {
             Spacer()
             
             Text(title)
-                .font(.custom("NanumGothicBold", size: 22))
+                .font(.system(size: 15))
             
             Spacer()
         }

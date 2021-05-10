@@ -9,11 +9,23 @@ import Foundation
 
 // MARK:- Models
 
-struct JsonSmsValidation: Hashable, Codable, Equatable {
+struct JsonSMSValidation: Codable, Equatable {
+    let isSuccess: Bool
+    let validationCode: String
+}
+
+struct JsonSMSVerification: Codable, Equatable {
     
-    let success: Bool
-    let code: Int
-    let response: Int
-    
+    let phone: String
+    let registered: Bool
+    /// IF already registered, redirect to logIn and return these
+    // account ID
+    let user: String?
+    let tokens: Tokens?
+}
+
+struct Tokens: Codable, Equatable {
+    let accessToken: String
+    let refreshToken: String
 }
 
