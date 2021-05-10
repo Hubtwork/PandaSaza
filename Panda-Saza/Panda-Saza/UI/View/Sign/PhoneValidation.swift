@@ -13,7 +13,7 @@ struct PhoneValidationView: View {
     @Environment(\.injected) private var injected: DIContainer
     @Environment(\.presentationMode) private var presentation
     
-    @State private var response: Loadable<JsonSmsValidation> = .notRequested
+    @State private var response: Loadable<JsonSMSValidation> = .notRequested
     
     @ObservedObject private var validation: PhoneValidationModel = PhoneValidationModel()
     
@@ -164,7 +164,9 @@ private extension PhoneValidationView {
     
     func authSMS_sent() {
         // api call
+        /*
         injected.interactors.signInteractor.authSMS(phone: $validation.phone.wrappedValue, response: $response)
+         */
         // if vaild
         /*
         if response.value!.success{
@@ -179,12 +181,14 @@ private extension PhoneValidationView {
         // get wrapped value and check
         
         // if authCode is valid and same with user input
-        if Int($validation.phoneAuthCode.wrappedValue) ?? 0 == response.value!.code {
+        /*
+        if Int($validation.phoneAuthCode.wrappedValue) ?? 0 == resonse.value!.code {
             isAuthComplete.toggle()
             self.validation.clearAll()
         } else {
             self.authFailedAlert.toggle()
         }
+         */
     }
 }
 

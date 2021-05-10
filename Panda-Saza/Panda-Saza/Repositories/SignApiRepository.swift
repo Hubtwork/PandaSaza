@@ -10,9 +10,6 @@ import Foundation
 
 protocol SignApiRepository: ApiRepository {
     
-    func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error>
-    func smsValidation(phone: String) -> AnyPublisher<JsonSMSValidation, Error>
-    
     func logout(phone: String) -> AnyPublisher<MsgResponse, Error>
     
 }
@@ -32,14 +29,6 @@ struct PandasazaSignApiRepository: SignApiRepository {
         let logoutParams = ["phone": phone]
         return request(endpoint: API.logout, params: logoutParams)
     }
-    
-    func smsValidation(phone: String) -> AnyPublisher<JsonSMSValidation, Error> {
-        return request(endpoint: API.smsVerification(phone))
-    }
-    
-    func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error> {
-        return request(endpoint: API.smsValidation(phone))
-    }
 }
 
 // MARK: - Endpoints
@@ -49,8 +38,6 @@ extension PandasazaSignApiRepository {
         case register
         case logout
         case refreshToken
-        case smsVerification(String)
-        case smsValidation(String)
     }
 }
 
@@ -64,17 +51,11 @@ extension PandasazaSignApiRepository.API: ApiRequest {
             return "/logout"
         case .refreshToken:
             return "/refresh"
-        case let .smsVerification(phone):
-            return "/sms/authenticate/\(phone)"
-        case let .smsValidation(phone):
-            return "/sms/validation/\(phone)"
         }
     }
     
     var method: String {
         switch self {
-        case .smsVerification, .smsValidation:
-            return "GET"
         case .register, .logout, .refreshToken:
             return "POST"
         }

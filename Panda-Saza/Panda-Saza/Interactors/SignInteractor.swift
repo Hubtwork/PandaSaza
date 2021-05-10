@@ -11,10 +11,11 @@ import SwiftUI
 
 protocol SignInteractor {
     
+    /*
     func signIn(user: LoadableSubject<UserModel>, id: String, pw: String)
     func sign(id: String, pw: String)
-    func authSMS(phone: String, response: LoadableSubject<JsonSmsValidation>)
-    
+    func authSMS(phone: String, response: LoadableSubject<JsonSMSValidation>)
+    */
 }
 
 struct PandaSazaSignInteractor: SignInteractor {
@@ -31,6 +32,7 @@ struct PandaSazaSignInteractor: SignInteractor {
         self.appState = appState
     }
     
+    /*
     func sign(id: String, pw: String) {
         let cancelBag = CancelBag()
         apiRepository.signIn(id: id, password: pw)
@@ -53,10 +55,12 @@ struct PandaSazaSignInteractor: SignInteractor {
             .ensureTimeSpan(1)
             .sinkToLoadable { response.wrappedValue = $0 }
             .store(in: cancelBag)
-    }
+     }
+ */
 }
 
 struct StubSignInteractor: SignInteractor {
+    /*
     func sign(id: String, pw: String) {
         
     }
@@ -67,5 +71,5 @@ struct StubSignInteractor: SignInteractor {
     func authSMS(phone: String, response: LoadableSubject<JsonSmsValidation>) {
         
     }
-    
+    */
 }

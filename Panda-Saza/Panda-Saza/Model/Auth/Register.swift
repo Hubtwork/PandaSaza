@@ -8,5 +8,12 @@
 import Foundation
 
 struct UserRegisterDTO {
+    let phone: String
+    
+    let school: String
+    let nationality: String
+    
+    let profileName: String
+    let profileImg: String
     
 }

@@ -152,7 +152,7 @@ extension SignIn {
 private extension SignIn {
     
     func signIn(id: String, pw: String) {
-        injected.interactors.signInteractor.signIn(user: $user, id: id, pw: pw)
+        //injected.interactors.signInteractor.signIn(user: $user, id: id, pw: pw)
     }
     
     func signedSuccess() {
