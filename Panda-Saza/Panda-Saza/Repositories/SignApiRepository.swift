@@ -13,10 +13,12 @@ protocol SignApiRepository: ApiRepository {
     func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error>
     func smsValidation(phone: String) -> AnyPublisher<JsonSMSValidation, Error>
     
-    func signIn(id: String, password: String) -> AnyPublisher<UserModel, Error>
+    func logout(phone: String) -> AnyPublisher<MsgResponse, Error>
+    
 }
 
 struct PandasazaSignApiRepository: SignApiRepository {
+    
     let session: URLSession
     let baseURL: String
     
@@ -26,17 +28,16 @@ struct PandasazaSignApiRepository: SignApiRepository {
         self.session = session
         self.baseURL = baseURL
     }
-    
-    func signIn(id: String, password: String) -> AnyPublisher<UserModel, Error> {
-        let signInParams = ["id": id, "pw": password]
-        return request(endpoint: API.signIn, params: signInParams)
+    func logout(phone: String) -> AnyPublisher<MsgResponse, Error> {
+        let logoutParams = ["phone": phone]
+        return request(endpoint: API.logout, params: logoutParams)
     }
     
-    func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error> {
+    func smsValidation(phone: String) -> AnyPublisher<JsonSMSValidation, Error> {
         return request(endpoint: API.smsVerification(phone))
     }
     
-    func smsVerification(phone: String) -> AnyPublisher<JsonSMSValidation, Error> {
+    func smsVerification(phone: String) -> AnyPublisher<JsonSMSVerification, Error> {
         return request(endpoint: API.smsValidation(phone))
     }
 }
