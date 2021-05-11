@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 @testable import Panda_Saza
 
-class SignApiRepositoryTest: XCTestCase {
+class SmsApiRepositoryTest: XCTestCase {
     
     let appState = CurrentValueSubject<AppState, Never>(AppState())
     private var apiRepository: PandasazaSmspiRepository!
@@ -34,8 +34,7 @@ class SignApiRepositoryTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func test_connectionTest() throws {
-        
+    func test_smsValidation_success() throws {
         var apiResponse: DataResponse<JsonSMSValidation>?
         let exp = XCTestExpectation(description: "Completion")
         apiRepository.smsValidation(phone: "01075187260")
@@ -47,6 +46,26 @@ class SignApiRepositoryTest: XCTestCase {
                         let smsValidation = apiResponse!.data
                         print("Whole Response From Server: \(String(describing: apiResponse))")
                         print("SMS Validation CODE: \(smsValidation.validationCode)")
+                        exp.fulfill()
+                    }
+                }
+            }
+            .store(in: cancelBag)
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func test_smsVerification_success() throws {
+        var apiResponse: DataResponse<JsonSMSVerification>?
+        let exp = XCTestExpectation(description: "Completion")
+        apiRepository.smsVerification(phone: "01075187260")
+            .sinkToResult { result in
+                XCTAssertTrue(Thread.isMainThread)
+                if result.isSuccess {
+                    try? apiResponse = result.get()
+                    if apiResponse?.apiStatusCode == "PS00" {
+                        let smsVerification = apiResponse!.data
+                        print("Whole Response From Server: \(String(describing: apiResponse))")
+                        print(" Phone [ \(smsVerification.phone)] : Registered [ \(smsVerification.registered)")
                         exp.fulfill()
                     }
                 }

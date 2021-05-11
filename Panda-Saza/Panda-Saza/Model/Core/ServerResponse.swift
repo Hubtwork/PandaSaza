@@ -13,8 +13,19 @@ struct MsgResponse: Codable {
     let message: String
 }
 
+struct ErrorResponse: Codable {
+    let apiStatusCode: String
+    let message: String
+}
+
 struct DataResponse<T : Codable>: Codable {
     let apiStatusCode: String
     let message: String
     let data: T
+}
+
+struct TokenResponse: Codable {
+    let apiStatusCode: String
+    let message: String
+    let tokens: Tokens
 }

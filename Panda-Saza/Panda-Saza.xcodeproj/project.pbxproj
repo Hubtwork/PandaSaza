@@ -10,12 +10,14 @@
 		004D774F75B0123EEF5B63A2 /* Pods_Panda_Saza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */; };
 		29C758A8B03806CA68ABD5E2 /* Pods_Panda_Saza_Panda_SazaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D252ABEDEEE9B4935A46D3 /* Pods_Panda_Saza_Panda_SazaUITests.framework */; };
 		33ED981126495CAE00A4067E /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981026495CAE00A4067E /* ServerResponse.swift */; };
-		33ED98142649666D00A4067E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED98132649666D00A4067E /* Account.swift */; };
-		33ED981626497A2300A4067E /* SMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981526497A2300A4067E /* SMS.swift */; };
+		33ED98142649666D00A4067E /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED98132649666D00A4067E /* AccountModel.swift */; };
+		33ED981626497A2300A4067E /* SmsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981526497A2300A4067E /* SmsModel.swift */; };
 		33ED981926497AA500A4067E /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981826497AA500A4067E /* Tokens.swift */; };
-		33ED981B26497B0100A4067E /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981A26497B0100A4067E /* Register.swift */; };
+		33ED981B26497B0100A4067E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981A26497B0100A4067E /* RegisterModel.swift */; };
 		33ED981F2649887D00A4067E /* SmsApiRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED981E2649887D00A4067E /* SmsApiRepositoryTest.swift */; };
 		33ED98212649936000A4067E /* SmsApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED98202649936000A4067E /* SmsApiRepository.swift */; };
+		33ED9823264A3F5000A4067E /* SignApiRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED9822264A3F5000A4067E /* SignApiRepositoryTest.swift */; };
+		33ED9825264A449300A4067E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED9824264A449300A4067E /* LoginModel.swift */; };
 		6549E2526BB7DE98D1ED2625 /* Pods_Panda_SazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */; };
 		C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF025E3558C005974B0 /* Assets.xcassets */; };
 		C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */; };
@@ -220,12 +222,14 @@
 		1C5CCEF56E016FBBA51B9AFE /* Pods-Panda-Saza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-Saza.release.xcconfig"; path = "Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza.release.xcconfig"; sourceTree = "<group>"; };
 		2A70656BE242A677427B3C96 /* Pods-Panda-Saza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-Saza.debug.xcconfig"; path = "Target Support Files/Pods-Panda-Saza/Pods-Panda-Saza.debug.xcconfig"; sourceTree = "<group>"; };
 		33ED981026495CAE00A4067E /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
-		33ED98132649666D00A4067E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		33ED981526497A2300A4067E /* SMS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMS.swift; sourceTree = "<group>"; };
+		33ED98132649666D00A4067E /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		33ED981526497A2300A4067E /* SmsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsModel.swift; sourceTree = "<group>"; };
 		33ED981826497AA500A4067E /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
-		33ED981A26497B0100A4067E /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		33ED981A26497B0100A4067E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		33ED981E2649887D00A4067E /* SmsApiRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsApiRepositoryTest.swift; sourceTree = "<group>"; };
 		33ED98202649936000A4067E /* SmsApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsApiRepository.swift; sourceTree = "<group>"; };
+		33ED9822264A3F5000A4067E /* SignApiRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignApiRepositoryTest.swift; sourceTree = "<group>"; };
+		33ED9824264A449300A4067E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_Saza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.debug.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.release.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -453,9 +457,10 @@
 		33ED9812264965AA00A4067E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				33ED98132649666D00A4067E /* Account.swift */,
-				33ED981526497A2300A4067E /* SMS.swift */,
-				33ED981A26497B0100A4067E /* Register.swift */,
+				33ED98132649666D00A4067E /* AccountModel.swift */,
+				33ED981526497A2300A4067E /* SmsModel.swift */,
+				33ED981A26497B0100A4067E /* RegisterModel.swift */,
+				33ED9824264A449300A4067E /* LoginModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1125,6 +1130,7 @@
 			children = (
 				C6EECD912621AA740011EFCB /* StaticApiInteractorTest.swift */,
 				33ED981E2649887D00A4067E /* SmsApiRepositoryTest.swift */,
+				33ED9822264A3F5000A4067E /* SignApiRepositoryTest.swift */,
 			);
 			path = APITest;
 			sourceTree = "<group>";
@@ -1555,7 +1561,7 @@
 				C6EECE502622DC4D0011EFCB /* PhoneValidation.swift in Sources */,
 				C63695652609DF6100CCA4FC /* UserModel.swift in Sources */,
 				C60C50F425E62137005974B0 /* LikeView.swift in Sources */,
-				33ED981B26497B0100A4067E /* Register.swift in Sources */,
+				33ED981B26497B0100A4067E /* RegisterModel.swift in Sources */,
 				C6EECCCB261856140011EFCB /* SignInteractor.swift in Sources */,
 				C6FEA5D225E8A8B9007E7AB5 /* ProductDetail.swift in Sources */,
 				C6D2E46A25F08EC8006182DA /* ChattingThumbnailView.swift in Sources */,
@@ -1584,6 +1590,7 @@
 				C60C507225E3778E005974B0 /* AuthSignInView.swift in Sources */,
 				C66D3B8A25F725DC008F06E4 /* ProfileChangeViewModel.swift in Sources */,
 				C63D46C425F745D7001AE6E5 /* PhotopickerDemo.swift in Sources */,
+				33ED9825264A449300A4067E /* LoginModel.swift in Sources */,
 				C66D3B7A25F71C1E008F06E4 /* PhotoPickerModel.swift in Sources */,
 				C63D47AF2601B144001AE6E5 /* AppLocaleConfigurationView.swift in Sources */,
 				C6EECD5B261FE8CD0011EFCB /* SIgnUpValidationModel.swift in Sources */,
@@ -1640,7 +1647,7 @@
 				C6FEA65F25E8E34D007E7AB5 /* ProductDetailLocal.swift in Sources */,
 				C6EECCEE261C30470011EFCB /* SignUpView.swift in Sources */,
 				C63D476F25FE23AE001AE6E5 /* PushSoundConfigurationView.swift in Sources */,
-				33ED98142649666D00A4067E /* Account.swift in Sources */,
+				33ED98142649666D00A4067E /* AccountModel.swift in Sources */,
 				C6701C552611E98700B76753 /* ProductContentCell.swift in Sources */,
 				C6FEA5A825E77C7A007E7AB5 /* ProductDetailView.swift in Sources */,
 				C6EECD7226211BB50011EFCB /* SearchBar.swift in Sources */,
@@ -1656,7 +1663,7 @@
 				C6D2E40E25EE4BB2006182DA /* MyPageView.swift in Sources */,
 				C60C50DB25E60D69005974B0 /* ShoppingHomeView.swift in Sources */,
 				C6369580260B091900CCA4FC /* RootViewModifier.swift in Sources */,
-				33ED981626497A2300A4067E /* SMS.swift in Sources */,
+				33ED981626497A2300A4067E /* SmsModel.swift in Sources */,
 				33ED98212649936000A4067E /* SmsApiRepository.swift in Sources */,
 				C680CC2A26170424007498CC /* SignApiRepository.swift in Sources */,
 				C636956F2609EA9400CCA4FC /* DependencyInjector.swift in Sources */,
@@ -1689,6 +1696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33ED9823264A3F5000A4067E /* SignApiRepositoryTest.swift in Sources */,
 				C6EECD922621AA740011EFCB /* StaticApiInteractorTest.swift in Sources */,
 				33ED981F2649887D00A4067E /* SmsApiRepositoryTest.swift in Sources */,
 				C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */,

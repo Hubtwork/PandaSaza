@@ -11,8 +11,9 @@ import Foundation
 struct Account: Equatable, Codable {
     let accountId: String
     let phone: String
-    let registeredAt: Date
-    let updatedAt: Date
+    
+    // Timestamps
+    let registeredAt: String
     
     let user: User
     
@@ -27,8 +28,10 @@ struct User: Equatable, Codable {
     let uId: ID
     let school: String
     let nationality: String
-    let registeredAt: Date
-    let updatedAt: Date
+    
+    // Timestamps
+    let registeredAt: String
+    let updatedAt: String
     
     let profile: Profile
     
@@ -43,6 +46,10 @@ struct Profile: Equatable, Codable {
     let profileId: ID
     let profileName: String
     let profileImage: String
+    
+    // Timestamps
+    let registeredAt: String
+    let updatedAt: String
     
     typealias ID = Int
 }

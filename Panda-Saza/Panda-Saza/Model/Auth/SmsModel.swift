@@ -13,11 +13,6 @@ struct JsonSMSValidation: Codable, Equatable {
 }
 
 struct JsonSMSVerification: Codable, Equatable {
-    
     let phone: String
     let registered: Bool
-    /// IF already registered, redirect to logIn and return these
-    // account ID
-    let user: String?
-    let tokens: Tokens?
 }

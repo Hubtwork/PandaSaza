@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserRegisterDTO {
+struct RegistrationModel {
     let phone: String
     
     let school: String
