@@ -5,7 +5,7 @@ var _ = require('lodash')
 var schoolData = require('../data/school')
 
 router.get('/schools', function(req, res, next) {
-    res.json(schoolData)
+    res.status(200).json(schoolData)
 })
   
 

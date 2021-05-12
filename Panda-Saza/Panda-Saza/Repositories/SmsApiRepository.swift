@@ -15,9 +15,11 @@ protocol SmsApiRepository: ApiRepository {
     func smsVerification(phone: String) -> AnyPublisher<DataResponse<JsonSMSVerification>, Error>
     func smsValidation(phone: String) -> AnyPublisher<DataResponse<JsonSMSValidation>, Error>
     
+    func verifyingSMS(phone: String) -> AnyPublisher<Bool, Error>
+    func requestSMSValidation(phone: String) -> AnyPublisher<String, Error>
 }
 
-struct PandasazaSmspiRepository: SmsApiRepository {
+struct PandasazaSmsApiRepository: SmsApiRepository {
     
     let session: URLSession
     let baseURL: String
@@ -36,18 +38,28 @@ struct PandasazaSmspiRepository: SmsApiRepository {
     func smsVerification(phone: String) -> AnyPublisher<DataResponse<JsonSMSVerification>, Error> {
         return request(endpoint: API.smsVerification(phone))
     }
+    
+    func verifyingSMS(phone: String) -> AnyPublisher<Bool, Error> {
+        let smsRequest: AnyPublisher<DataResponse<JsonSMSVerification>, Error> = request(endpoint: API.smsVerification(phone))
+        return smsRequest.map { return $0.data.registered }.eraseToAnyPublisher()
+    }
+    
+    func requestSMSValidation(phone: String) -> AnyPublisher<String, Error> {
+        let smsRequest: AnyPublisher<DataResponse<JsonSMSValidation>, Error> = request(endpoint: API.smsValidation(phone))
+        return smsRequest.map { return $0.data.validationCode }.eraseToAnyPublisher()
+    }
 }
 
 // MARK: - Endpoints
 
-extension PandasazaSmspiRepository {
+extension PandasazaSmsApiRepository {
     enum API {
         case smsVerification(String)
         case smsValidation(String)
     }
 }
 
-extension PandasazaSmspiRepository.API: ApiRequest {
+extension PandasazaSmsApiRepository.API: ApiRequest {
     
     var path: String {
         switch self {

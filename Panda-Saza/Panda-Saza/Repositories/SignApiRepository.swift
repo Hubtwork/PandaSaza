@@ -93,7 +93,13 @@ extension PandasazaSignApiRepository.API: ApiRequest {
     }
     
     var headers: [String: String]? {
-        return ["Accept": "application/json"]
+        switch self {
+        case .refreshToken:
+            return ["Authroization": "Bearer ",
+                    "Accept": "application/json"]
+        default:
+            return ["Accept": "application/json"]
+        }
     }
     
     func body(params: [String: Any] = [:]) throws -> Data? {
