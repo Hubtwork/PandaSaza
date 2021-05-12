@@ -31,7 +31,7 @@ extension SchoolValidationView {
         ZStack {
             
             self.schoolValidationView
-                .padding(.top, 50)  // consider toolbar height
+                .padding(.top, 40)  // consider toolbar height
             
             self.signToolBar
             
@@ -83,7 +83,7 @@ extension SchoolValidationView {
             Spacer()
             
             Text(title)
-                .font(.custom("NanumGothicBold", size: 22))
+                .font(.custom("NanumGothicBold", size: 15))
             
             Spacer()
         }
@@ -121,12 +121,12 @@ private extension SchoolValidationView {
         VStack(spacing: 0){
             SearchBar(searchText: $schoolSearch.searchText,
                       hintText: "Search your school")
-                .frame(height: 60)
-                .padding(.bottom, 20)
+                .frame(height: 30)
             List(schools) { school in
                 SchoolCell(school: school)
             }.padding(.leading, -15)
         }
+        .padding(.top, 10)
         .padding(.horizontal, 30)
         .padding(.bottom, schoolSearch.keyboardHeight)
     }
