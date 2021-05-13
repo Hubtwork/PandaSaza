@@ -16,17 +16,20 @@ struct PhoneTextField: View {
     
     // UI References
     let textFieldHeight: CGFloat
+    let textSize: CGFloat
     let width: CGFloat = 500
     @State private var isEditing: Bool = false
     
     init(text: Binding<String>,
          hint: String,
-         textFieldHeight: CGFloat = 45,
+         textFieldHeight: CGFloat = 34,
+         textSize: CGFloat = 15,
          isAuth: Bool = false
     ) {
         self.text = text
         self.hint = hint
         self.textFieldHeight = textFieldHeight
+        self.textSize = textSize
         self.isAuthCode = isAuth
     }
     
@@ -39,8 +42,8 @@ struct PhoneTextField: View {
                       )
             .textContentType(isAuthCode ? .oneTimeCode : .telephoneNumber)
             .keyboardType(.numberPad)
-            .font(.custom("NanumGothic", size: 18))
-            .padding(.horizontal, 18)
+            .font(.system(size: textSize))
+            .padding(.horizontal, 15)
             .frame(height: textFieldHeight)
             .clipShape(RoundedRectangle(cornerRadius: 5))
             .overlay(

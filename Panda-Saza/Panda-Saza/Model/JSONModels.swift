@@ -8,12 +8,3 @@
 import Foundation
 
 // MARK:- Models
-
-struct JsonSmsValidation: Hashable, Codable, Equatable {
-    
-    let success: Bool
-    let code: Int
-    let response: Int
-    
-}
-

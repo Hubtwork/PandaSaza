@@ -400,7 +400,7 @@ extension SignMain {
 private extension SignMain {
     
     func signIn(id: String, pw: String) {
-        injected.interactors.signInteractor.signIn(user: $signedUser, id: id, pw: pw)
+        //injected.interactors.signInteractor.signIn(user: $signedUser, id: id, pw: pw)
     }
     
     func signedSuccess() {

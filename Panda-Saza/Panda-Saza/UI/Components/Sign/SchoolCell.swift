@@ -15,7 +15,7 @@ struct SchoolCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(school.name.localized(locale))
-                .font(.custom("NanumGothic", size: 20))
+                .font(.custom("NanumGothic", size: 15))
         }
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity, alignment: .leading)

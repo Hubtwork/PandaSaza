@@ -10,13 +10,17 @@ import Foundation
 
 protocol SignApiRepository: ApiRepository {
     
-    func signIn(id: String, password: String) -> AnyPublisher<UserModel, Error>
+    func register(registration: RegistrationModel) -> AnyPublisher<DataResponse<LoginModel>, Error>
     
-    func auth(phone: String) -> AnyPublisher<JsonSmsValidation, Error>
+    func login(phone: String) -> AnyPublisher<DataResponse<LoginModel>, Error>
+    func logout(phone: String) -> AnyPublisher<MsgResponse, Error>
+    
+    func refreshToken(refreshToken: String) -> AnyPublisher<TokenResponse, Error>
     
 }
 
 struct PandasazaSignApiRepository: SignApiRepository {
+    
     let session: URLSession
     let baseURL: String
     
@@ -27,25 +31,40 @@ struct PandasazaSignApiRepository: SignApiRepository {
         self.baseURL = baseURL
     }
     
-    func signIn(id: String, password: String) -> AnyPublisher<UserModel, Error> {
-        let signInParams = ["id": id, "pw": password]
-        return request(endpoint: API.signIn, params: signInParams)
+    func register(registration: RegistrationModel) -> AnyPublisher<DataResponse<LoginModel>, Error> {
+        let loginParams = [
+            "phone": registration.phone,
+            "profileName": registration.profileName,
+            "profileImg": registration.profileImg,
+            "nationality": registration.nationality,
+            "school": registration.school
+        ]
+        return request(endpoint: API.register, params: loginParams)
     }
     
-    
-    func auth(phone: String) -> AnyPublisher<JsonSmsValidation, Error> {
-        return request(endpoint: API.authSMS(phone))
+    func login(phone: String) -> AnyPublisher<DataResponse<LoginModel>, Error> {
+        return request(endpoint: API.login(phone))
     }
     
+    func logout(phone: String) -> AnyPublisher<MsgResponse, Error> {
+        let logoutParams = ["phone": phone]
+        return request(endpoint: API.logout, params: logoutParams)
+    }
+    
+    func refreshToken(refreshToken: String) -> AnyPublisher<TokenResponse, Error> {
+        let tokenParam = [ "refreshToken": refreshToken ]
+        return request(endpoint: API.refreshToken, params: tokenParam)
+    }
 }
 
 // MARK: - Endpoints
 
 extension PandasazaSignApiRepository {
     enum API {
-        case signIn
-        case signUp
-        case authSMS(String)
+        case register
+        case login(String)
+        case logout
+        case refreshToken
     }
 }
 
@@ -53,26 +72,34 @@ extension PandasazaSignApiRepository.API: ApiRequest {
     
     var path: String {
         switch self {
-        case .signIn:
-            return "/signIn"
-        case .signUp:
-            return "/sign/signUp"
-        case let .authSMS(phone):
-            return "/auth/sms/\(phone)"
+        case .register:
+            return "/register"
+        case let .login(phone):
+            return "/login/\(phone)"
+        case .logout:
+            return "/logout"
+        case .refreshToken:
+            return "/refresh"
         }
     }
     
     var method: String {
         switch self {
-        case .authSMS:
+        case .login:
             return "GET"
-        case .signIn, .signUp:
+        case .register, .logout, .refreshToken:
             return "POST"
         }
     }
     
     var headers: [String: String]? {
-        return ["Accept": "application/json"]
+        switch self {
+        case .refreshToken:
+            return ["Authroization": "Bearer ",
+                    "Accept": "application/json"]
+        default:
+            return ["Accept": "application/json"]
+        }
     }
     
     func body(params: [String: Any] = [:]) throws -> Data? {
