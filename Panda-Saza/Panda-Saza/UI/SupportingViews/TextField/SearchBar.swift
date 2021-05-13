@@ -54,10 +54,14 @@ struct SearchBar: View {
                 if isEditing {
                     HStack {
                         Spacer()
-                        Image(systemName: "multiply")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                            .padding(5)
+                        Button(action: {
+                            searchText.wrappedValue = ""
+                        }) {
+                            Image(systemName: "multiply")
+                                .resizable()
+                                .frame(width: 12, height: 12)
+                                .padding(5)
+                        }.foregroundColor(.black)
                     }
                 }
             }

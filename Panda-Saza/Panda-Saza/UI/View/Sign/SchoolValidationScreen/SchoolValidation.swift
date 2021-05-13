@@ -14,12 +14,12 @@ struct SchoolValidationView: View {
     
     @State private var schoolSearch: SchoolSearch = SchoolSearch()
     
-    
     // MARK:- Phone Validation Info
     let phoneNumber: String
     
     var body: some View {
         content
+            .padding(.horizontal, 15)
             .foregroundColor(Color.black)
             .background(Color.white.edgesIgnoringSafeArea(.all))
     }
@@ -31,7 +31,7 @@ extension SchoolValidationView {
         ZStack {
             
             self.schoolValidationView
-                .padding(.top, 40)  // consider toolbar height
+                .padding(.top, 50)  // consider toolbar height
             
             self.signToolBar
             
@@ -52,8 +52,6 @@ extension SchoolValidationView {
     var signToolBar: some View {
         VStack(spacing: 0) {
             ZStack {
-                self.toolBarTitle(title: "School Validation")
-                
                 self.toolBarButton
             }
             .padding(.vertical, 15)
@@ -62,7 +60,7 @@ extension SchoolValidationView {
     }
     
     var toolBarButton: some View {
-        HStack{
+        HStack(spacing: 15){
             Button(action: {
                 withAnimation {
                     presentation.wrappedValue.dismiss()
@@ -70,23 +68,15 @@ extension SchoolValidationView {
             }) {
                 Image(systemName: "arrow.left")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 15, height: 15)
                     .foregroundColor(Color.black)
             }
-            Spacer()
-        }
-        .padding(.leading, 30)
-    }
-    
-    func toolBarTitle(title: String) -> some View {
-        HStack {
-            Spacer()
+            SearchBar(searchText: $schoolSearch.searchText,
+                      hintText: "Search your school")
+                
             
-            Text(title)
-                .font(.custom("NanumGothicBold", size: 15))
-            
-            Spacer()
         }
+        .frame(height: 40)
     }
     
 }
@@ -119,15 +109,11 @@ private extension SchoolValidationView {
 private extension SchoolValidationView {
     func loadedView(_ schools: [School]) -> some View {
         VStack(spacing: 0){
-            SearchBar(searchText: $schoolSearch.searchText,
-                      hintText: "Search your school")
-                .frame(height: 30)
             List(schools) { school in
                 SchoolCell(school: school)
             }.padding(.leading, -15)
         }
         .padding(.top, 10)
-        .padding(.horizontal, 30)
         .padding(.bottom, schoolSearch.keyboardHeight)
     }
 }

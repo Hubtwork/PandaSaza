@@ -19,6 +19,7 @@
 		33ED9823264A3F5000A4067E /* SignApiRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED9822264A3F5000A4067E /* SignApiRepositoryTest.swift */; };
 		33ED9825264A449300A4067E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED9824264A449300A4067E /* LoginModel.swift */; };
 		33ED9829264B4FDB00A4067E /* SignInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED9828264B4FDB00A4067E /* SignInteractorTest.swift */; };
+		33ED9832264CD11600A4067E /* ProfileRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED9831264CD11600A4067E /* ProfileRegistration.swift */; };
 		6549E2526BB7DE98D1ED2625 /* Pods_Panda_SazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */; };
 		C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF025E3558C005974B0 /* Assets.xcassets */; };
 		C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */; };
@@ -232,6 +233,7 @@
 		33ED9822264A3F5000A4067E /* SignApiRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignApiRepositoryTest.swift; sourceTree = "<group>"; };
 		33ED9824264A449300A4067E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		33ED9828264B4FDB00A4067E /* SignInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInteractorTest.swift; sourceTree = "<group>"; };
+		33ED9831264CD11600A4067E /* ProfileRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegistration.swift; sourceTree = "<group>"; };
 		558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_Saza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.debug.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.release.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -510,6 +512,14 @@
 				C6EECE4A2622CE3F0011EFCB /* SchoolValidation.swift */,
 			);
 			path = SchoolValidationScreen;
+			sourceTree = "<group>";
+		};
+		33ED982E264CD0E500A4067E /* ProfileRegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				33ED9831264CD11600A4067E /* ProfileRegistration.swift */,
+			);
+			path = ProfileRegisterScreen;
 			sourceTree = "<group>";
 		};
 		48BFFAF1C248F28C9F491DD7 /* Pods */ = {
@@ -1027,6 +1037,7 @@
 		C6701C852612AA1300B76753 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				33ED982E264CD0E500A4067E /* ProfileRegisterScreen */,
 				33ED982B264C024E00A4067E /* SchoolValidationScreen */,
 				33ED982A264C023900A4067E /* PhoneValidationScreen */,
 				C6EECD03261D249D0011EFCB /* First-Design */,
@@ -1722,6 +1733,7 @@
 				C60C50EE25E610F9005974B0 /* SearchExtension.swift in Sources */,
 				C60C514225E7691E005974B0 /* PagingImageView.swift in Sources */,
 				C63D4785260187D1001AE6E5 /* BottomSheet.swift in Sources */,
+				33ED9832264CD11600A4067E /* ProfileRegistration.swift in Sources */,
 				C60C50F925E626C7005974B0 /* SlidingTabView.swift in Sources */,
 				C6701B28260DFD6500B76753 /* AppEnvironment.swift in Sources */,
 			);

@@ -66,7 +66,7 @@ private extension PhoneValidationView {
                         Spacer()
                     }.padding(.horizontal, geometry.size.width * 0.05)
                 }
-                .padding(.top, 60)  // consider toolbar height
+                .padding(.top, 70)  // consider toolbar height
                 
                 self.signToolBar
             
@@ -145,6 +145,7 @@ private extension PhoneValidationView {
             Spacer()
         }
         .padding(.leading, 20)
+        .frame(height: 40)
     }
     
     func toolBarTitle(title: String) -> some View {
