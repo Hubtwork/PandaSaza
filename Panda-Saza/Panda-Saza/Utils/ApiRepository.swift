@@ -7,6 +7,12 @@
 
 import Foundation
 import Combine
+import Alamofire
+
+struct Response<T> {
+    let value: T
+    let response: URLResponse
+}
 
 protocol ApiRepository {
     var session: URLSession { get }
@@ -32,16 +38,28 @@ extension ApiRepository {
         }
     }
     
-    func postRequest<Value>(endpoint: ApiRequest, params: [String: Any], httpStatusCodes: HttpStatusCodes = .success) -> AnyPublisher<Value, Error>
+    func imageRequest<Value>(endpoint: ApiRequest, httpStatusCodes: HttpStatusCodes = .success, image: Data, params: [String: Any] = [:]) -> AnyPublisher<Value, Error>
         where Value: Decodable {
         do {
-            let request = try endpoint.postRequest(baseURL: baseURL, params: params)
-            print("URL Request: [\(String(describing: request.httpMethod))] \(String(describing: request.url))")
-            print("Params : \(params)")
-            return session
-                .dataTaskPublisher(for: request)
-                .requestJSON(httpStatusCodes: httpStatusCodes)
-                .ensureTimeSpan(0.5)
+            let request = try endpoint.multipartFormDataRequest(baseURL: baseURL, image: image, params: params)
+            return request.validate()
+                .publishData(emptyResponseCodes: [200, 204, 205])
+                .tryMap {
+                    guard let code = ($0.response)?.statusCode else {
+                        throw ApiError.unexpectedResponse
+                    }
+                    guard httpStatusCodes.contains(code) else {
+                        throw ApiError.httpStatusCode(code)
+                    }
+                    guard let data = $0.data else {
+                        throw ApiError.unexpectedResponse
+                    }
+                    return data
+                }
+                .extractUnderlyingError()
+                .decode(type: Value.self, decoder: JSONDecoder())
+                .receive(on: DispatchQueue.main)
+                .eraseToAnyPublisher()
         } catch let error {
             return Fail<Value, Error>(error: error).eraseToAnyPublisher()
         }
@@ -68,4 +86,3 @@ private extension Publisher where Output == URLSession.DataTaskPublisher.Output 
             .eraseToAnyPublisher()
     }
 }
-

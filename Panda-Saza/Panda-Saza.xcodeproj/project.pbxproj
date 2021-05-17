@@ -24,6 +24,9 @@
 		33ED9839264CF15E00A4067E /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 33ED9838264CF15E00A4067E /* BSImagePicker */; };
 		33ED983B264CF1B000A4067E /* BSImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983A264CF1B000A4067E /* BSImagePicker.swift */; };
 		33ED983D264D46B300A4067E /* TextfieldModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983C264D46B300A4067E /* TextfieldModifiers.swift */; };
+		33ED983F264FF8E900A4067E /* ProfileApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */; };
+		33ED984226501BE500A4067E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 33ED984126501BE500A4067E /* Alamofire */; };
+		33ED984426501D9C00A4067E /* AlamoFireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED984326501D9C00A4067E /* AlamoFireClient.swift */; };
 		6549E2526BB7DE98D1ED2625 /* Pods_Panda_SazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */; };
 		C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF025E3558C005974B0 /* Assets.xcassets */; };
 		C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */; };
@@ -239,6 +242,8 @@
 		33ED9835264CDD0000A4067E /* ModifiableProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiableProfileImageView.swift; sourceTree = "<group>"; };
 		33ED983A264CF1B000A4067E /* BSImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSImagePicker.swift; sourceTree = "<group>"; };
 		33ED983C264D46B300A4067E /* TextfieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldModifiers.swift; sourceTree = "<group>"; };
+		33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiRepository.swift; sourceTree = "<group>"; };
+		33ED984326501D9C00A4067E /* AlamoFireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireClient.swift; sourceTree = "<group>"; };
 		558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_Saza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.debug.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.release.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -431,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6701BE32610B31300B76753 /* URLImage in Frameworks */,
+				33ED984226501BE500A4067E /* Alamofire in Frameworks */,
 				33ED9839264CF15E00A4067E /* BSImagePicker in Frameworks */,
 				004D774F75B0123EEF5B63A2 /* Pods_Panda_Saza.framework in Frameworks */,
 			);
@@ -643,6 +649,7 @@
 				C6964E73260340490090B45C /* Loadable.swift */,
 				C6964E782603430C0090B45C /* LazyList.swift */,
 				C6701B8C261039BF00B76753 /* Helper.swift */,
+				33ED984326501D9C00A4067E /* AlamoFireClient.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -844,6 +851,7 @@
 				C680CC2926170424007498CC /* SignApiRepository.swift */,
 				C6EECD7E2621A2570011EFCB /* StaticApiRepository.swift */,
 				33ED98202649936000A4067E /* SmsApiRepository.swift */,
+				33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1338,6 +1346,7 @@
 			packageProductDependencies = (
 				C6701BE22610B31300B76753 /* URLImage */,
 				33ED9838264CF15E00A4067E /* BSImagePicker */,
+				33ED984126501BE500A4067E /* Alamofire */,
 			);
 			productName = "Panda-Saza";
 			productReference = C60C4FE925E35589005974B0 /* Panda-Saza.app */;
@@ -1418,6 +1427,7 @@
 			packageReferences = (
 				C6701BE12610B31300B76753 /* XCRemoteSwiftPackageReference "url-image" */,
 				33ED9837264CF15E00A4067E /* XCRemoteSwiftPackageReference "BSImagePicker" */,
+				33ED984026501BE500A4067E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C60C4FEA25E35589005974B0 /* Products */;
 			projectDirPath = "";
@@ -1636,6 +1646,7 @@
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
 				C6EECD7F2621A2570011EFCB /* StaticApiRepository.swift in Sources */,
+				33ED983F264FF8E900A4067E /* ProfileApiRepository.swift in Sources */,
 				C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */,
 				C6EECE6426257CCE0011EFCB /* ProfileRegisterView.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,
@@ -1718,6 +1729,7 @@
 				C60C50DB25E60D69005974B0 /* ShoppingHomeView.swift in Sources */,
 				C6369580260B091900CCA4FC /* RootViewModifier.swift in Sources */,
 				33ED981626497A2300A4067E /* SmsModel.swift in Sources */,
+				33ED984426501D9C00A4067E /* AlamoFireClient.swift in Sources */,
 				33ED98212649936000A4067E /* SmsApiRepository.swift in Sources */,
 				C680CC2A26170424007498CC /* SignApiRepository.swift in Sources */,
 				C636956F2609EA9400CCA4FC /* DependencyInjector.swift in Sources */,
@@ -2099,6 +2111,14 @@
 				minimumVersion = 3.3.1;
 			};
 		};
+		33ED984026501BE500A4067E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
 		C6701BE12610B31300B76753 /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
@@ -2114,6 +2134,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 33ED9837264CF15E00A4067E /* XCRemoteSwiftPackageReference "BSImagePicker" */;
 			productName = BSImagePicker;
+		};
+		33ED984126501BE500A4067E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33ED984026501BE500A4067E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		C6701BE22610B31300B76753 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -110,7 +110,9 @@ private extension SchoolValidationView {
     func loadedView(_ schools: [School]) -> some View {
         VStack(spacing: 0){
             List(schools) { school in
-                SchoolCell(school: school)
+                NavigationLink(destination: ProfileRegistration(phoneNumber: phoneNumber, school: school.name)){
+                    SchoolCell(school: school)
+                }
             }.padding(.leading, -15)
         }
         .padding(.top, 10)

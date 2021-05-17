@@ -52,11 +52,12 @@ extension ProfileRegistration {
     
     var profileNameView: some View {
         TextField("", text: $profileName)
+            .multilineTextAlignment(.center)
             .font(.system(size: 17))
             .padding(.vertical, 5)
             .padding(.horizontal, 10)
             .overlay(
-                RoundedRectangle(cornerRadius: 5)
+                RoundedRectangle(cornerRadius: 8)
                     .stroke(Color.black, lineWidth: 1)
             )
     }
@@ -100,6 +101,11 @@ extension ProfileRegistration {
             Spacer()
         }
     }
+}
+
+/// Side Effects
+extension ProfileRegistration {
+    
 }
 
 struct ProfileRegistration_Previews: PreviewProvider {
