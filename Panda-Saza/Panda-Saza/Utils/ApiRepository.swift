@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Alamofire
 
+
 struct Response<T> {
     let value: T
     let response: URLResponse
@@ -38,10 +39,10 @@ extension ApiRepository {
         }
     }
     
-    func imageRequest<Value>(endpoint: ApiRequest, httpStatusCodes: HttpStatusCodes = .success, image: Data, params: [String: Any] = [:]) -> AnyPublisher<Value, Error>
+    func imageRequest<Value>(endpoint: ApiRequest, httpStatusCodes: HttpStatusCodes = .success, imageKey: String, image: Data, params: [String: Any] = [:]) -> AnyPublisher<Value, Error>
         where Value: Decodable {
         do {
-            let request = try endpoint.multipartFormDataRequest(baseURL: baseURL, image: image, params: params)
+            let request = try endpoint.multipartFormDataRequest(baseURL: baseURL, imageKey: imageKey, image: image, params: params)
             return request.validate()
                 .publishData(emptyResponseCodes: [200, 204, 205])
                 .tryMap {

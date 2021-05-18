@@ -27,6 +27,9 @@
 		33ED983F264FF8E900A4067E /* ProfileApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */; };
 		33ED984226501BE500A4067E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 33ED984126501BE500A4067E /* Alamofire */; };
 		33ED984426501D9C00A4067E /* AlamoFireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED984326501D9C00A4067E /* AlamoFireClient.swift */; };
+		33ED98472653308900A4067E /* ImageUploadTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED98462653308900A4067E /* ImageUploadTestModel.swift */; };
+		33ED98492653435B00A4067E /* ImageUploaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED98482653435B00A4067E /* ImageUploaderTest.swift */; };
+		33ED984B26537BE300A4067E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED984A26537BE300A4067E /* ProfileModel.swift */; };
 		6549E2526BB7DE98D1ED2625 /* Pods_Panda_SazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E8CA543BFA376A64EFFD63 /* Pods_Panda_SazaTests.framework */; };
 		C60C4FF125E3558C005974B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF025E3558C005974B0 /* Assets.xcassets */; };
 		C60C4FF425E3558C005974B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60C4FF325E3558C005974B0 /* Preview Assets.xcassets */; };
@@ -244,6 +247,9 @@
 		33ED983C264D46B300A4067E /* TextfieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldModifiers.swift; sourceTree = "<group>"; };
 		33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiRepository.swift; sourceTree = "<group>"; };
 		33ED984326501D9C00A4067E /* AlamoFireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireClient.swift; sourceTree = "<group>"; };
+		33ED98462653308900A4067E /* ImageUploadTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadTestModel.swift; sourceTree = "<group>"; };
+		33ED98482653435B00A4067E /* ImageUploaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploaderTest.swift; sourceTree = "<group>"; };
+		33ED984A26537BE300A4067E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		558BB626407097C7F4AC1586 /* Pods_Panda_Saza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Panda_Saza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E89688C2101F418E336E14 /* Pods-Panda-SazaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.debug.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67C3B22A9FEF976DD36CF439 /* Pods-Panda-SazaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panda-SazaTests.release.xcconfig"; path = "Target Support Files/Pods-Panda-SazaTests/Pods-Panda-SazaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -475,6 +481,7 @@
 				33ED981526497A2300A4067E /* SmsModel.swift */,
 				33ED981A26497B0100A4067E /* RegisterModel.swift */,
 				33ED9824264A449300A4067E /* LoginModel.swift */,
+				33ED984A26537BE300A4067E /* ProfileModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -494,6 +501,7 @@
 				C6EECD912621AA740011EFCB /* StaticApiInteractorTest.swift */,
 				33ED981E2649887D00A4067E /* SmsApiRepositoryTest.swift */,
 				33ED9822264A3F5000A4067E /* SignApiRepositoryTest.swift */,
+				33ED98482653435B00A4067E /* ImageUploaderTest.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -530,6 +538,14 @@
 				33ED9831264CD11600A4067E /* ProfileRegistration.swift */,
 			);
 			path = ProfileRegisterScreen;
+			sourceTree = "<group>";
+		};
+		33ED98452653307B00A4067E /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				33ED98462653308900A4067E /* ImageUploadTestModel.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		48BFFAF1C248F28C9F491DD7 /* Pods */ = {
@@ -823,6 +839,7 @@
 		C63695632609DCA600CCA4FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				33ED98452653307B00A4067E /* Image */,
 				33ED981726497A6D00A4067E /* Core */,
 				33ED9812264965AA00A4067E /* Auth */,
 				C63695642609DF6100CCA4FC /* UserModel.swift */,
@@ -1642,6 +1659,7 @@
 				C60C50B425E54EAB005974B0 /* RoundedEdge.swift in Sources */,
 				C60C505925E3655E005974B0 /* FloatingTextField.swift in Sources */,
 				C6EECE552622E5B40011EFCB /* PhoneValidationModel.swift in Sources */,
+				33ED98472653308900A4067E /* ImageUploadTestModel.swift in Sources */,
 				C60C510B25E63652005974B0 /* UserManager.swift in Sources */,
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
@@ -1680,6 +1698,7 @@
 				C66D3B8525F7220E008F06E4 /* LivePhotoView.swift in Sources */,
 				C680CC252616DB6C007498CC /* SignInValidation.swift in Sources */,
 				C6FEA6C025ECF42C007E7AB5 /* Category.swift in Sources */,
+				33ED984B26537BE300A4067E /* ProfileModel.swift in Sources */,
 				C6701B592610189B00B76753 /* ProductsList.swift in Sources */,
 				C6701B35260DFEF700B76753 /* DeepLinksHandler.swift in Sources */,
 				C6D2E43525EF1378006182DA /* UserData.swift in Sources */,
@@ -1766,6 +1785,7 @@
 				33ED9823264A3F5000A4067E /* SignApiRepositoryTest.swift in Sources */,
 				33ED9829264B4FDB00A4067E /* SignInteractorTest.swift in Sources */,
 				C6EECD922621AA740011EFCB /* StaticApiInteractorTest.swift in Sources */,
+				33ED98492653435B00A4067E /* ImageUploaderTest.swift in Sources */,
 				33ED981F2649887D00A4067E /* SmsApiRepositoryTest.swift in Sources */,
 				C60C4FFF25E3558C005974B0 /* Panda_SazaTests.swift in Sources */,
 				C63695D4260CCCDE00CCA4FC /* TestHelpers.swift in Sources */,

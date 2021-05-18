@@ -47,7 +47,7 @@ extension ApiRequest {
         return request
     }
     
-    func multipartFormDataRequest(baseURL: String, image: Data?, params: [String : Any]) throws -> Alamofire.UploadRequest {
+    func multipartFormDataRequest(baseURL: String, imageKey: String, image: Data?, params: [String : Any]) throws -> Alamofire.UploadRequest {
         guard let url = URL(string: baseURL + path) else {
             throw ApiError.invalidURL
         }
@@ -83,7 +83,7 @@ extension ApiRequest {
             }
             
             if let imageData = image {
-                multipartFormData.append(imageData, withName: "file", fileName: "\(imageName).png", mimeType: "image/png")
+                multipartFormData.append(imageData, withName: imageKey, fileName: "\(imageName).png", mimeType: "image/png")
             }
         },
         to: url,

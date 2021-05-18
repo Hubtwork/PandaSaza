@@ -8,9 +8,12 @@
 import Foundation
 import Combine
 import SwiftUI
+import UIKit
 
 protocol ProfileApiRepository: ApiRepository {
-    func profileImageUpload(image: Image)
+    func basicImageUpload(image: UIImage) -> AnyPublisher<ImageUploadResponseModel, Error>
+    
+    func changeProfileImage(accessToken: String, profileName: String, profileImage: UIImage) -> AnyPublisher<ProfileModel, Error>
 }
 
 
@@ -26,8 +29,21 @@ struct PandasazaProfileApiRepository: ProfileApiRepository {
         self.baseURL = baseURL
     }
     
-    func profileImageUpload(image: Image) {
-        
+    func basicImageUpload(image: UIImage) -> AnyPublisher<ImageUploadResponseModel, Error> {
+        let params = [
+            "refreshToken": "tokenString",
+            "user":"hubtwork"
+        ]
+        let imageUploadRequest: AnyPublisher<DataResponse<ImageUploadResponseModel>, Error> = imageRequest(endpoint: API.profileImageUpload, imageKey: "profile", image: image.pngData()!, params: params)
+        return imageUploadRequest.map { return $0.data }.eraseToAnyPublisher()
+    }
+    
+    func changeProfileImage(accessToken: String, profileName: String, profileImage: UIImage) -> AnyPublisher<ProfileModel, Error> {
+        let params = [
+            "profileName": profileName
+        ]
+        let changeProfileRequest: AnyPublisher<DataResponse<ProfileModel>, Error> = imageRequest(endpoint: API.changeProfileImage(accessToken), imageKey: "profileImage", image: profileImage.pngData()!, params: params)
+        return changeProfileRequest.map{ return $0.data }.eraseToAnyPublisher()
     }
     
 }
@@ -36,6 +52,7 @@ struct PandasazaProfileApiRepository: ProfileApiRepository {
 extension PandasazaProfileApiRepository {
     enum API {
         case profileImageUpload
+        case changeProfileImage(String)
     }
 }
 
@@ -44,19 +61,32 @@ extension PandasazaProfileApiRepository.API: ApiRequest {
     var path: String {
         switch self {
         case .profileImageUpload:
-            return "/imageUpload/profileImage"
+            return "/imageUploadTest"
+        case .changeProfileImage:
+            return "/my/change"
         }
     }
     
     var method: String {
         switch self {
-        case .profileImageUpload:
+        case .profileImageUpload, .changeProfileImage:
             return "PUT"
         }
     }
     
     var headers: [String: String]? {
-        return ["Accept": "application/json"]
+        var headers = [
+            "Accept": "application/json"
+        ]
+        switch self {
+        case .profileImageUpload:
+            headers["Authorization"] = "test"
+            break
+        case let .changeProfileImage(accessToken):
+            headers["Authorization"] = accessToken
+            break
+        }
+        return headers
     }
     
     func body(params: [String: Any] = [:]) throws -> Data? {

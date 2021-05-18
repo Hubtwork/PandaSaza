@@ -67,16 +67,5 @@ struct ImageUploadClient {
     static let client = AFClient()
     
     
-    static func requestWithImage(
-        url: String,
-        header: [String: String],
-        method: String,
-        params: [String: Any],
-        image: Data,
-        fileURL: URL
-    ) -> AnyPublisher<Alamofire.Empty, AFResponseError> {
-        
-        
-    }
     
 }
