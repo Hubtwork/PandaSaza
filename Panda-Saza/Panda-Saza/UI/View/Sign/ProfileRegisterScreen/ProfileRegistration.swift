@@ -13,6 +13,7 @@ struct ProfileRegistration: View {
     @Environment(\.presentationMode) private var presentation
     
     @State private var profileName: String = ""
+    @State private var registerButton: Bool = false
     
     // Registration Info
     let phoneNumber: String
@@ -20,7 +21,8 @@ struct ProfileRegistration: View {
     
     var body: some View {
         self.content
-            .padding(.horizontal, 15)
+            .background(Color.white.edgesIgnoringSafeArea(.all))
+            
     }
 }
 
@@ -28,21 +30,28 @@ extension ProfileRegistration {
     
     var content: some View {
         ZStack {
-            self.profileView
-                .padding(.top, 90)  // consider toolbar height
-                .padding(.horizontal, 20)
+            ScrollView {
+                self.profileView
+                    .padding(.top, 40)
+                    .padding(.horizontal, 30)
+            }.padding(.top, 50)  // consider toolbar height
             
             self.signToolBar
-                
+            
+            VStack {
+                Spacer()
+                self.signButton
+            }
             .navigationBarHidden(true)
-        }
+        }.ignoresSafeArea(.all, edges: .bottom)
     }
     
     var profileView: some View {
-        VStack(spacing: 15){
+        VStack(spacing: 30){
             /// Profile Image
             ModifiableProfileImageView()
-                .frame(width: 80, height: 80)
+                .frame(width: UIScreen.screenWidth*0.3,
+                       height: UIScreen.screenWidth*0.3)
             /// Profile Name
             self.profileNameView
             
@@ -54,12 +63,27 @@ extension ProfileRegistration {
         TextField("", text: $profileName)
             .multilineTextAlignment(.center)
             .font(.system(size: 17))
-            .padding(.vertical, 5)
-            .padding(.horizontal, 10)
+            .padding(.vertical, 15)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(Color.black, lineWidth: 1)
             )
+    }
+    
+    var signButton: some View {
+        Button(action: { }) {
+            HStack {
+                Spacer()
+                Text("Register")
+                    .foregroundColor(Color.white)
+                    .font(.system(size:20))
+                    .bold()
+                
+                Spacer()
+            }
+            .frame(height: 60)
+            .background(Color.gray)
+        }
     }
     
     var signToolBar: some View {
@@ -69,7 +93,9 @@ extension ProfileRegistration {
                 
                 self.toolBarButton
             }
-            .padding(.vertical, 15)
+            .background(Color.white)
+            Divider()
+            
             Spacer()
         }
     }
@@ -83,12 +109,13 @@ extension ProfileRegistration {
             }) {
                 Image(systemName: "arrow.left")
                     .resizable()
-                    .frame(width: 15, height: 15)
+                    .frame(width: 20, height: 20)
                     .foregroundColor(Color.black)
+                    .padding(.leading, 30)
             }
             Spacer()
         }
-        .frame(height: 40)
+        .frame(height: 50)
     }
     
     func toolBarTitle(title: String) -> some View {
@@ -96,7 +123,8 @@ extension ProfileRegistration {
             Spacer()
             
             Text(title)
-                .font(.system(size: 15))
+                .font(.system(size: 20))
+                
             
             Spacer()
         }
@@ -110,6 +138,11 @@ extension ProfileRegistration {
 
 struct ProfileRegistration_Previews: PreviewProvider {
     static var previews: some View {
+        ProfileRegistration(phoneNumber: "01075187260", school: "Dongguk Univ.")
+            .inject(AppEnvironment.bootstrap().container)
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
+        
+        
         ProfileRegistration(phoneNumber: "01075187260", school: "Dongguk Univ.")
             .inject(AppEnvironment.bootstrap().container)
     }

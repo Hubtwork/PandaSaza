@@ -34,26 +34,27 @@ class SignApiRepositoryTest: XCTestCase {
     }
     
     func test1_sign_register_success() throws {
-        var apiResponse: DataResponse<LoginModel>?
-        
+        var apiResponse: LoginModel?
+    
+        let image: UIImage = UIImage(systemName: "return")!
+    
         let registerInfo: RegistrationModel = RegistrationModel(phone: "01075187260",
                                                             school: "Dongguk Univ.", nationality: "Republic Of Korea",
-                                                            profileName: "마스터", profileImg: "https://imgur.com/ntIdiPn")
+                                                            profileName: "마스터")
         let exp = XCTestExpectation(description: "Completion")
-        apiRepository.register(registration: registerInfo)
+        apiRepository.register(registration: registerInfo, profileImage: image)
             .sinkToResult { result in
                 XCTAssertTrue(Thread.isMainThread)
                 if result.isSuccess {
-                    try? apiResponse = result.get()
+                    try? apiResponse = result.get().data
                     XCTAssertTrue(apiResponse != nil)
-                    XCTAssertTrue(apiResponse?.apiStatusCode == "PS00")
-                    if apiResponse?.apiStatusCode == "PS00" {
-                        let accountData = apiResponse!.data
-                        XCTAssertTrue(accountData.account.phone == "01075187260")
-                        print("Account: \(String(describing: accountData.account))")
-                        print("Tokens: \(accountData.tokens)")
-                        exp.fulfill()
-                    }
+                    XCTAssertTrue(apiResponse!.accountId.count > 0)
+                    XCTAssertTrue(apiResponse!.phone == "01075187260")
+                    XCTAssertTrue(apiResponse!.tokens.accessToken.count > 0)
+                    XCTAssertTrue(apiResponse!.tokens.refreshToken.count > 0)
+                    print(String(describing: apiResponse))
+                    
+                    exp.fulfill()
                 }
             }
             .store(in: cancelBag)
@@ -80,11 +81,13 @@ class SignApiRepositoryTest: XCTestCase {
     }
     
     func test3_sign_register_fail_alreadayRegisteredWithThePhone() throws {
+        
+        let image: UIImage = UIImage(systemName: "return")!
         let registerInfo: RegistrationModel = RegistrationModel(phone: "01075187260",
                                                             school: "Dongguk Univ.", nationality: "Republic Of Korea",
-                                                            profileName: "마스터", profileImg: "https://imgur.com/ntIdiPn")
+                                                            profileName: "마스터")
         let exp = XCTestExpectation(description: "Completion")
-        apiRepository.register(registration: registerInfo)
+        apiRepository.register(registration: registerInfo, profileImage: image)
             .sinkToResult { result in
                 XCTAssertTrue(Thread.isMainThread)
                 if !result.isSuccess {
@@ -124,8 +127,6 @@ class SignApiRepositoryTest: XCTestCase {
                     XCTAssertTrue(apiResponse?.apiStatusCode == "PS00")
                     if apiResponse?.apiStatusCode == "PS00" {
                         let accountData = apiResponse!.data
-                        XCTAssertTrue(accountData.account.phone == "01075187260")
-                        print("Account: \(String(describing: accountData.account))")
                         print("Tokens: \(accountData.tokens)")
                         exp.fulfill()
                     }

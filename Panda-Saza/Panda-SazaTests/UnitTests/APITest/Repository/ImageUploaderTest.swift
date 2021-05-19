@@ -13,7 +13,7 @@ import Combine
 class ImageUploaderTest: XCTestCase {
     
     let appState = CurrentValueSubject<AppState, Never>(AppState())
-    private var apiRepository: ProfileApiRepository!
+    private var apiRepository: UserConfigurationApiRepository!
     private var cancelBag = CancelBag()
 
     override func setUpWithError() throws {
@@ -27,7 +27,7 @@ class ImageUploaderTest: XCTestCase {
         let session = URLSession(configuration: configuration)
         
         appState.value = AppState()
-        apiRepository = PandasazaProfileApiRepository(session: session, baseURL: "http://localhost:3030/service/profile")
+        apiRepository = PandasazaUserConfigurationApiRepository(session: session, baseURL: "http://localhost:3030/configuration")
     }
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -55,8 +55,8 @@ class ImageUploaderTest: XCTestCase {
         let image: UIImage = UIImage(systemName: "return")!
         var response: ProfileModel?
         let exp = XCTestExpectation(description: "Completion")
-        let accessToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjAxMDc1MTg3MjYwIiwiYWNjb3VudElkIjoiM2Q2ZWEyMDktNzhlYi00MjRhLTg0MjgtZTI4MjBhOGEzYmJhIiwiaWF0IjoxNjIxMzMyNDU3LCJleHAiOjE2MjE0MTg4NTcsImlzcyI6InBhbmRhU2F6YSJ9.nf9jVr8QkVAybMmIRKbLiTXtEs0_EV_5Ecl9HRcCUoo"
-        apiRepository.changeProfileImage(accessToken: accessToken, profileName: "호우재", profileImage: image)
+        let accessToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjAxMDc1MTg3MjYwIiwiYWNjb3VudElkIjoiYjZmZThkN2ItYmVmYy00Y2IwLTg2MDEtYjYxY2JkMzY0OGY3IiwiaWF0IjoxNjIxMzg3ODUxLCJleHAiOjE2MjE0NzQyNTEsImlzcyI6InBhbmRhU2F6YSJ9.t4CWaiUA7apV6pIsvEEjDGFsp56cENa9AGCoPgWorsc"
+        apiRepository.changeProfileImage(accessToken: accessToken, profileName: "master", profileImage: image)
             .sinkToResult { result in
                 if result.isSuccess {
                     try? response = result.get()

@@ -9,6 +9,6 @@ import Foundation
 
 struct LoginModel: Codable, Equatable {
     let phone: String
-    let account: Account
+    let accountId: String
     let tokens: Tokens
 }

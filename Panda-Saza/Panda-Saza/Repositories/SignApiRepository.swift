@@ -7,10 +7,11 @@
 
 import Combine
 import Foundation
+import UIKit
 
 protocol SignApiRepository: ApiRepository {
     
-    func register(registration: RegistrationModel) -> AnyPublisher<DataResponse<LoginModel>, Error>
+    func register(registration: RegistrationModel, profileImage: UIImage) -> AnyPublisher<DataResponse<LoginModel>, Error>
     
     func login(phone: String) -> AnyPublisher<DataResponse<LoginModel>, Error>
     func logout(phone: String) -> AnyPublisher<MsgResponse, Error>
@@ -31,15 +32,16 @@ struct PandasazaSignApiRepository: SignApiRepository {
         self.baseURL = baseURL
     }
     
-    func register(registration: RegistrationModel) -> AnyPublisher<DataResponse<LoginModel>, Error> {
-        let loginParams = [
+    
+    func register(registration: RegistrationModel, profileImage: UIImage) -> AnyPublisher<DataResponse<LoginModel>, Error> {
+        let registrationParams = [
             "phone": registration.phone,
             "profileName": registration.profileName,
-            "profileImg": registration.profileImg,
             "nationality": registration.nationality,
             "school": registration.school
         ]
-        return request(endpoint: API.register, params: loginParams)
+        let changeProfileRequest: AnyPublisher<DataResponse<LoginModel>, Error> = imageRequest(endpoint: API.register, imageKey: "profileImage", image: profileImage.pngData()!, params: registrationParams)
+        return changeProfileRequest
     }
     
     func login(phone: String) -> AnyPublisher<DataResponse<LoginModel>, Error> {

@@ -34,14 +34,14 @@ struct ModifiableProfileImageView: View {
                     } else {
                         circleClippedImage
                             /// It seems to Circle Image in frame, usually fit to height frame not width
-                            .frame(width: geometry.size.width,
-                                   height: geometry.size.height)
+                            .frame(width: calc_CameraButtonDiameter(diameter: geometry.size.width),
+                                   height: calc_CameraButtonDiameter(diameter: geometry.size.height))
                     }
                     cameraButton
-                        .frame(width: geometry.size.width * 0.5,
-                               height: geometry.size.height * 0.5)
-                        .offset(x: geometry.size.width * 0.45,
-                                y: geometry.size.height * 0.2)
+                        .frame(width: calc_CameraButtonDiameter(diameter: geometry.size.width),
+                               height: calc_CameraButtonDiameter(diameter: geometry.size.height))
+                        .offset(x: calc_CameraButtonLoc(radius: geometry.size.width),
+                                y: calc_CameraButtonLoc(radius: geometry.size.height))
                 }
             }
             .actionSheet(isPresented: $showSheet) {
@@ -76,7 +76,7 @@ private extension ModifiableProfileImageView {
             Image("man-user")
                 .resizable()
                 .opacity(0.7)
-                .padding(5)
+                .padding(10)
                 .background(Color.gray.opacity(0.3))
                 .clipShape(Circle())
         }
@@ -102,6 +102,14 @@ private extension ModifiableProfileImageView {
             .resizable()
             .scaledToFit()
             .clipShape(Circle())
+    }
+    
+    func calc_CameraButtonLoc(radius: CGFloat) -> CGFloat {
+        return radius * 0.5 / CGFloat((2.0).squareRoot())
+    }
+    
+    func calc_CameraButtonDiameter(diameter: CGFloat) -> CGFloat {
+        return diameter / 3
     }
 }
 

@@ -24,7 +24,7 @@
 		33ED9839264CF15E00A4067E /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 33ED9838264CF15E00A4067E /* BSImagePicker */; };
 		33ED983B264CF1B000A4067E /* BSImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983A264CF1B000A4067E /* BSImagePicker.swift */; };
 		33ED983D264D46B300A4067E /* TextfieldModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983C264D46B300A4067E /* TextfieldModifiers.swift */; };
-		33ED983F264FF8E900A4067E /* ProfileApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */; };
+		33ED983F264FF8E900A4067E /* UserConfigurationApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED983E264FF8E800A4067E /* UserConfigurationApiRepository.swift */; };
 		33ED984226501BE500A4067E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 33ED984126501BE500A4067E /* Alamofire */; };
 		33ED984426501D9C00A4067E /* AlamoFireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED984326501D9C00A4067E /* AlamoFireClient.swift */; };
 		33ED98472653308900A4067E /* ImageUploadTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED98462653308900A4067E /* ImageUploadTestModel.swift */; };
@@ -245,7 +245,7 @@
 		33ED9835264CDD0000A4067E /* ModifiableProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiableProfileImageView.swift; sourceTree = "<group>"; };
 		33ED983A264CF1B000A4067E /* BSImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSImagePicker.swift; sourceTree = "<group>"; };
 		33ED983C264D46B300A4067E /* TextfieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldModifiers.swift; sourceTree = "<group>"; };
-		33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiRepository.swift; sourceTree = "<group>"; };
+		33ED983E264FF8E800A4067E /* UserConfigurationApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationApiRepository.swift; sourceTree = "<group>"; };
 		33ED984326501D9C00A4067E /* AlamoFireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireClient.swift; sourceTree = "<group>"; };
 		33ED98462653308900A4067E /* ImageUploadTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadTestModel.swift; sourceTree = "<group>"; };
 		33ED98482653435B00A4067E /* ImageUploaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploaderTest.swift; sourceTree = "<group>"; };
@@ -868,7 +868,7 @@
 				C680CC2926170424007498CC /* SignApiRepository.swift */,
 				C6EECD7E2621A2570011EFCB /* StaticApiRepository.swift */,
 				33ED98202649936000A4067E /* SmsApiRepository.swift */,
-				33ED983E264FF8E800A4067E /* ProfileApiRepository.swift */,
+				33ED983E264FF8E800A4067E /* UserConfigurationApiRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1664,7 +1664,7 @@
 				C6D2E43025EF1356006182DA /* UserDataLocal.swift in Sources */,
 				C63D472625F9E05B001AE6E5 /* ItemPurchasedView.swift in Sources */,
 				C6EECD7F2621A2570011EFCB /* StaticApiRepository.swift in Sources */,
-				33ED983F264FF8E900A4067E /* ProfileApiRepository.swift in Sources */,
+				33ED983F264FF8E900A4067E /* UserConfigurationApiRepository.swift in Sources */,
 				C6701C132611773D00B76753 /* SellerProfileCell.swift in Sources */,
 				C6EECE6426257CCE0011EFCB /* ProfileRegisterView.swift in Sources */,
 				C6FEA62F25E8D4C2007E7AB5 /* ProductDetailViewModel.swift in Sources */,

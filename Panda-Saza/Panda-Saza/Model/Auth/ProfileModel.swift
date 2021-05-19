@@ -10,6 +10,6 @@ import Foundation
 struct ProfileModel: Codable, Equatable {
     
     let profileName: String
-    let profileImg: String
+    let profileImage: String
     
 }

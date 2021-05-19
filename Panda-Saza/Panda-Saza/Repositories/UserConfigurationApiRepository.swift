@@ -10,14 +10,25 @@ import Combine
 import SwiftUI
 import UIKit
 
-protocol ProfileApiRepository: ApiRepository {
+// MARK:-
+/**
+ 
+ User Configuration
+ - Change Profile
+ -
+ 
+*/
+protocol UserConfigurationApiRepository: ApiRepository {
     func basicImageUpload(image: UIImage) -> AnyPublisher<ImageUploadResponseModel, Error>
     
+    // MARK:- Profile
     func changeProfileImage(accessToken: String, profileName: String, profileImage: UIImage) -> AnyPublisher<ProfileModel, Error>
+    
+    
 }
 
 
-struct PandasazaProfileApiRepository: ProfileApiRepository {
+struct PandasazaUserConfigurationApiRepository: UserConfigurationApiRepository {
     
     let session: URLSession
     let baseURL: String
@@ -49,21 +60,21 @@ struct PandasazaProfileApiRepository: ProfileApiRepository {
 }
 
 
-extension PandasazaProfileApiRepository {
+extension PandasazaUserConfigurationApiRepository {
     enum API {
         case profileImageUpload
         case changeProfileImage(String)
     }
 }
 
-extension PandasazaProfileApiRepository.API: ApiRequest {
+extension PandasazaUserConfigurationApiRepository.API: ApiRequest {
     
     var path: String {
         switch self {
         case .profileImageUpload:
             return "/imageUploadTest"
         case .changeProfileImage:
-            return "/my/change"
+            return "/change/profile"
         }
     }
     
