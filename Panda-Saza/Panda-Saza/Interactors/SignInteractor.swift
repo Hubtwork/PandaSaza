@@ -21,7 +21,7 @@ protocol SignInteractor {
     func smsVerification(phone: String, registered: LoadableSubject<Bool>)
     func smsValidation(phone: String, validationCode: LoadableSubject<String>)
     
-    
+    func registration(registration: RegistrationModel, profileImage: UIImage, isLogin: LoadableSubject<Bool>)
 }
 
 struct PandaSazaSignInteractor: SignInteractor {

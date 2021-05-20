@@ -29,6 +29,8 @@ extension AppState {
 // MARK: - User Data
 extension AppState {
     struct UserData: Equatable {
+        
+        var tokens: Tokens? = nil
         var userData: Loadable<UserModel> = .notRequested
         
         

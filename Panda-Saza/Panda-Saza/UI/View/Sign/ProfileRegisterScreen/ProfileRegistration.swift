@@ -134,6 +134,7 @@ extension ProfileRegistration {
 /// Side Effects
 extension ProfileRegistration {
     
+    
 }
 
 struct ProfileRegistration_Previews: PreviewProvider {
