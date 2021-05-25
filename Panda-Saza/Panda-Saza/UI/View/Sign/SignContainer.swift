@@ -81,9 +81,7 @@ extension SignNavMain {
 // MARK:- Side Effect
 private extension SignNavMain {
     
-    func lookAroundWithoutSignIn() -> Void {
-        injected.appState[\.system.activateContent] = true
-    }
+    
     
 }
 
