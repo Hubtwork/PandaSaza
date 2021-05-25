@@ -29,6 +29,11 @@ extension AppState {
 // MARK: - User Data
 extension AppState {
     struct UserData: Equatable {
+        
+        // if tokens are not nil, It means user signed.
+        // 
+        // it will refresh Top View Container
+        var tokens: Tokens? = nil
         var userData: Loadable<UserModel> = .notRequested
         
         
@@ -52,13 +57,8 @@ extension AppState {
         
         /*
          System Setting Flow
-         
-         - !isSigned & !activateContent : Base Mode. Just Sign-Main View will be displayed for App
-         - !isSigned && activateContent : Look around without SignIn. The mode can display just thumbnail of items
-         - isSigned && activateContent : Signed Mode. All tabs can be reached.
          */
         var isSigned: Bool = false
-        var activateContent: Bool = false
     }
 }
 

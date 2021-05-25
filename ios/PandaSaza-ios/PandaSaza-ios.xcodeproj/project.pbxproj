@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3339A057265C8F1600F90C63 /* PandaSaza_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A056265C8F1600F90C63 /* PandaSaza_iosApp.swift */; };
+		3339A059265C8F1600F90C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A058265C8F1600F90C63 /* ContentView.swift */; };
+		3339A05B265C8F1700F90C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3339A05A265C8F1700F90C63 /* Assets.xcassets */; };
+		3339A05E265C8F1700F90C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */; };
+		3339A069265C8F1700F90C63 /* PandaSaza_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A068265C8F1700F90C63 /* PandaSaza_iosTests.swift */; };
+		3339A074265C8F1700F90C63 /* PandaSaza_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A073265C8F1700F90C63 /* PandaSaza_iosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3339A065265C8F1700F90C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3339A04B265C8F1600F90C63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3339A052265C8F1600F90C63;
+			remoteInfo = "PandaSaza-ios";
+		};
+		3339A070265C8F1700F90C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3339A04B265C8F1600F90C63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3339A052265C8F1600F90C63;
+			remoteInfo = "PandaSaza-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3339A053265C8F1600F90C63 /* PandaSaza-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PandaSaza-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3339A056265C8F1600F90C63 /* PandaSaza_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaSaza_iosApp.swift; sourceTree = "<group>"; };
+		3339A058265C8F1600F90C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3339A05A265C8F1700F90C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3339A05F265C8F1700F90C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3339A064265C8F1700F90C63 /* PandaSaza-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PandaSaza-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3339A068265C8F1700F90C63 /* PandaSaza_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaSaza_iosTests.swift; sourceTree = "<group>"; };
+		3339A06A265C8F1700F90C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3339A06F265C8F1700F90C63 /* PandaSaza-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PandaSaza-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3339A073265C8F1700F90C63 /* PandaSaza_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaSaza_iosUITests.swift; sourceTree = "<group>"; };
+		3339A075265C8F1700F90C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3339A050265C8F1600F90C63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3339A061265C8F1700F90C63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3339A06C265C8F1700F90C63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3339A04A265C8F1600F90C63 = {
+			isa = PBXGroup;
+			children = (
+				3339A055265C8F1600F90C63 /* PandaSaza-ios */,
+				3339A067265C8F1700F90C63 /* PandaSaza-iosTests */,
+				3339A072265C8F1700F90C63 /* PandaSaza-iosUITests */,
+				3339A054265C8F1600F90C63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3339A054265C8F1600F90C63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3339A053265C8F1600F90C63 /* PandaSaza-ios.app */,
+				3339A064265C8F1700F90C63 /* PandaSaza-iosTests.xctest */,
+				3339A06F265C8F1700F90C63 /* PandaSaza-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3339A055265C8F1600F90C63 /* PandaSaza-ios */ = {
+			isa = PBXGroup;
+			children = (
+				3339A056265C8F1600F90C63 /* PandaSaza_iosApp.swift */,
+				3339A058265C8F1600F90C63 /* ContentView.swift */,
+				3339A05A265C8F1700F90C63 /* Assets.xcassets */,
+				3339A05F265C8F1700F90C63 /* Info.plist */,
+				3339A05C265C8F1700F90C63 /* Preview Content */,
+			);
+			path = "PandaSaza-ios";
+			sourceTree = "<group>";
+		};
+		3339A05C265C8F1700F90C63 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3339A067265C8F1700F90C63 /* PandaSaza-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				3339A068265C8F1700F90C63 /* PandaSaza_iosTests.swift */,
+				3339A06A265C8F1700F90C63 /* Info.plist */,
+			);
+			path = "PandaSaza-iosTests";
+			sourceTree = "<group>";
+		};
+		3339A072265C8F1700F90C63 /* PandaSaza-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3339A073265C8F1700F90C63 /* PandaSaza_iosUITests.swift */,
+				3339A075265C8F1700F90C63 /* Info.plist */,
+			);
+			path = "PandaSaza-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3339A052265C8F1600F90C63 /* PandaSaza-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3339A078265C8F1700F90C63 /* Build configuration list for PBXNativeTarget "PandaSaza-ios" */;
+			buildPhases = (
+				3339A04F265C8F1600F90C63 /* Sources */,
+				3339A050265C8F1600F90C63 /* Frameworks */,
+				3339A051265C8F1600F90C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PandaSaza-ios";
+			productName = "PandaSaza-ios";
+			productReference = 3339A053265C8F1600F90C63 /* PandaSaza-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3339A063265C8F1700F90C63 /* PandaSaza-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3339A07B265C8F1700F90C63 /* Build configuration list for PBXNativeTarget "PandaSaza-iosTests" */;
+			buildPhases = (
+				3339A060265C8F1700F90C63 /* Sources */,
+				3339A061265C8F1700F90C63 /* Frameworks */,
+				3339A062265C8F1700F90C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3339A066265C8F1700F90C63 /* PBXTargetDependency */,
+			);
+			name = "PandaSaza-iosTests";
+			productName = "PandaSaza-iosTests";
+			productReference = 3339A064265C8F1700F90C63 /* PandaSaza-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3339A06E265C8F1700F90C63 /* PandaSaza-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3339A07E265C8F1700F90C63 /* Build configuration list for PBXNativeTarget "PandaSaza-iosUITests" */;
+			buildPhases = (
+				3339A06B265C8F1700F90C63 /* Sources */,
+				3339A06C265C8F1700F90C63 /* Frameworks */,
+				3339A06D265C8F1700F90C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3339A071265C8F1700F90C63 /* PBXTargetDependency */,
+			);
+			name = "PandaSaza-iosUITests";
+			productName = "PandaSaza-iosUITests";
+			productReference = 3339A06F265C8F1700F90C63 /* PandaSaza-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3339A04B265C8F1600F90C63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					3339A052265C8F1600F90C63 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					3339A063265C8F1700F90C63 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 3339A052265C8F1600F90C63;
+					};
+					3339A06E265C8F1700F90C63 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 3339A052265C8F1600F90C63;
+					};
+				};
+			};
+			buildConfigurationList = 3339A04E265C8F1600F90C63 /* Build configuration list for PBXProject "PandaSaza-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3339A04A265C8F1600F90C63;
+			productRefGroup = 3339A054265C8F1600F90C63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3339A052265C8F1600F90C63 /* PandaSaza-ios */,
+				3339A063265C8F1700F90C63 /* PandaSaza-iosTests */,
+				3339A06E265C8F1700F90C63 /* PandaSaza-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3339A051265C8F1600F90C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3339A05E265C8F1700F90C63 /* Preview Assets.xcassets in Resources */,
+				3339A05B265C8F1700F90C63 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3339A062265C8F1700F90C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3339A06D265C8F1700F90C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3339A04F265C8F1600F90C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3339A059265C8F1600F90C63 /* ContentView.swift in Sources */,
+				3339A057265C8F1600F90C63 /* PandaSaza_iosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3339A060265C8F1700F90C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3339A069265C8F1700F90C63 /* PandaSaza_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3339A06B265C8F1700F90C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3339A074265C8F1700F90C63 /* PandaSaza_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3339A066265C8F1700F90C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3339A052265C8F1600F90C63 /* PandaSaza-ios */;
+			targetProxy = 3339A065265C8F1700F90C63 /* PBXContainerItemProxy */;
+		};
+		3339A071265C8F1700F90C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3339A052265C8F1600F90C63 /* PandaSaza-ios */;
+			targetProxy = 3339A070265C8F1700F90C63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3339A076265C8F1700F90C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3339A077265C8F1700F90C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3339A079265C8F1700F90C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PandaSaza-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "PandaSaza-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pandalion.PandaSaza-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3339A07A265C8F1700F90C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PandaSaza-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "PandaSaza-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pandalion.PandaSaza-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3339A07C265C8F1700F90C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "PandaSaza-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pandalion.PandaSaza-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PandaSaza-ios.app/PandaSaza-ios";
+			};
+			name = Debug;
+		};
+		3339A07D265C8F1700F90C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "PandaSaza-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pandalion.PandaSaza-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PandaSaza-ios.app/PandaSaza-ios";
+			};
+			name = Release;
+		};
+		3339A07F265C8F1700F90C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "PandaSaza-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pandalion.PandaSaza-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "PandaSaza-ios";
+			};
+			name = Debug;
+		};
+		3339A080265C8F1700F90C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVVAVTC3DA;
+				INFOPLIST_FILE = "PandaSaza-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pandalion.PandaSaza-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "PandaSaza-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3339A04E265C8F1600F90C63 /* Build configuration list for PBXProject "PandaSaza-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3339A076265C8F1700F90C63 /* Debug */,
+				3339A077265C8F1700F90C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3339A078265C8F1700F90C63 /* Build configuration list for PBXNativeTarget "PandaSaza-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3339A079265C8F1700F90C63 /* Debug */,
+				3339A07A265C8F1700F90C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3339A07B265C8F1700F90C63 /* Build configuration list for PBXNativeTarget "PandaSaza-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3339A07C265C8F1700F90C63 /* Debug */,
+				3339A07D265C8F1700F90C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3339A07E265C8F1700F90C63 /* Build configuration list for PBXNativeTarget "PandaSaza-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3339A07F265C8F1700F90C63 /* Debug */,
+				3339A080265C8F1700F90C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3339A04B265C8F1600F90C63 /* Project object */;
+}

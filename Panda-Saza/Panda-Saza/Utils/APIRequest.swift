@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol ApiRequest {
     var path: String { get }
@@ -16,6 +17,7 @@ protocol ApiRequest {
 
 enum ApiError: Swift.Error {
     case invalidURL
+    case invalidMethod(String)
     case httpStatusCode(HttpStatusCode)
     case unexpectedResponse
     case imageProcessing([URLRequest])
@@ -25,6 +27,7 @@ extension ApiError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidURL: return "Invalid URL"
+        case let .invalidMethod(method): return "Invalid Http Method: \(method)"
         case let .httpStatusCode(code): return "Unexpected HTTP Status Code: \(code)"
         case .unexpectedResponse: return "Unexpected response from the server"
         case .imageProcessing: return "Unable to load image"
@@ -44,14 +47,49 @@ extension ApiRequest {
         return request
     }
     
-    func postRequest(baseURL: String, params: [String: Any]) throws -> URLRequest {
+    func multipartFormDataRequest(baseURL: String, imageKey: String, image: Data?, params: [String : Any]) throws -> Alamofire.UploadRequest {
         guard let url = URL(string: baseURL + path) else {
             throw ApiError.invalidURL
         }
-        var request = URLRequest(url: url)
-        request.httpMethod = method
-        request.allHTTPHeaderFields = headers
-        request.httpBody = params.percentEncoded()
+        // randomize UUID String
+        let imageUUID = UUID().uuidString
+        let uuidIndex: String.Index = imageUUID.index(imageUUID.startIndex, offsetBy: 8)
+        let imageName = String(imageUUID[...uuidIndex])
+        // http Method initialization
+        var httpMethod: HTTPMethod {
+            switch (method) {
+            case "GET":
+                return HTTPMethod.get
+            case "POST":
+                return HTTPMethod.post
+            case "PUT":
+                return HTTPMethod.put
+            case "DELETE":
+                return HTTPMethod.delete
+            default:
+                return HTTPMethod.get
+            }
+        }
+        // construct request
+        let request = AF.upload(multipartFormData: { multipartFormData in
+            // Add Body Parameters on MultipartFormData
+            for (key, value) in params {
+                if let val = value as? String {
+                    multipartFormData.append(val.data(using: .utf8)!, withName: key)
+                }
+                if let val = value as? Int {
+                    multipartFormData.append("\(val)".data(using: .utf8)!, withName: key)
+                }
+            }
+            
+            if let imageData = image {
+                multipartFormData.append(imageData, withName: imageKey, fileName: "\(imageName).png", mimeType: "image/png")
+            }
+        },
+        to: url,
+        method: httpMethod,
+        headers: HTTPHeaders(headers!)
+        )
         return request
     }
 }
@@ -87,3 +125,4 @@ extension CharacterSet {
         return allowed
     }()
 }
+

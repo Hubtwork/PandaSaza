@@ -14,6 +14,4 @@ struct RegistrationModel {
     let nationality: String
     
     let profileName: String
-    let profileImg: String
-    
 }

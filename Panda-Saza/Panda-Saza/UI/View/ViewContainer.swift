@@ -44,4 +44,10 @@ struct ContentView: View {
     private var signInStateUpdate: AnyPublisher<Bool, Never> {
         container.appState.updates(for: \.system.isSigned)
     }
+    // if Tokens are valid ( By login or register )
+    // will return true
+    private var tokenLoader: AnyPublisher<Bool, Never> {
+        let token = container.appState.updates(for: \.userData.tokens)
+        return token.map { $0 != nil }.eraseToAnyPublisher()
+    }
 }

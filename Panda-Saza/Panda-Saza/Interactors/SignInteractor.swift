@@ -21,10 +21,14 @@ protocol SignInteractor {
     func smsVerification(phone: String, registered: LoadableSubject<Bool>)
     func smsValidation(phone: String, validationCode: LoadableSubject<String>)
     
-    
+    func registration(registration: RegistrationModel, profileImage: UIImage, isLogin: LoadableSubject<Bool>)
 }
 
 struct PandaSazaSignInteractor: SignInteractor {
+    func registration(registration: RegistrationModel, profileImage: UIImage, isLogin: LoadableSubject<Bool>) {
+        
+    }
+    
     
     let smsRepository: SmsApiRepository
     let signRepository: SignApiRepository
@@ -90,6 +94,10 @@ struct PandaSazaSignInteractor: SignInteractor {
 }
 
 struct StubSignInteractor: SignInteractor {
+    func registration(registration: RegistrationModel, profileImage: UIImage, isLogin: LoadableSubject<Bool>) {
+        
+    }
+    
     
     func smsValidation(phone: String, validationCode: LoadableSubject<String>) {
         
