@@ -3,16 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3339A057265C8F1600F90C63 /* PandaSaza_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A056265C8F1600F90C63 /* PandaSaza_iosApp.swift */; };
 		3339A059265C8F1600F90C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A058265C8F1600F90C63 /* ContentView.swift */; };
 		3339A05B265C8F1700F90C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3339A05A265C8F1700F90C63 /* Assets.xcassets */; };
 		3339A05E265C8F1700F90C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */; };
 		3339A069265C8F1700F90C63 /* PandaSaza_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A068265C8F1700F90C63 /* PandaSaza_iosTests.swift */; };
 		3339A074265C8F1700F90C63 /* PandaSaza_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A073265C8F1700F90C63 /* PandaSaza_iosUITests.swift */; };
+		3339A087265C929700F90C63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A086265C929700F90C63 /* AppDelegate.swift */; };
+		3339A08B265C92C800F90C63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A08A265C92C800F90C63 /* SceneDelegate.swift */; };
+		3339A08D265C92ED00F90C63 /* SystemEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A08C265C92ED00F90C63 /* SystemEventsHandler.swift */; };
+		3339A08F265C931B00F90C63 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A08E265C931B00F90C63 /* Store.swift */; };
+		3339A092265C937E00F90C63 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A091265C937E00F90C63 /* CancelBag.swift */; };
+		3339A095265C939500F90C63 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A094265C939500F90C63 /* AppState.swift */; };
+		3339A098265C93D400F90C63 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A097265C93D400F90C63 /* Loadable.swift */; };
+		3339A09A265C942900F90C63 /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A099265C942900F90C63 /* NetworkHelpers.swift */; };
+		3339A09C265C98B300F90C63 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A09B265C98B300F90C63 /* AppEnvironment.swift */; };
+		3339A09E265C993300F90C63 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A09D265C993300F90C63 /* DependencyInjector.swift */; };
+		3339A0A0265C998000F90C63 /* InteractorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A09F265C998000F90C63 /* InteractorContainer.swift */; };
+		3339A0A3265C9A5400F90C63 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0A2265C9A5400F90C63 /* UIScreen.swift */; };
+		3339A0A5265CA75000F90C63 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0A4265CA75000F90C63 /* View.swift */; };
+		3339A0A8265CA91D00F90C63 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3339A0A7265CA91D00F90C63 /* Alamofire */; };
+		3339A0AA265CAD8D00F90C63 /* ServerResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0A9265CAD8D00F90C63 /* ServerResponses.swift */; };
+		3339A0B0265CB7C500F90C63 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0AF265CB7C500F90C63 /* Tokens.swift */; };
+		3339A0B2265CCFF100F90C63 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B1265CCFF100F90C63 /* ApiRequest.swift */; };
+		3339A0B4265CD00600F90C63 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B3265CD00600F90C63 /* ApiRepository.swift */; };
+		3339A0B6265CE6A900F90C63 /* RootViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B5265CE6A900F90C63 /* RootViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		3339A053265C8F1600F90C63 /* PandaSaza-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PandaSaza-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3339A056265C8F1600F90C63 /* PandaSaza_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaSaza_iosApp.swift; sourceTree = "<group>"; };
 		3339A058265C8F1600F90C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3339A05A265C8F1700F90C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +62,24 @@
 		3339A06F265C8F1700F90C63 /* PandaSaza-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PandaSaza-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3339A073265C8F1700F90C63 /* PandaSaza_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaSaza_iosUITests.swift; sourceTree = "<group>"; };
 		3339A075265C8F1700F90C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3339A086265C929700F90C63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3339A08A265C92C800F90C63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3339A08C265C92ED00F90C63 /* SystemEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsHandler.swift; sourceTree = "<group>"; };
+		3339A08E265C931B00F90C63 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		3339A091265C937E00F90C63 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		3339A094265C939500F90C63 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		3339A097265C93D400F90C63 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		3339A099265C942900F90C63 /* NetworkHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
+		3339A09B265C98B300F90C63 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		3339A09D265C993300F90C63 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		3339A09F265C998000F90C63 /* InteractorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorContainer.swift; sourceTree = "<group>"; };
+		3339A0A2265C9A5400F90C63 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		3339A0A4265CA75000F90C63 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		3339A0A9265CAD8D00F90C63 /* ServerResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponses.swift; sourceTree = "<group>"; };
+		3339A0AF265CB7C500F90C63 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
+		3339A0B1265CCFF100F90C63 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		3339A0B3265CD00600F90C63 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
+		3339A0B5265CE6A900F90C63 /* RootViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3339A0A8265CA91D00F90C63 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,21 +131,15 @@
 		3339A055265C8F1600F90C63 /* PandaSaza-ios */ = {
 			isa = PBXGroup;
 			children = (
-				3339A056265C8F1600F90C63 /* PandaSaza_iosApp.swift */,
-				3339A058265C8F1600F90C63 /* ContentView.swift */,
-				3339A05A265C8F1700F90C63 /* Assets.xcassets */,
-				3339A05F265C8F1700F90C63 /* Info.plist */,
-				3339A05C265C8F1700F90C63 /* Preview Content */,
+				3339A096265C93BB00F90C63 /* Models */,
+				3339A090265C932600F90C63 /* Resources */,
+				3339A085265C928200F90C63 /* Utils */,
+				3339A084265C927E00F90C63 /* UI */,
+				3339A083265C927800F90C63 /* Injected */,
+				3339A082265C927300F90C63 /* Interactors */,
+				3339A081265C926A00F90C63 /* System */,
 			);
 			path = "PandaSaza-ios";
-			sourceTree = "<group>";
-		};
-		3339A05C265C8F1700F90C63 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		3339A067265C8F1700F90C63 /* PandaSaza-iosTests */ = {
@@ -130,6 +160,117 @@
 			path = "PandaSaza-iosUITests";
 			sourceTree = "<group>";
 		};
+		3339A081265C926A00F90C63 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				3339A086265C929700F90C63 /* AppDelegate.swift */,
+				3339A08A265C92C800F90C63 /* SceneDelegate.swift */,
+				3339A08C265C92ED00F90C63 /* SystemEventsHandler.swift */,
+				3339A099265C942900F90C63 /* NetworkHelpers.swift */,
+				3339A09B265C98B300F90C63 /* AppEnvironment.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		3339A082265C927300F90C63 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		3339A083265C927800F90C63 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				3339A094265C939500F90C63 /* AppState.swift */,
+				3339A09D265C993300F90C63 /* DependencyInjector.swift */,
+				3339A09F265C998000F90C63 /* InteractorContainer.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
+		3339A084265C927E00F90C63 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3339A0AE265CB2F500F90C63 /* Screens */,
+				3339A0AD265CB2EF00F90C63 /* Components */,
+				3339A0AC265CB20A00F90C63 /* SupportingViews */,
+				3339A058265C8F1600F90C63 /* ContentView.swift */,
+				3339A0B5265CE6A900F90C63 /* RootViewModifier.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3339A085265C928200F90C63 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3339A08E265C931B00F90C63 /* Store.swift */,
+				3339A091265C937E00F90C63 /* CancelBag.swift */,
+				3339A097265C93D400F90C63 /* Loadable.swift */,
+				3339A0B1265CCFF100F90C63 /* ApiRequest.swift */,
+				3339A0B3265CD00600F90C63 /* ApiRepository.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3339A090265C932600F90C63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3339A05A265C8F1700F90C63 /* Assets.xcassets */,
+				3339A05F265C8F1700F90C63 /* Info.plist */,
+				3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3339A096265C93BB00F90C63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3339A0AB265CAD9000F90C63 /* Core */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3339A0A1265C9A4300F90C63 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				3339A0A2265C9A5400F90C63 /* UIScreen.swift */,
+				3339A0A4265CA75000F90C63 /* View.swift */,
+			);
+			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		3339A0AB265CAD9000F90C63 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3339A0A9265CAD8D00F90C63 /* ServerResponses.swift */,
+				3339A0AF265CB7C500F90C63 /* Tokens.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3339A0AC265CB20A00F90C63 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				3339A0A1265C9A4300F90C63 /* UIExtensions */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		3339A0AD265CB2EF00F90C63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3339A0AE265CB2F500F90C63 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +287,9 @@
 			dependencies = (
 			);
 			name = "PandaSaza-ios";
+			packageProductDependencies = (
+				3339A0A7265CA91D00F90C63 /* Alamofire */,
+			);
 			productName = "PandaSaza-ios";
 			productReference = 3339A053265C8F1600F90C63 /* PandaSaza-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +361,9 @@
 				Base,
 			);
 			mainGroup = 3339A04A265C8F1600F90C63;
+			packageReferences = (
+				3339A0A6265CA91D00F90C63 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3339A054265C8F1600F90C63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +406,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3339A087265C929700F90C63 /* AppDelegate.swift in Sources */,
 				3339A059265C8F1600F90C63 /* ContentView.swift in Sources */,
-				3339A057265C8F1600F90C63 /* PandaSaza_iosApp.swift in Sources */,
+				3339A0A0265C998000F90C63 /* InteractorContainer.swift in Sources */,
+				3339A0AA265CAD8D00F90C63 /* ServerResponses.swift in Sources */,
+				3339A098265C93D400F90C63 /* Loadable.swift in Sources */,
+				3339A0B6265CE6A900F90C63 /* RootViewModifier.swift in Sources */,
+				3339A0A3265C9A5400F90C63 /* UIScreen.swift in Sources */,
+				3339A09E265C993300F90C63 /* DependencyInjector.swift in Sources */,
+				3339A095265C939500F90C63 /* AppState.swift in Sources */,
+				3339A0B4265CD00600F90C63 /* ApiRepository.swift in Sources */,
+				3339A08F265C931B00F90C63 /* Store.swift in Sources */,
+				3339A09C265C98B300F90C63 /* AppEnvironment.swift in Sources */,
+				3339A08B265C92C800F90C63 /* SceneDelegate.swift in Sources */,
+				3339A0B0265CB7C500F90C63 /* Tokens.swift in Sources */,
+				3339A092265C937E00F90C63 /* CancelBag.swift in Sources */,
+				3339A09A265C942900F90C63 /* NetworkHelpers.swift in Sources */,
+				3339A0A5265CA75000F90C63 /* View.swift in Sources */,
+				3339A08D265C92ED00F90C63 /* SystemEventsHandler.swift in Sources */,
+				3339A0B2265CCFF100F90C63 /* ApiRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,10 +582,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"PandaSaza-ios/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PandaSaza-ios/Resources\"";
 				DEVELOPMENT_TEAM = BVVAVTC3DA;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "PandaSaza-ios/Info.plist";
+				INFOPLIST_FILE = "PandaSaza-ios/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,10 +604,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"PandaSaza-ios/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PandaSaza-ios/Resources\"";
 				DEVELOPMENT_TEAM = BVVAVTC3DA;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "PandaSaza-ios/Info.plist";
+				INFOPLIST_FILE = "PandaSaza-ios/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -580,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3339A0A6265CA91D00F90C63 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3339A0A7265CA91D00F90C63 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3339A0A6265CA91D00F90C63 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3339A04B265C8F1600F90C63 /* Project object */;
 }
