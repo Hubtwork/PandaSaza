@@ -12,8 +12,11 @@ struct AppState: Equatable {
     var userData = UserData()
     var routes = ViewRoutes()
     var system = System()
-    var permissions = Permissions()
     var loadedData = LoadedData()
+    
+    // MARK:- TODO
+    
+    //var permissions = Permissions()
 }
 
 
@@ -21,8 +24,6 @@ struct AppState: Equatable {
 extension AppState {
     struct LoadedData: Equatable {
         var loadedPage: Int = 0
-        var products: Loadable<[Product]> = .notRequested
-        var productDetails: Loadable<ProductDetails> = .notRequested
     }
 }
 
@@ -34,7 +35,6 @@ extension AppState {
         //
         // it will refresh Top View Container
         var tokens: Tokens? = nil
-        var userData: Loadable<UserModel> = .notRequested
         
         
     }
@@ -57,6 +57,12 @@ extension AppState {
         
         /*
          System Setting Flow
+         
+         1. Already has Login History ( Phone )
+         
+         2. Sign Process ( Regis†er )
+         
+         3. Sign Process ( LogIn )
          */
         var isSigned: Bool = false
     }
@@ -64,6 +70,7 @@ extension AppState {
 
 // MARK: - Permission Manager
 extension AppState {
+    /*
     struct Permissions: Equatable {
         var push: Permission.Status = .unknown
     }
@@ -75,6 +82,7 @@ extension AppState {
             return pathToPermissions.appending(path: \.push)
         }
     }
+     */
 }
 
 // MARK: - AppState Comprehension
@@ -83,8 +91,8 @@ func == (lhs: AppState, rhs: AppState) -> Bool {
     return lhs.userData == rhs.userData &&
         lhs.routes == rhs.routes &&
         lhs.system == rhs.system &&
-        lhs.permissions == rhs.permissions &&
         lhs.loadedData == rhs.loadedData
+        // lhs.permissions == rhs.permissions
 }
 
 #if DEBUG
