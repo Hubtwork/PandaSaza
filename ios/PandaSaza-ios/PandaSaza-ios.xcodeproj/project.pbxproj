@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330164B4265F52630035762C /* SmsApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330164B3265F52630035762C /* SmsApiRepository.swift */; };
+		330164B7265F537C0035762C /* SmsServiceResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330164B6265F537C0035762C /* SmsServiceResponses.swift */; };
+		330164B9265F724A0035762C /* SignApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330164B8265F724A0035762C /* SignApiRepository.swift */; };
 		3339A059265C8F1600F90C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A058265C8F1600F90C63 /* ContentView.swift */; };
 		3339A05B265C8F1700F90C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3339A05A265C8F1700F90C63 /* Assets.xcassets */; };
 		3339A05E265C8F1700F90C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3339A05D265C8F1700F90C63 /* Preview Assets.xcassets */; };
@@ -31,6 +34,7 @@
 		3339A0B2265CCFF100F90C63 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B1265CCFF100F90C63 /* ApiRequest.swift */; };
 		3339A0B4265CD00600F90C63 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B3265CD00600F90C63 /* ApiRepository.swift */; };
 		3339A0B6265CE6A900F90C63 /* RootViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B5265CE6A900F90C63 /* RootViewModifier.swift */; };
+		3339A0B9265D2E4E00F90C63 /* SignMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3339A0B8265D2E4E00F90C63 /* SignMainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330164B3265F52630035762C /* SmsApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsApiRepository.swift; sourceTree = "<group>"; };
+		330164B6265F537C0035762C /* SmsServiceResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsServiceResponses.swift; sourceTree = "<group>"; };
+		330164B8265F724A0035762C /* SignApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignApiRepository.swift; sourceTree = "<group>"; };
 		3339A053265C8F1600F90C63 /* PandaSaza-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PandaSaza-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3339A058265C8F1600F90C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3339A05A265C8F1700F90C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +87,7 @@
 		3339A0B1265CCFF100F90C63 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		3339A0B3265CD00600F90C63 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		3339A0B5265CE6A900F90C63 /* RootViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModifier.swift; sourceTree = "<group>"; };
+		3339A0B8265D2E4E00F90C63 /* SignMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignMainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330164B2265F519E0035762C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				330164B3265F52630035762C /* SmsApiRepository.swift */,
+				330164B8265F724A0035762C /* SignApiRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		330164B5265F536D0035762C /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				330164B6265F537C0035762C /* SmsServiceResponses.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
 		3339A04A265C8F1600F90C63 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +156,7 @@
 		3339A055265C8F1600F90C63 /* PandaSaza-ios */ = {
 			isa = PBXGroup;
 			children = (
+				330164B2265F519E0035762C /* Repositories */,
 				3339A096265C93BB00F90C63 /* Models */,
 				3339A090265C932600F90C63 /* Resources */,
 				3339A085265C928200F90C63 /* Utils */,
@@ -226,6 +252,7 @@
 		3339A096265C93BB00F90C63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				330164B5265F536D0035762C /* Sign */,
 				3339A0AB265CAD9000F90C63 /* Core */,
 			);
 			path = Models;
@@ -267,8 +294,17 @@
 		3339A0AE265CB2F500F90C63 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3339A0B7265D2DD400F90C63 /* Sign */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		3339A0B7265D2DD400F90C63 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				3339A0B8265D2E4E00F90C63 /* SignMainScreen.swift */,
+			);
+			path = Sign;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,12 +445,15 @@
 				3339A087265C929700F90C63 /* AppDelegate.swift in Sources */,
 				3339A059265C8F1600F90C63 /* ContentView.swift in Sources */,
 				3339A0A0265C998000F90C63 /* InteractorContainer.swift in Sources */,
+				330164B4265F52630035762C /* SmsApiRepository.swift in Sources */,
 				3339A0AA265CAD8D00F90C63 /* ServerResponses.swift in Sources */,
 				3339A098265C93D400F90C63 /* Loadable.swift in Sources */,
 				3339A0B6265CE6A900F90C63 /* RootViewModifier.swift in Sources */,
 				3339A0A3265C9A5400F90C63 /* UIScreen.swift in Sources */,
 				3339A09E265C993300F90C63 /* DependencyInjector.swift in Sources */,
 				3339A095265C939500F90C63 /* AppState.swift in Sources */,
+				330164B7265F537C0035762C /* SmsServiceResponses.swift in Sources */,
+				330164B9265F724A0035762C /* SignApiRepository.swift in Sources */,
 				3339A0B4265CD00600F90C63 /* ApiRepository.swift in Sources */,
 				3339A08F265C931B00F90C63 /* Store.swift in Sources */,
 				3339A09C265C98B300F90C63 /* AppEnvironment.swift in Sources */,
@@ -423,6 +462,7 @@
 				3339A092265C937E00F90C63 /* CancelBag.swift in Sources */,
 				3339A09A265C942900F90C63 /* NetworkHelpers.swift in Sources */,
 				3339A0A5265CA75000F90C63 /* View.swift in Sources */,
+				3339A0B9265D2E4E00F90C63 /* SignMainScreen.swift in Sources */,
 				3339A08D265C92ED00F90C63 /* SystemEventsHandler.swift in Sources */,
 				3339A0B2265CCFF100F90C63 /* ApiRequest.swift in Sources */,
 			);

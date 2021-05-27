@@ -24,6 +24,10 @@ protocol ApiRepository {
 // MARK: - Http Request Implementation
 
 extension ApiRepository {
+    
+
+    
+    
     func request<Value>(endpoint: ApiRequest, httpStatusCodes: HttpStatusCodes = .success, params: [String: Any] = [:]) -> AnyPublisher<Value, Error>
         where Value: Decodable {
         do {

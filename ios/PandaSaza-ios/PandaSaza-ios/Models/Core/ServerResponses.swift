@@ -7,8 +7,21 @@
 
 import Foundation
 
-struct DataResponse<T : Codable>: Codable {
+struct ServerResponse<T : Codable>: Codable {
     let apiStatusCode: String
     let message: String
-    let data: T?
+    let data: T
 }
+
+struct MsgResponse: Codable {
+    let apiStatusCode: String
+    let message: String
+}
+
+struct TokenResponse: Codable {
+    let apiStatusCode: String
+    let message: String
+    let tokens: Tokens
+}
+
+
